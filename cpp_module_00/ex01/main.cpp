@@ -6,7 +6,7 @@
 /*   By: tsodre-p <tsodre-p@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/03 12:36:29 by tsodre-p          #+#    #+#             */
-/*   Updated: 2023/10/04 12:04:23 by tsodre-p         ###   ########.fr       */
+/*   Updated: 2023/10/04 12:37:31 by tsodre-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,40 +14,48 @@
 
 void	display_contacts(Phonebook phonebook)
 {
-	for(int	i = 0; i < 8; i++)
+	/* for(int	i = 0; i < 8; i++)
 	{
-		if (phonebook.Contacts[i].FirstName.size() < 10);
+		if (phonebook.Contacts[i].FirstName.size() < 10)
 			while (phonebook.Contacts[i].FirstName.size() < 10)
 				phonebook.Contacts[i].FirstName.append(" ");
-		if (phonebook.Contacts[i].LastName.size() < 10);
+		if (phonebook.Contacts[i].LastName.size() < 10)
 			while (phonebook.Contacts[i].LastName.size() < 10)
 				phonebook.Contacts[i].LastName.append(" ");
-		if (phonebook.Contacts[i].Nickname.size() < 10);
+		if (phonebook.Contacts[i].Nickname.size() < 10)
 			while (phonebook.Contacts[i].Nickname.size() < 10)
 				phonebook.Contacts[i].Nickname.append(" ");
-	}
-	for(int j = 0; j < 8; j++)
+	} */
+	for(int i = 0; i < 8; i++)
 	{
-		std::cout << j + 1;
-		if (phonebook.Contacts[j].FirstName.size() > 10);
-			while (phonebook.Contacts[j].FirstName.size() > 10)
-				phonebook.Contacts[j].FirstName.append(" ");
-		if (phonebook.Contacts[j].LastName.size() > 10);
-			while (phonebook.Contacts[j].LastName.size() > 10)
-				phonebook.Contacts[j].LastName.append(" ");
-		if (phonebook.Contacts[j].Nickname.size() > 10)
+		std::cout << i + 1;
+		if (phonebook.Contacts[i].FirstName.size() > 10)
 		{
-			for(int	i = 0; i < 9; i++)
-				std::cout << phonebook.Contacts[j].Nickname[i];
-			std::cout << "." << std::endl;
+			for(int	j = 0; j < 9; j++)
+				std::cout << phonebook.Contacts[i].FirstName[j];
+			std::cout << ".";
+			std::cout << "|";
 		}
+		if (phonebook.Contacts[i].LastName.size() > 10)
+		{
+			for(int	j = 0; j < 9; j++)
+				std::cout << phonebook.Contacts[i].LastName[j];
+			std::cout << ".";
+			std::cout << "|";
+		}
+		if (phonebook.Contacts[i].Nickname.size() > 10)
+		{
+			for(int	j = 0; j < 9; j++)
+				std::cout << phonebook.Contacts[i].Nickname[j];
+			std::cout << ".";
+		}
+		std::cout << std::endl;
 	}
 }
-void	search_contact(Phonebook phonebook)
+/* void	search_contact(Phonebook phonebook)
 {
-
 	exit (0);
-}
+} */
 void	add_contact(int counter, Phonebook phonebook)
 {
 	system("clear");
@@ -88,11 +96,11 @@ int	main(int argc, char **argv)
 			add_contact(counter, phonebook);
 			counter++;
 		}
-		/* else if (command == "SEARCH")
+		else if (command == "SEARCH")
 		{
-			search_contact(phonebook);
-			counter++;
-		} */
+			display_contacts(phonebook);
+			/* search_contact(phonebook); */
+		}
 		else if (command == "EXIT")
 			exit(0);
 	}
