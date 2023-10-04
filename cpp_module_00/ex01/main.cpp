@@ -6,7 +6,7 @@
 /*   By: tsodre-p <tsodre-p@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/03 12:36:29 by tsodre-p          #+#    #+#             */
-/*   Updated: 2023/10/04 12:37:31 by tsodre-p         ###   ########.fr       */
+/*   Updated: 2023/10/04 15:40:11 by tsodre-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 void	display_contacts(Phonebook phonebook)
 {
-	/* for(int	i = 0; i < 8; i++)
+	for(int	i = 0; i < 8; i++)
 	{
 		if (phonebook.Contacts[i].FirstName.size() < 10)
 			while (phonebook.Contacts[i].FirstName.size() < 10)
@@ -25,7 +25,7 @@ void	display_contacts(Phonebook phonebook)
 		if (phonebook.Contacts[i].Nickname.size() < 10)
 			while (phonebook.Contacts[i].Nickname.size() < 10)
 				phonebook.Contacts[i].Nickname.append(" ");
-	} */
+	}
 	for(int i = 0; i < 8; i++)
 	{
 		std::cout << i + 1;
@@ -49,7 +49,7 @@ void	display_contacts(Phonebook phonebook)
 				std::cout << phonebook.Contacts[i].Nickname[j];
 			std::cout << ".";
 		}
-		std::cout << std::endl;
+		std::cout << "|" << std::endl;
 	}
 }
 /* void	search_contact(Phonebook phonebook)
@@ -58,21 +58,27 @@ void	display_contacts(Phonebook phonebook)
 } */
 void	add_contact(int counter, Phonebook phonebook)
 {
-	system("clear");
+	std::string	input;
+
 	std::cout << "First Name:" << std::endl;
-	std::cin >> phonebook.Contacts[counter].FirstName;
+	getline(std::cin, input);
+	phonebook.Contacts[counter].FirstName = input;
 	system("clear");
 	std::cout << "Last Name:" << std::endl;
-	std::cin >> phonebook.Contacts[counter].LastName;
+	getline(std::cin, input);
+	phonebook.Contacts[counter].LastName = input;
 	system("clear");
 	std::cout << "Nickname:" << std::endl;
-	std::cin >> phonebook.Contacts[counter].Nickname;
+	getline(std::cin, input);
+	phonebook.Contacts[counter].Nickname = input;
 	system("clear");
 	std::cout << "Phone Number:" << std::endl;
-	std::cin >> phonebook.Contacts[counter].PhoneNumber;
+	getline(std::cin, input);
+	phonebook.Contacts[counter].PhoneNumber = input;
 	system("clear");
 	std::cout << "Darkest Secret:" << std::endl;
-	std::cin >> phonebook.Contacts[counter].DarkestSecret;
+	getline(std::cin, input);
+	phonebook.Contacts[counter].DarkestSecret = input;
 }
 
 int	main(int argc, char **argv)
@@ -93,6 +99,7 @@ int	main(int argc, char **argv)
 			counter = 0;
 		if (command == "ADD")
 		{
+			system("clear");
 			add_contact(counter, phonebook);
 			counter++;
 		}
