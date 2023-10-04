@@ -6,7 +6,7 @@
 /*   By: tsodre-p <tsodre-p@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/03 12:36:29 by tsodre-p          #+#    #+#             */
-/*   Updated: 2023/10/04 15:40:11 by tsodre-p         ###   ########.fr       */
+/*   Updated: 2023/10/04 15:51:20 by tsodre-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,6 +60,7 @@ void	add_contact(int counter, Phonebook phonebook)
 {
 	std::string	input;
 
+	system("clear");
 	std::cout << "First Name:" << std::endl;
 	getline(std::cin, input);
 	phonebook.Contacts[counter].FirstName = input;
