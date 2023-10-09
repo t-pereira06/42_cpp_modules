@@ -1,0 +1,54 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   PhoneBook.cpp                                      :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: tsodre-p <tsodre-p@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/10/09 09:19:31 by tsodre-p          #+#    #+#             */
+/*   Updated: 2023/10/09 09:34:53 by tsodre-p         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+#include "PhoneBook.hpp"
+
+/* void	display_contacts(PhoneBook phonebook)
+{
+	for(int	i = 0; i < 8; i++)
+	{
+		if (phonebook.Contacts[i].FirstName.size() < 10)
+			while (phonebook.Contacts[i].FirstName.size() < 10)
+				phonebook.Contacts[i].FirstName.append(" ");
+		if (phonebook.Contacts[i].LastName.size() < 10)
+			while (phonebook.Contacts[i].LastName.size() < 10)
+				phonebook.Contacts[i].LastName.append(" ");
+		if (phonebook.Contacts[i].NickName.size() < 10)
+			while (phonebook.Contacts[i].NickName.size() < 10)
+				phonebook.Contacts[i].NickName.append(" ");
+	}
+	for(int i = 0; i < 8; i++)
+	{
+		std::cout << i + 1;
+		if (phonebook.Contacts[i].FirstName.size() > 10)
+		{
+			for(int	j = 0; j < 9; j++)
+				std::cout << phonebook.Contacts[i].FirstName[j];
+			std::cout << ".";
+			std::cout << "|";
+		}
+		if (phonebook.Contacts[i].LastName.size() > 10)
+		{
+			for(int	j = 0; j < 9; j++)
+				std::cout << phonebook.Contacts[i].LastName[j];
+			std::cout << ".";
+			std::cout << "|";
+		}
+		if (phonebook.Contacts[i].NickName.size() > 10)
+		{
+			for(int	j = 0; j < 9; j++)
+				std::cout << phonebook.Contacts[i].NickName[j];
+			std::cout << ".";
+		}
+		std::cout << "|" << std::endl;
+	}
+} */

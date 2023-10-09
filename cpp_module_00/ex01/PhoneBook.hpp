@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   phonebook.hpp                                      :+:      :+:    :+:   */
+/*   PhoneBook.hpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tsodre-p <tsodre-p@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/03 12:29:51 by tsodre-p          #+#    #+#             */
-/*   Updated: 2023/10/04 10:10:20 by tsodre-p         ###   ########.fr       */
+/*   Updated: 2023/10/09 10:28:33 by tsodre-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,21 +17,17 @@
 #include <string>
 #include <locale>
 #include <stdio.h>
+#include "Contact.hpp"
 
-class Contact
+class PhoneBook
 {
-	public:
-		std::string FirstName;
-		std::string LastName;
-		std::string Nickname;
-		std::string PhoneNumber;
-		std::string DarkestSecret;
-};
-
-class Phonebook
-{
-	public:
+	private:
 		Contact Contacts[8];
+
+	public:
+		PhoneBook();
+		void	AddContact();
+		void	DisplayContacts();
 };
 
 #endif
