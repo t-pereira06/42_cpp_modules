@@ -6,11 +6,18 @@
 /*   By: tsodre-p <tsodre-p@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/09 09:19:31 by tsodre-p          #+#    #+#             */
-/*   Updated: 2023/10/09 09:34:53 by tsodre-p         ###   ########.fr       */
+/*   Updated: 2023/10/09 12:08:52 by tsodre-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "PhoneBook.hpp"
+#include "headers/PhoneBook.hpp"
+
+PhoneBook::PhoneBook() {};
+
+void	PhoneBook::AddContact(int counter)
+{
+	Contacts[counter].FillContact();
+}
 
 /* void	display_contacts(PhoneBook phonebook)
 {

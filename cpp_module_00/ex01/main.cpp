@@ -6,11 +6,11 @@
 /*   By: tsodre-p <tsodre-p@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/03 12:36:29 by tsodre-p          #+#    #+#             */
-/*   Updated: 2023/10/09 10:28:48 by tsodre-p         ###   ########.fr       */
+/*   Updated: 2023/10/09 12:10:04 by tsodre-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "PhoneBook.hpp"
+#include "headers/PhoneBook.hpp"
 
 int	main(int argc, char **argv)
 {
@@ -30,16 +30,13 @@ int	main(int argc, char **argv)
 			counter = 0;
 		if (command == "ADD")
 		{
-			system("clear");
-			phonebook.AddContact();
-			//add_contact(counter, phonebook);
+			//system("clear");
+			phonebook.AddContact(counter);
 			counter++;
 		}
-		else if (command == "SEARCH")
+		/* else if (command == "SEARCH")
 		{
-			//display_contacts(phonebook);
-			/* search_contact(phonebook); */
-		}
+		} */
 		else if (command == "EXIT")
 			exit(0);
 	}

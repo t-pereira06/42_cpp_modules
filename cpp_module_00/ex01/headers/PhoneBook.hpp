@@ -6,7 +6,7 @@
 /*   By: tsodre-p <tsodre-p@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/03 12:29:51 by tsodre-p          #+#    #+#             */
-/*   Updated: 2023/10/09 10:28:33 by tsodre-p         ###   ########.fr       */
+/*   Updated: 2023/10/09 10:46:10 by tsodre-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ class PhoneBook
 
 	public:
 		PhoneBook();
-		void	AddContact();
+		void	AddContact(int counter);
 		void	DisplayContacts();
 };
 

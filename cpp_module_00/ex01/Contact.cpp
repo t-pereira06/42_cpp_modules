@@ -6,11 +6,11 @@
 /*   By: tsodre-p <tsodre-p@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/09 09:20:11 by tsodre-p          #+#    #+#             */
-/*   Updated: 2023/10/09 10:40:10 by tsodre-p         ###   ########.fr       */
+/*   Updated: 2023/10/09 12:09:57 by tsodre-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Contact.hpp"
+#include "headers/Contact.hpp"
 
 std::string	Contact::GetFirstName()
 {
@@ -54,19 +54,19 @@ std::string	Contact::GetInput(std::string output)
 
 std::string	Contact::GetInfo(std::string type)
 {
-	if (type == "First Name")
+	if (type == "FN")
 		return (GetFirstName());
-	if (type == "Last Name")
+	if (type == "LN")
 		return (GetLastName());
-	if (type == "Nickname")
+	if (type == "NN")
 		return (GetNickName());
-	if (type == "Phone Number")
+	if (type == "PN")
 		return (GetPhoneNumber());
-	if (type == "Darkest Secret")
+	if (type == "DS")
 		return (GetDarkestSecret());
 }
 
-std::string	Contact::FillContacts(std::string output)
+std::string	Contact::FillContact()
 {
 	FirstName = GetInput("First Name: ");
 	LastName = GetInput("Last Name: ");
