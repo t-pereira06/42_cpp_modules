@@ -6,7 +6,7 @@
 /*   By: tsodre-p <tsodre-p@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/09 09:16:31 by tsodre-p          #+#    #+#             */
-/*   Updated: 2023/10/09 10:49:48 by tsodre-p         ###   ########.fr       */
+/*   Updated: 2023/10/09 12:15:36 by tsodre-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,9 +33,9 @@ class Contact
 		std::string GetNickName();
 		std::string GetPhoneNumber();
 		std::string GetDarkestSecret();
-		std::string	FillContact();
 		std::string	GetInput(std::string output);
 		std::string	GetInfo(std::string type);
+		void		FillContact();
 };
 
 #endif

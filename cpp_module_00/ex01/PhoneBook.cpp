@@ -6,7 +6,7 @@
 /*   By: tsodre-p <tsodre-p@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/09 09:19:31 by tsodre-p          #+#    #+#             */
-/*   Updated: 2023/10/09 12:08:52 by tsodre-p         ###   ########.fr       */
+/*   Updated: 2023/10/09 14:59:48 by tsodre-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,15 @@ PhoneBook::PhoneBook() {};
 void	PhoneBook::AddContact(int counter)
 {
 	Contacts[counter].FillContact();
+}
+
+void	PhoneBook::DisplayContacts()
+{
+	std::cout << Contacts[0].GetInfo("FN") << std::endl;
+	std::cout << Contacts[0].GetInfo("LN") << std::endl;
+	std::cout << Contacts[0].GetInfo("NN") << std::endl;
+	std::cout << Contacts[0].GetInfo("PN") << std::endl;
+	std::cout << Contacts[0].GetInfo("DS") << std::endl;
 }
 
 /* void	display_contacts(PhoneBook phonebook)
