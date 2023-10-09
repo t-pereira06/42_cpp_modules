@@ -6,7 +6,7 @@
 /*   By: tsodre-p <tsodre-p@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/09 09:20:11 by tsodre-p          #+#    #+#             */
-/*   Updated: 2023/10/09 16:21:58 by tsodre-p         ###   ########.fr       */
+/*   Updated: 2023/10/09 16:44:37 by tsodre-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,7 +54,6 @@ std::string	Contact::GetInput(std::string output)
 
 std::string	Contact::GetInfo(std::string type)
 {
-	std::cout << type;
 	if (type == "FN")
 		return (GetFirstName());
 	if (type == "LN")
@@ -71,11 +70,8 @@ std::string	Contact::GetInfo(std::string type)
 void	Contact::FillContact()
 {
 	FirstName = GetInput("First Name: ");
-	std::cout << FirstName;
 	LastName = GetInput("Last Name: ");
-	std::cout << LastName;
 	NickName = GetInput("Nickname: ");
-	std::cout << NickName;
 	PhoneNumber = GetInput("Phone Number: ");
 	DarkestSecret = GetInput("Darkest Secret: ");
 }
