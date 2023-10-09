@@ -6,15 +6,15 @@
 #    By: tsodre-p <tsodre-p@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/10/03 12:43:37 by tsodre-p          #+#    #+#              #
-#    Updated: 2023/10/09 15:02:10 by tsodre-p         ###   ########.fr        #
+#    Updated: 2023/10/09 16:37:33 by tsodre-p         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = phonebook
-CC = c++
+C++ = c++
 RM = rm -rf
 AR = ar rcs
-CFLAGS = -Wall -Wextra -Werror
+CFLAGS = -Wall -Wextra -Werror -std=c++98
 
 FUNCS = Contact.cpp PhoneBook.cpp main.cpp
 OBJ = $(FUNCS:%.cpp=%.o)
@@ -26,7 +26,7 @@ all: $(NAME)
 $(NAME): $(OBJ)
 		@echo "$(GREEN) [ Conpiled: $(NAME) ] "
 		@echo "$(GREEN) [ Generated: $(NAME) ] "
-		c++ -g $(CFLAGS) $(OBJ) -o $(NAME)
+		@$(C++) -g $(CFLAGS) $(OBJ) -o $(NAME)
 
 clean:
 		$(RM) $(OBJ)
