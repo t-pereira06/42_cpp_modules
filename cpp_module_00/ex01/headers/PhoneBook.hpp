@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   PhoneBook.hpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tsodre-p <tsodre-p@student.42.fr>          +#+  +:+       +#+        */
+/*   By: tsodre-p <tsodre-p@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/03 12:29:51 by tsodre-p          #+#    #+#             */
-/*   Updated: 2023/10/09 10:46:10 by tsodre-p         ###   ########.fr       */
+/*   Updated: 2023/10/11 12:47:04 by tsodre-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,7 @@
 #include <string>
 #include <locale>
 #include <stdio.h>
+#include <iomanip>
 #include "Contact.hpp"
 
 class PhoneBook
@@ -27,7 +28,9 @@ class PhoneBook
 	public:
 		PhoneBook();
 		void	AddContact(int counter);
-		void	DisplayContacts();
+		void	DisplayContacts(int size);
+		void	HandleInfoContacts(std::string info);
+		void	SearchIndexContact(int size);
 };
 
 #endif

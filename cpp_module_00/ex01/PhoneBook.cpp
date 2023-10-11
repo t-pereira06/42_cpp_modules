@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   PhoneBook.cpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tsodre-p <tsodre-p@student.42.fr>          +#+  +:+       +#+        */
+/*   By: tsodre-p <tsodre-p@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/09 09:19:31 by tsodre-p          #+#    #+#             */
-/*   Updated: 2023/10/09 16:43:39 by tsodre-p         ###   ########.fr       */
+/*   Updated: 2023/10/11 12:59:59 by tsodre-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,57 +14,68 @@
 
 PhoneBook::PhoneBook() {};
 
+void	PhoneBook::HandleInfoContacts(std::string info)
+{
+	if (info.size() > 10)
+	{
+		info.resize(9);
+		info.append(".");
+	}
+	std::cout << std::setw(10) << info << "|";
+}
+
 void	PhoneBook::AddContact(int counter)
 {
 	Contacts[counter].FillContact();
 }
 
-void	PhoneBook::DisplayContacts()
+void	PhoneBook::DisplayContacts(int size)
 {
-	std::cout << Contacts[0].GetInfo("FN") << "\n";
-	std::cout << Contacts[0].GetInfo("LN") << "\n";
-	std::cout << Contacts[0].GetInfo("NN") << "\n";
-	std::cout << Contacts[0].GetInfo("PN") << "\n";
-	std::cout << Contacts[0].GetInfo("DS") << "\n";
+	int	i;
+
+	i = 0;
+	while (i < size)
+	{
+		std::cout << std::setw(10) << i << "|";
+		HandleInfoContacts(Contacts[i].GetInfo("FN"));
+		HandleInfoContacts(Contacts[i].GetInfo("LN"));
+		HandleInfoContacts(Contacts[i].GetInfo("NN"));
+		std::cout << "\n";
+		i++;
+	}
+	std::cout << "\n";
 }
 
-/* void	display_contacts(PhoneBook phonebook)
+void	PhoneBook::SearchIndexContact(int size)
 {
-	for(int	i = 0; i < 8; i++)
+	std::string	command;
+	int	i;
+
+	i = 0;
+	while (1)
 	{
-		if (phonebook.Contacts[i].FirstName.size() < 10)
-			while (phonebook.Contacts[i].FirstName.size() < 10)
-				phonebook.Contacts[i].FirstName.append(" ");
-		if (phonebook.Contacts[i].LastName.size() < 10)
-			while (phonebook.Contacts[i].LastName.size() < 10)
-				phonebook.Contacts[i].LastName.append(" ");
-		if (phonebook.Contacts[i].NickName.size() < 10)
-			while (phonebook.Contacts[i].NickName.size() < 10)
-				phonebook.Contacts[i].NickName.append(" ");
+		std::cin >> i;
+		if (!getline(std::cin, command))
+		{
+			/* std::cout << "ERROR";
+			exit(1); */
+			break;
+		}
+		if (command == "BACK")
+			break;
+		if (i < 0 || i >= size)
+		{
+			std::cout << "Index out of the phonebook range!" << "\n";
+			continue;
+		}
+		else
+		{
+			std::cout << "First Name: " << Contacts[i].GetInfo("FN") << "\n";
+			std::cout << "Last Name: " << Contacts[i].GetInfo("LN") << "\n";
+			std::cout << "Nickname: " << Contacts[i].GetInfo("NN") << "\n";
+			break;
+		}
 	}
-	for(int i = 0; i < 8; i++)
-	{
-		std::cout << i + 1;
-		if (phonebook.Contacts[i].FirstName.size() > 10)
-		{
-			for(int	j = 0; j < 9; j++)
-				std::cout << phonebook.Contacts[i].FirstName[j];
-			std::cout << ".";
-			std::cout << "|";
-		}
-		if (phonebook.Contacts[i].LastName.size() > 10)
-		{
-			for(int	j = 0; j < 9; j++)
-				std::cout << phonebook.Contacts[i].LastName[j];
-			std::cout << ".";
-			std::cout << "|";
-		}
-		if (phonebook.Contacts[i].NickName.size() > 10)
-		{
-			for(int	j = 0; j < 9; j++)
-				std::cout << phonebook.Contacts[i].NickName[j];
-			std::cout << ".";
-		}
-		std::cout << "|" << std::endl;
-	}
-} */
+}
+
+
