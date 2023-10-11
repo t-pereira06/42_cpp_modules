@@ -6,7 +6,7 @@
 /*   By: tsodre-p <tsodre-p@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/09 09:19:31 by tsodre-p          #+#    #+#             */
-/*   Updated: 2023/10/11 12:59:59 by tsodre-p         ###   ########.fr       */
+/*   Updated: 2023/10/11 16:55:54 by tsodre-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,6 +34,7 @@ void	PhoneBook::DisplayContacts(int size)
 	int	i;
 
 	i = 0;
+	std::cout << "     Index|First Name| Last Name|  Nickname|\n";
 	while (i < size)
 	{
 		std::cout << std::setw(10) << i << "|";
@@ -54,18 +55,16 @@ void	PhoneBook::SearchIndexContact(int size)
 	i = 0;
 	while (1)
 	{
-		std::cin >> i;
 		if (!getline(std::cin, command))
-		{
-			/* std::cout << "ERROR";
-			exit(1); */
 			break;
-		}
 		if (command == "BACK")
 			break;
+		i = atoi(command.c_str());
+		std::cout << i;
 		if (i < 0 || i >= size)
 		{
-			std::cout << "Index out of the phonebook range!" << "\n";
+			std::cout << "\nIndex out of the phonebook range!" << "\n\n";
+			std::cout << "Write BACK to go to main menu\n" << "Entry the index of the contact: \n";
 			continue;
 		}
 		else
@@ -73,6 +72,8 @@ void	PhoneBook::SearchIndexContact(int size)
 			std::cout << "First Name: " << Contacts[i].GetInfo("FN") << "\n";
 			std::cout << "Last Name: " << Contacts[i].GetInfo("LN") << "\n";
 			std::cout << "Nickname: " << Contacts[i].GetInfo("NN") << "\n";
+			std::cout << "Phone Number: " << Contacts[i].GetInfo("PN") << "\n";
+			std::cout << "Darkest Secret: " << Contacts[i].GetInfo("DS") << "\n";
 			break;
 		}
 	}

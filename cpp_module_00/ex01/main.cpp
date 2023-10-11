@@ -6,7 +6,7 @@
 /*   By: tsodre-p <tsodre-p@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/03 12:36:29 by tsodre-p          #+#    #+#             */
-/*   Updated: 2023/10/11 13:00:53 by tsodre-p         ###   ########.fr       */
+/*   Updated: 2023/10/11 15:56:31 by tsodre-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,8 @@ int	main(int argc, char **argv)
 	size = 0;
 	while (1)
 	{
-		std::cout << "Available commands: ADD, SEARCH, EXIT\n";
+		system("clear");
+		std::cout << "Available commands: ADD, SEARCH, EXIT" << std::endl;
 		if (!getline(std::cin, command))
 		{
 			std::cout << "ERROR\n";
@@ -36,6 +37,7 @@ int	main(int argc, char **argv)
 		if (command == "ADD")
 		{
 			system("clear");
+			std::cout << "New contact :\n";
 			phonebook.AddContact(counter);
 			if (size < 8)
 				size++;
@@ -45,7 +47,7 @@ int	main(int argc, char **argv)
 		{
 			system("clear");
 			phonebook.DisplayContacts(size);
-			std::cout << "Entry the index of the contact" << "\n";
+			std::cout << "Write BACK to go to main menu\n" << "Entry the index of the contact: ";
 			phonebook.SearchIndexContact(size);
 		}
 		else if (command == "EXIT")
