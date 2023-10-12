@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   PhoneBook.cpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tsodre-p <tsodre-p@student.42porto.com>    +#+  +:+       +#+        */
+/*   By: tsodre-p <tsodre-p@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/09 09:19:31 by tsodre-p          #+#    #+#             */
-/*   Updated: 2023/10/11 16:55:54 by tsodre-p         ###   ########.fr       */
+/*   Updated: 2023/10/12 12:12:54 by tsodre-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,17 @@
 
 PhoneBook::PhoneBook() {};
 
+int	CheckIfOnlyDigit(std::string command)
+{
+	for (int i = 0; i < command.size(); i++)
+	{
+		if (!isdigit(command[i]))
+		{
+			return (1);
+		}
+	}
+	return (0);
+}
 void	PhoneBook::HandleInfoContacts(std::string info)
 {
 	if (info.size() > 10)
@@ -59,9 +70,16 @@ void	PhoneBook::SearchIndexContact(int size)
 			break;
 		if (command == "BACK")
 			break;
+		if (command == "EXIT")
+			exit(0);
 		i = atoi(command.c_str());
-		std::cout << i;
-		if (i < 0 || i >= size)
+		if (CheckIfOnlyDigit(command) == 1)
+		{
+			std::cout << "\nIndex out of the phonebook range!" << "\n\n";
+			std::cout << "Write BACK to go to main menu\n" << "Entry the index of the contact: \n";
+			continue;
+		}
+		else if (i < 0 || i >= size)
 		{
 			std::cout << "\nIndex out of the phonebook range!" << "\n\n";
 			std::cout << "Write BACK to go to main menu\n" << "Entry the index of the contact: \n";
@@ -69,12 +87,14 @@ void	PhoneBook::SearchIndexContact(int size)
 		}
 		else
 		{
+			std::cout << "\n";
 			std::cout << "First Name: " << Contacts[i].GetInfo("FN") << "\n";
 			std::cout << "Last Name: " << Contacts[i].GetInfo("LN") << "\n";
 			std::cout << "Nickname: " << Contacts[i].GetInfo("NN") << "\n";
 			std::cout << "Phone Number: " << Contacts[i].GetInfo("PN") << "\n";
-			std::cout << "Darkest Secret: " << Contacts[i].GetInfo("DS") << "\n";
-			break;
+			std::cout << "Darkest Secret: " << Contacts[i].GetInfo("DS") << "\n\n";
+			std::cout << "Write BACK to go to main menu\n" << "Entry the index of the contact: \n";
+			continue;
 		}
 	}
 }

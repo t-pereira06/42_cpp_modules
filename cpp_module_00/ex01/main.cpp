@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tsodre-p <tsodre-p@student.42porto.com>    +#+  +:+       +#+        */
+/*   By: tsodre-p <tsodre-p@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/03 12:36:29 by tsodre-p          #+#    #+#             */
-/*   Updated: 2023/10/11 15:56:31 by tsodre-p         ###   ########.fr       */
+/*   Updated: 2023/10/12 11:41:31 by tsodre-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,9 +23,9 @@ int	main(int argc, char **argv)
 
 	counter = 0;
 	size = 0;
+	system("clear");
 	while (1)
 	{
-		system("clear");
 		std::cout << "Available commands: ADD, SEARCH, EXIT" << std::endl;
 		if (!getline(std::cin, command))
 		{
