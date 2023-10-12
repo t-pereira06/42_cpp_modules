@@ -6,7 +6,7 @@
 /*   By: tsodre-p <tsodre-p@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/09 09:19:31 by tsodre-p          #+#    #+#             */
-/*   Updated: 2023/10/12 12:42:48 by tsodre-p         ###   ########.fr       */
+/*   Updated: 2023/10/12 13:56:07 by tsodre-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 PhoneBook::PhoneBook() {};
 
-int	CheckIfOnlyDigit(std::string command)
+static int	CheckIfOnlyDigit(std::string command)
 {
 	for (int i = 0; i < command.size(); i++)
 	{
@@ -69,7 +69,10 @@ void	PhoneBook::SearchIndexContact(int size)
 		if (!getline(std::cin, command))
 			break;
 		if (command == "BACK")
+		{
+			system("clear");
 			break;
+		}
 		if (command == "EXIT")
 			exit(0);
 		i = atoi(command.c_str());

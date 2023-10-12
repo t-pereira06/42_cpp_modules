@@ -6,14 +6,13 @@
 #    By: tsodre-p <tsodre-p@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/10/03 12:43:37 by tsodre-p          #+#    #+#              #
-#    Updated: 2023/10/12 12:21:57 by tsodre-p         ###   ########.fr        #
+#    Updated: 2023/10/12 14:26:55 by tsodre-p         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = phonebook
 C++ = c++
 RM = rm -rf
-#AR = ar rcs
 CFLAGS = -Wall -Wextra -Werror -std=c++98
 
 FUNCS = Contact.cpp PhoneBook.cpp main.cpp
