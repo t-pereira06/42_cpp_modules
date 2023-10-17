@@ -6,12 +6,12 @@
 /*   By: tsodre-p <tsodre-p@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/03 11:11:36 by tsodre-p          #+#    #+#             */
-/*   Updated: 2023/10/17 09:24:49 by tsodre-p         ###   ########.fr       */
+/*   Updated: 2023/10/17 12:05:21 by tsodre-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <iostream>
-#include <string>
+#include <string.h>
 #include <locale>
 #include <stdio.h>
 
@@ -23,9 +23,8 @@ int	main(int argc, char **argv)
 	{
 		for(int i = 1; i < argc; i++)
 		{
-			for(int j = 0; j < argv[i][j]; j++)
+			for(int j = 0; j < strlen(argv[i]); j++)
 				std::cout << (char)toupper(argv[i][j]);
-			std::cout << " ";
 		}
 	}
 	std::cout << std::endl;
