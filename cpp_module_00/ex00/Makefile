@@ -6,14 +6,13 @@
 #    By: tsodre-p <tsodre-p@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/10/03 11:11:41 by tsodre-p          #+#    #+#              #
-#    Updated: 2023/10/17 09:24:02 by tsodre-p         ###   ########.fr        #
+#    Updated: 2023/10/17 09:34:22 by tsodre-p         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = megaphone
 CC = c++
 RM = rm -rf
-AR = ar rcs
 CFLAGS = -Wall -Wextra -Werror -std=c++98
 
 FUNCS = megaphone.cpp
