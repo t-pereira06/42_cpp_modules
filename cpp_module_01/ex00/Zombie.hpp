@@ -6,7 +6,7 @@
 /*   By: tsodre-p <tsodre-p@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/17 09:51:12 by tsodre-p          #+#    #+#             */
-/*   Updated: 2023/10/17 12:22:46 by tsodre-p         ###   ########.fr       */
+/*   Updated: 2023/10/18 12:09:44 by tsodre-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,10 +27,9 @@ public:
 	Zombie(std::string name);
 	~Zombie();
 	void 	announce( void );
-	void	ZombieName(std::string name);
 };
 
-Zombie* newZombie( std::string name );
-void randomChump( std::string name );
+Zombie* newZombie(std::string name);
+void randomChump(std::string name);
 
 #endif

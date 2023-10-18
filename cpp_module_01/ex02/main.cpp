@@ -5,27 +5,31 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: tsodre-p <tsodre-p@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/17 09:51:00 by tsodre-p          #+#    #+#             */
-/*   Updated: 2023/10/18 10:59:03 by tsodre-p         ###   ########.fr       */
+/*   Created: 2023/10/18 14:52:38 by tsodre-p          #+#    #+#             */
+/*   Updated: 2023/10/18 15:00:10 by tsodre-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Zombie.hpp"
+#include <iostream>
+#include <string.h>
+#include <locale.h>
+#include <stdio.h>
+#include <iomanip>
 
 int	main(void)
 {
-	std::string	ZombieName;
-	std::string	ChumpName;
+	std::string	string = "HI THIS IS BRAIN";
+	std::string*	stringPTR =  &string;
+	std::string&	stringREF = string;
 
-	Zombie	*zombie;
-
-	std::cout << "Give a name to the zombie:" << std::endl;
-	getline(std::cin, ZombieName);
-	std::cout << "Give a name to the chump:" << std::endl;
-	getline(std::cin, ChumpName);
-	zombie = newZombie(ZombieName);
-	zombie->announce();
-	randomChump(ChumpName);
-	delete zombie;
+	std::cout << "Memory adresses:" << std::endl;
+	std::cout << &string << std::endl;
+	std::cout << &stringPTR << std::endl;
+	std::cout << &stringREF << std::endl;
+	std::cout << std::endl;
+	std::cout << "Values:" << std::endl;
+	std::cout << string << std::endl;
+	std::cout << stringPTR << std::endl;
+	std::cout << stringREF << std::endl;
 	return (0);
 }

@@ -1,31 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   Zombie.cpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tsodre-p <tsodre-p@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/17 09:51:00 by tsodre-p          #+#    #+#             */
-/*   Updated: 2023/10/18 10:59:03 by tsodre-p         ###   ########.fr       */
+/*   Created: 2023/10/18 11:04:37 by tsodre-p          #+#    #+#             */
+/*   Updated: 2023/10/18 14:44:02 by tsodre-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Zombie.hpp"
 
-int	main(void)
+Zombie::~Zombie()
 {
-	std::string	ZombieName;
-	std::string	ChumpName;
+}
 
-	Zombie	*zombie;
+void	Zombie::announce()
+{
+	std::cout << this->name << ": BraiiiiiiinnnzzzZ..." << std::endl;
+}
 
-	std::cout << "Give a name to the zombie:" << std::endl;
-	getline(std::cin, ZombieName);
-	std::cout << "Give a name to the chump:" << std::endl;
-	getline(std::cin, ChumpName);
-	zombie = newZombie(ZombieName);
-	zombie->announce();
-	randomChump(ChumpName);
-	delete zombie;
-	return (0);
+void	Zombie::setZombieName(std::string _name)
+{
+	this->name = _name;
 }

@@ -1,31 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   Zombie.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tsodre-p <tsodre-p@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/17 09:51:00 by tsodre-p          #+#    #+#             */
-/*   Updated: 2023/10/18 10:59:03 by tsodre-p         ###   ########.fr       */
+/*   Created: 2023/10/18 11:04:39 by tsodre-p          #+#    #+#             */
+/*   Updated: 2023/10/18 14:48:28 by tsodre-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Zombie.hpp"
+#ifndef ZOMBIE_HPP
+# define ZOMBIE_HPP
 
-int	main(void)
+#include <iostream>
+#include <string.h>
+#include <locale.h>
+#include <stdio.h>
+#include <iomanip>
+
+class Zombie
 {
-	std::string	ZombieName;
-	std::string	ChumpName;
+private:
+	std::string	name;
+public:
+	~Zombie();
+	void 	announce( void );
+	void	setZombieName(std::string name);
+};
 
-	Zombie	*zombie;
+Zombie* zombieHorde(int N, std::string name);
 
-	std::cout << "Give a name to the zombie:" << std::endl;
-	getline(std::cin, ZombieName);
-	std::cout << "Give a name to the chump:" << std::endl;
-	getline(std::cin, ChumpName);
-	zombie = newZombie(ZombieName);
-	zombie->announce();
-	randomChump(ChumpName);
-	delete zombie;
-	return (0);
-}
+#endif
