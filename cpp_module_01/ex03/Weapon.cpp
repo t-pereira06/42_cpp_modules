@@ -6,7 +6,18 @@
 /*   By: tsodre-p <tsodre-p@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/20 09:26:56 by tsodre-p          #+#    #+#             */
-/*   Updated: 2023/10/20 09:26:57 by tsodre-p         ###   ########.fr       */
+/*   Updated: 2023/10/20 09:50:22 by tsodre-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "headers/Weapon.hpp"
+
+Weapon::Weapon(std::string type)
+{
+	_type = type;
+}
+
+Weapon::~Weapon()
+{
+
+}
