@@ -6,14 +6,14 @@
 #    By: tsodre-p <tsodre-p@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/10/12 14:25:49 by tsodre-p          #+#    #+#              #
-#    Updated: 2023/10/16 10:56:51 by tsodre-p         ###   ########.fr        #
+#    Updated: 2023/10/24 14:16:18 by tsodre-p         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = bank
-C++ = c++
+CXX = c++
 RM = rm -rf
-CFLAGS = -Wall -Wextra -Werror -std=c++98
+CXXFLAGS = -Wall -Wextra -Werror -std=c++98
 
 FUNCS = Account.cpp tests.cpp
 OBJ = $(FUNCS:%.cpp=%.o)
@@ -23,7 +23,7 @@ GREEN = \033[0;32m
 all: $(NAME)
 
 $(NAME): $(OBJ)
-		$(C++) $(CFLAGS) $(OBJ) -o $(NAME)
+		$(CXX) $(CXXFLAGS) $(OBJ) -o $(NAME)
 		@echo "$(GREEN) [ Conpiled: $(NAME) ] "
 		@echo "$(GREEN) [ Generated: $(NAME) ] "
 

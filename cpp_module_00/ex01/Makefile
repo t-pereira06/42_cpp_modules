@@ -6,14 +6,14 @@
 #    By: tsodre-p <tsodre-p@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/10/03 12:43:37 by tsodre-p          #+#    #+#              #
-#    Updated: 2023/10/12 14:26:55 by tsodre-p         ###   ########.fr        #
+#    Updated: 2023/10/24 14:14:47 by tsodre-p         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = phonebook
-C++ = c++
+CXX = c++
 RM = rm -rf
-CFLAGS = -Wall -Wextra -Werror -std=c++98
+CXXFLAGS = -Wall -Wextra -Werror -std=c++98
 
 FUNCS = Contact.cpp PhoneBook.cpp main.cpp
 OBJ = $(FUNCS:%.cpp=%.o)
@@ -23,7 +23,7 @@ GREEN = \033[0;32m
 all: $(NAME)
 
 $(NAME): $(OBJ)
-		$(C++) $(CFLAGS) $(OBJ) -o $(NAME)
+		$(CXX) $(CXXFLAGS) $(OBJ) -o $(NAME)
 		@echo "$(GREEN) [ Conpiled: $(NAME) ] "
 		@echo "$(GREEN) [ Generated: $(NAME) ] "
 
