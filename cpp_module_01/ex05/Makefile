@@ -6,11 +6,11 @@
 #    By: tsodre-p <tsodre-p@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/10/24 15:04:03 by tsodre-p          #+#    #+#              #
-#    Updated: 2023/10/24 15:04:15 by tsodre-p         ###   ########.fr        #
+#    Updated: 2023/10/24 16:47:52 by tsodre-p         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = program
+NAME = harl
 CXX = c++
 RM = rm -rf
 CXXFLAGS = -Wall -Wextra -Werror -std=c++98

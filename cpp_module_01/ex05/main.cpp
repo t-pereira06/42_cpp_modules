@@ -6,14 +6,20 @@
 /*   By: tsodre-p <tsodre-p@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/24 15:04:00 by tsodre-p          #+#    #+#             */
-/*   Updated: 2023/10/24 15:32:39 by tsodre-p         ###   ########.fr       */
+/*   Updated: 2023/10/24 16:53:39 by tsodre-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Harl.hpp"
 
-int	main(void)
+int	main(int argc, char **argv)
 {
+	(void)argv;
+	if (argc != 1)
+	{
+		std::cout << "Run the program without arguments!" << std::endl;
+		return (0);
+	}
 	Harl harl;
 
 	std::cout << "Debug Message from Harl: " << std::endl;
