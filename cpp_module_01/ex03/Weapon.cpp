@@ -6,7 +6,7 @@
 /*   By: tsodre-p <tsodre-p@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/20 09:26:56 by tsodre-p          #+#    #+#             */
-/*   Updated: 2023/10/20 09:50:22 by tsodre-p         ###   ########.fr       */
+/*   Updated: 2023/10/24 09:16:17 by tsodre-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,4 +20,14 @@ Weapon::Weapon(std::string type)
 Weapon::~Weapon()
 {
 
+}
+
+void	Weapon::setType(std::string type)
+{
+	this->_type = type;
+}
+
+std::string	Weapon::getType()
+{
+	return (this->_type);
 }
