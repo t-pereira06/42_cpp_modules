@@ -6,7 +6,7 @@
 /*   By: tsodre-p <tsodre-p@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/18 11:04:25 by tsodre-p          #+#    #+#             */
-/*   Updated: 2023/10/18 14:49:44 by tsodre-p         ###   ########.fr       */
+/*   Updated: 2023/10/24 14:10:55 by tsodre-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 static int	CheckIfOnlyDigit(std::string command)
 {
-	for (int i = 0; i < command.size(); i++)
+	for (size_t i = 0; i < command.size(); i++)
 	{
 		if (!isdigit(command[i]))
 		{
