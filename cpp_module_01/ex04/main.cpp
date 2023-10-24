@@ -6,7 +6,7 @@
 /*   By: tsodre-p <tsodre-p@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/24 10:17:26 by tsodre-p          #+#    #+#             */
-/*   Updated: 2023/10/24 12:56:30 by tsodre-p         ###   ########.fr       */
+/*   Updated: 2023/10/24 14:43:59 by tsodre-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,17 +16,17 @@
 #include <stdio.h>
 #include <fstream>
 
-std::ofstream	create_file(std::string	filename)
+/* std::ofstream	create_file(std::string	filename)
 {
 	std::ofstream	file;
 	filename.append(".replace");
-	file.open(filename);
+	file.open(filename.c_str());
 	return (file);
-}
+} */
 
 std::string	checkString(std::string line, std::string s1, std::string s2)
 {
-	int	i;
+	size_t	i;
 
 	while (1)
 	{
@@ -47,11 +47,23 @@ int	main(int argc, char** argv)
 		std::cout << "Wrong inputs! Start program like ./program <filename> string1 string2" << std::endl;
 		return (0);
 	}
+	//creating files
 	std::ifstream	file;
 	std::ofstream	replaceFile;
-	file.open(argv[1]);
+
+	//names of the files
+	std::string	in_filename = argv[1];
+	std::string	out_filename = argv[1];
+	out_filename.append(".replace");
+
+	//converting to const char to use open
+	const char *in_file = in_filename.c_str();
+	const char *out_file = out_filename.c_str();
+
+	file.open(in_file);
+	replaceFile.open(out_file);
 	std::string	line;
-	replaceFile = create_file(argv[1]);
+	//replaceFile = create_file(argv[1]);
 	if (file.is_open() && replaceFile.is_open())
 	{
 		while (getline(file, line))
