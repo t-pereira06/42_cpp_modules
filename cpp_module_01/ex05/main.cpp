@@ -6,7 +6,7 @@
 /*   By: tsodre-p <tsodre-p@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/24 15:04:00 by tsodre-p          #+#    #+#             */
-/*   Updated: 2023/10/24 17:25:35 by tsodre-p         ###   ########.fr       */
+/*   Updated: 2023/10/25 09:42:33 by tsodre-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ int	main(int argc, char **argv)
 	(void)argv;
 	if (argc != 1)
 	{
-		std::cout << "Run the program without arguments!";
+		std::cout << "Run the program without arguments!" << std::endl;
 		return (0);
 	}
 	Harl harl;

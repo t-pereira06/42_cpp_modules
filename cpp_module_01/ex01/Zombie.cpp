@@ -6,7 +6,7 @@
 /*   By: tsodre-p <tsodre-p@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/18 11:04:37 by tsodre-p          #+#    #+#             */
-/*   Updated: 2023/10/18 14:44:02 by tsodre-p         ###   ########.fr       */
+/*   Updated: 2023/10/25 09:33:32 by tsodre-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 
 Zombie::~Zombie()
 {
+	std::cout << "I'm dead!" << std::endl;
 }
 
 void	Zombie::announce()
