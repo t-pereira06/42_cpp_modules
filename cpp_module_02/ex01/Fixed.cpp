@@ -6,7 +6,7 @@
 /*   By: tsodre-p <tsodre-p@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/25 12:22:29 by tsodre-p          #+#    #+#             */
-/*   Updated: 2023/10/26 16:02:29 by tsodre-p         ###   ########.fr       */
+/*   Updated: 2023/10/26 16:58:01 by tsodre-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,13 +40,13 @@ Fixed::Fixed(const Fixed &obj)
 
 Fixed::Fixed(const int number)
 {
-	std::cout << "Int constructor called";
+	std::cout << "Int constructor called" << std::endl;
 	this->_value = number * (1 << this->_frac_bits);
 }
 
 Fixed::Fixed(const float number)
 {
-	std::cout << "Float constructor called";
+	std::cout << "Float constructor called" << std::endl;
 	this->_value = number * (1 << this->_frac_bits);
 }
 
@@ -72,10 +72,10 @@ Fixed::~Fixed()
  * @param obj The source object from which to copy the value.
  * @return A reference to the target object after the assignment.
  */
-Fixed	&Fixed::operator= (const Fixed &obj)
+Fixed	&Fixed::operator= (const Fixed &fixed)
 {
 	std::cout << "Copy assignment operator called" << std::endl;
-	this->_value = obj.getRawBits();
+	this->_value = fixed.getRawBits();
 	return (*this);
 }
 
@@ -98,4 +98,10 @@ int	Fixed::toInt(void) const
 float	Fixed::toFloat(void) const
 {
 	return (static_cast<float>(this->_value) / static_cast<float>(1 << this->_frac_bits));
+}
+
+std::ostream	&operator<<(std::ostream &output, const Fixed &fixed)
+{
+	output << fixed.toFloat();
+	return (output);
 }

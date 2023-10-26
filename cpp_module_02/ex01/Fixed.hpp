@@ -6,7 +6,7 @@
 /*   By: tsodre-p <tsodre-p@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/25 12:22:34 by tsodre-p          #+#    #+#             */
-/*   Updated: 2023/10/26 15:48:10 by tsodre-p         ###   ########.fr       */
+/*   Updated: 2023/10/26 16:13:52 by tsodre-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ class Fixed
 {
 	private:
 		int	_value;
-		static const int	_frac_bits;
+		static const int	_frac_bits = 8;
 	public:
 		Fixed();
 		Fixed(Fixed const &obj);
@@ -35,6 +35,8 @@ class Fixed
 		int		toInt(void) const;
 		float	toFloat(void) const;
 };
+
+std::ostream	&operator<<(std::ostream &os, const Fixed &fixed);
 
 #endif
 
