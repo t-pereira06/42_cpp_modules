@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Fixed.hpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tsodre-p <tsodre-p@student.42.fr>          +#+  +:+       +#+        */
+/*   By: tsodre-p <tsodre-p@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/25 12:22:34 by tsodre-p          #+#    #+#             */
-/*   Updated: 2023/10/25 14:58:54 by tsodre-p         ###   ########.fr       */
+/*   Updated: 2023/10/26 16:13:59 by tsodre-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ class Fixed
 {
 	private:
 		int	_value;
-		static const int	_frac_bits;
+		static const int	_frac_bits = 8;
 	public:
 		Fixed();
 		Fixed(Fixed const &obj);
