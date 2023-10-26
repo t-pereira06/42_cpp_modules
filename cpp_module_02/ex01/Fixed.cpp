@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Fixed.cpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tsodre-p <tsodre-p@student.42.fr>          +#+  +:+       +#+        */
+/*   By: tsodre-p <tsodre-p@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/25 12:22:29 by tsodre-p          #+#    #+#             */
-/*   Updated: 2023/10/26 12:34:59 by tsodre-p         ###   ########.fr       */
+/*   Updated: 2023/10/26 16:02:29 by tsodre-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,18 +24,6 @@ Fixed::Fixed() : _value(0)
 }
 
 /**
- * @brief Destructor for the class.
- *
- * This destructor is responsible for cleaning up any resources held by a object.
- * In this case, it prints a message to the standard output to indicate that the destructor has been called.
- * Destructors are automatically called when an object goes out of scope or is explicitly deleted.
- */
-Fixed::~Fixed()
-{
-	std::cout << "Destructor called" << std::endl;
-}
-
-/**
  * @brief Copy constructor for the class.
  *
  * This copy constructor creates a new object by making a copy of an existing object.
@@ -48,6 +36,30 @@ Fixed::Fixed(const Fixed &obj)
 {
 	std::cout << "Copy constructor called" << std::endl;
 	this->_value = obj.getRawBits();
+}
+
+Fixed::Fixed(const int number)
+{
+	std::cout << "Int constructor called";
+	this->_value = number * (1 << this->_frac_bits);
+}
+
+Fixed::Fixed(const float number)
+{
+	std::cout << "Float constructor called";
+	this->_value = number * (1 << this->_frac_bits);
+}
+
+/**
+ * @brief Destructor for the class.
+ *
+ * This destructor is responsible for cleaning up any resources held by a object.
+ * In this case, it prints a message to the standard output to indicate that the destructor has been called.
+ * Destructors are automatically called when an object goes out of scope or is explicitly deleted.
+ */
+Fixed::~Fixed()
+{
+	std::cout << "Destructor called" << std::endl;
 }
 
 /**
@@ -75,6 +87,15 @@ int	Fixed::getRawBits(void) const
 
 void	Fixed::setRawBits(int const raw)
 {
-	std::cout << "setRawBits member function called" << std::endl;
 	this->_value = raw;
+}
+
+int	Fixed::toInt(void) const
+{
+	return (this->_value / (1 << this->_frac_bits));
+}
+
+float	Fixed::toFloat(void) const
+{
+	return (static_cast<float>(this->_value) / static_cast<float>(1 << this->_frac_bits));
 }

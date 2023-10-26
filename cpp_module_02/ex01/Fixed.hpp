@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Fixed.hpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tsodre-p <tsodre-p@student.42.fr>          +#+  +:+       +#+        */
+/*   By: tsodre-p <tsodre-p@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/25 12:22:34 by tsodre-p          #+#    #+#             */
-/*   Updated: 2023/10/26 12:47:37 by tsodre-p         ###   ########.fr       */
+/*   Updated: 2023/10/26 15:48:10 by tsodre-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,10 +27,13 @@ class Fixed
 		Fixed();
 		Fixed(Fixed const &obj);
 		Fixed(const int number);
+		Fixed(const float number);
 		~Fixed();
 		Fixed &operator= (const Fixed &obj);
-		int	getRawBits(void) const;
+		int		getRawBits(void) const;
 		void	setRawBits(int const raw);
+		int		toInt(void) const;
+		float	toFloat(void) const;
 };
 
 #endif
