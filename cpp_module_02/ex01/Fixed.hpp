@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Fixed.hpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tsodre-p <tsodre-p@student.42porto.com>    +#+  +:+       +#+        */
+/*   By: tsodre-p <tsodre-p@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/25 12:22:34 by tsodre-p          #+#    #+#             */
-/*   Updated: 2023/10/26 16:13:52 by tsodre-p         ###   ########.fr       */
+/*   Updated: 2023/10/30 16:14:03 by tsodre-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,7 @@
 #include <string.h>
 #include <locale.h>
 #include <stdio.h>
+#include <cmath>
 
 class Fixed
 {
@@ -24,16 +25,25 @@ class Fixed
 		int	_value;
 		static const int	_frac_bits = 8;
 	public:
+		/*Constructors*/
+
 		Fixed();
 		Fixed(Fixed const &obj);
 		Fixed(const int number);
 		Fixed(const float number);
 		~Fixed();
-		Fixed &operator= (const Fixed &obj);
+
+		/*Member Functions*/
+
 		int		getRawBits(void) const;
 		void	setRawBits(int const raw);
 		int		toInt(void) const;
 		float	toFloat(void) const;
+
+		/*Operators*/
+
+		Fixed &operator= (const Fixed &obj);
+
 };
 
 std::ostream	&operator<<(std::ostream &os, const Fixed &fixed);

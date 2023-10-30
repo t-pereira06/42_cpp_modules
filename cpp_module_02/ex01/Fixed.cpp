@@ -6,7 +6,7 @@
 /*   By: tsodre-p <tsodre-p@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/25 12:22:29 by tsodre-p          #+#    #+#             */
-/*   Updated: 2023/10/30 10:53:23 by tsodre-p         ###   ########.fr       */
+/*   Updated: 2023/10/30 16:11:04 by tsodre-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,10 +32,10 @@ Fixed::Fixed() : _value(0)
  *
  * @param obj The source object from which to make a copy.
  */
-Fixed::Fixed(const Fixed &obj)
+Fixed::Fixed(const Fixed &copy)
 {
 	std::cout << "Copy constructor called" << std::endl;
-	this->_value = obj.getRawBits();
+	this->_value = copy._value;
 }
 
 Fixed::Fixed(const int number)
@@ -72,11 +72,11 @@ Fixed::~Fixed()
  * @param obj The source object from which to copy the value.
  * @return A reference to the target object after the assignment.
  */
-Fixed	&Fixed::operator= (const Fixed &fixed)
+Fixed	&Fixed::operator= (const Fixed &copy)
 {
 	std::cout << "Copy assignment operator called" << std::endl;
-	if (this != &fixed)
-		this->_value = fixed._value;
+	if (this != &copy)
+		this->_value = copy._value;
 	return (*this);
 }
 
@@ -135,8 +135,8 @@ float	Fixed::toFloat(void) const
  * @return A reference to the output stream to allow for chaining multiple output
  *         operations.
  */
-std::ostream	&operator<<(std::ostream &output, const Fixed &fixed)
+std::ostream	&operator<<(std::ostream &output, const Fixed &copy)
 {
-	output << fixed.toFloat();
+	output << copy.toFloat();
 	return (output);
 }

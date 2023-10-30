@@ -3,17 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tsodre-p <tsodre-p@student.42porto.com>    +#+  +:+       +#+        */
+/*   By: tsodre-p <tsodre-p@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/25 12:22:36 by tsodre-p          #+#    #+#             */
-/*   Updated: 2023/10/26 16:14:31 by tsodre-p         ###   ########.fr       */
+/*   Updated: 2023/10/30 16:06:26 by tsodre-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Fixed.hpp"
 
-int main( void )
-{
+int main( void ) {
 	Fixed a;
 	Fixed const b( 10 );
 	Fixed const c( 42.42f );
