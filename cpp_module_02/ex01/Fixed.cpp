@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Fixed.cpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tsodre-p <tsodre-p@student.42porto.com>    +#+  +:+       +#+        */
+/*   By: tsodre-p <tsodre-p@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/25 12:22:29 by tsodre-p          #+#    #+#             */
-/*   Updated: 2023/10/26 16:58:01 by tsodre-p         ###   ########.fr       */
+/*   Updated: 2023/10/30 10:53:23 by tsodre-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -75,7 +75,8 @@ Fixed::~Fixed()
 Fixed	&Fixed::operator= (const Fixed &fixed)
 {
 	std::cout << "Copy assignment operator called" << std::endl;
-	this->_value = fixed.getRawBits();
+	if (this != &fixed)
+		this->_value = fixed._value;
 	return (*this);
 }
 
@@ -90,16 +91,50 @@ void	Fixed::setRawBits(int const raw)
 	this->_value = raw;
 }
 
+/**
+ * @brief Convert the Fixed-point value to an integer representation.
+ *
+ * This member function converts the Fixed-point value to an integer
+ * representation by dividing the internal fixed-point representation by 2
+ * raised to the power of the fractional bits. It truncates any fractional
+ * portion and returns the result as an integer.
+ *
+ * @return The equivalent integer representation of the Fixed-point value.
+ */
 int	Fixed::toInt(void) const
 {
 	return (this->_value / (1 << this->_frac_bits));
 }
 
+/**
+ * @brief Convert the Fixed-point value to a floating-point representation.
+ *
+ * This member function converts the Fixed-point value to a floating-point
+ * representation by dividing the internal fixed-point representation by
+ * 2 raised to the power of the fractional bits. It returns the result as a
+ * floating-point value.
+ *
+ * @return The equivalent floating-point representation of the Fixed-point value.
+ */
 float	Fixed::toFloat(void) const
 {
 	return (static_cast<float>(this->_value) / static_cast<float>(1 << this->_frac_bits));
 }
 
+/**
+ * @brief Output stream operator for the Fixed class.
+ *
+ * This operator allows you to output the value of a Fixed object to a standard
+ * output stream, such as std::cout. It converts the Fixed object to a floating-
+ * point value using the Fixed::toFloat() method and then sends this value to
+ * the output stream.
+ *
+ * @param output The output stream to which the Fixed object's value is written.
+ * @param fixed The Fixed object to be written to the output stream.
+ *
+ * @return A reference to the output stream to allow for chaining multiple output
+ *         operations.
+ */
 std::ostream	&operator<<(std::ostream &output, const Fixed &fixed)
 {
 	output << fixed.toFloat();
