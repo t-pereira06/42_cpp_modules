@@ -6,11 +6,13 @@
 /*   By: tsodre-p <tsodre-p@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/25 12:22:29 by tsodre-p          #+#    #+#             */
-/*   Updated: 2023/10/30 10:53:05 by tsodre-p         ###   ########.fr       */
+/*   Updated: 2023/10/30 12:39:02 by tsodre-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Fixed.hpp"
+
+/*CONSTRUCTORS*/
 
 /**
  * @brief Default constructor for the class.
@@ -44,11 +46,14 @@ Fixed::~Fixed()
  *
  * @param obj The source object from which to make a copy.
  */
-Fixed::Fixed(const Fixed &obj)
+Fixed::Fixed(const Fixed &copy)
 {
 	std::cout << "Copy constructor called" << std::endl;
-	this->_value = obj.getRawBits();
+	this->_value = copy.getRawBits();
 }
+
+
+/*OPERATORS*/
 
 /**
  * @brief Copy assignment operator for the class.
@@ -60,12 +65,14 @@ Fixed::Fixed(const Fixed &obj)
  * @param obj The source object from which to copy the value.
  * @return A reference to the target object after the assignment.
  */
-Fixed	&Fixed::operator= (const Fixed &obj)
+Fixed	&Fixed::operator= (const Fixed &copy)
 {
 	std::cout << "Copy assignment operator called" << std::endl;
-	this->_value = obj.getRawBits();
+	this->_value = copy.getRawBits();
 	return (*this);
 }
+
+/*MEMBER FUNCTIONS*/
 
 int	Fixed::getRawBits(void) const
 {
