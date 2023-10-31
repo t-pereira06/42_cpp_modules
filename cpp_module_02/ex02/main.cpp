@@ -6,7 +6,7 @@
 /*   By: tsodre-p <tsodre-p@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/25 12:22:36 by tsodre-p          #+#    #+#             */
-/*   Updated: 2023/10/31 15:00:28 by tsodre-p         ###   ########.fr       */
+/*   Updated: 2023/10/31 15:04:36 by tsodre-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,7 @@ int	main (void)
 	std::cout << ++a << std::endl;
 	std::cout << a++ << std::endl;
 	std::cout << a-- << std::endl;
-	std::cout << --a << std::endl;
+	std::cout << --a << std::endl << std::endl;
 
 	std::cout << "Comparisons: " << std::endl;
 	std::cout << (a > b) << std::endl;
