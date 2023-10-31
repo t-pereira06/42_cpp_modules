@@ -6,7 +6,7 @@
 /*   By: tsodre-p <tsodre-p@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/25 12:22:29 by tsodre-p          #+#    #+#             */
-/*   Updated: 2023/10/31 12:16:14 by tsodre-p         ###   ########.fr       */
+/*   Updated: 2023/10/31 14:53:17 by tsodre-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@
  */
 Fixed::Fixed() : _value(0)
 {
-	std::cout << "Default constructor called" << std::endl;
+	//std::cout << "Default constructor called" << std::endl;
 }
 
 /**
@@ -36,19 +36,19 @@ Fixed::Fixed() : _value(0)
  */
 Fixed::Fixed(const Fixed &copy)
 {
-	std::cout << "Copy constructor called" << std::endl;
+	//std::cout << "Copy constructor called" << std::endl;
 	this->_value = copy._value;
 }
 
 Fixed::Fixed(const int number)
 {
-	std::cout << "Int constructor called" << std::endl;
+	//std::cout << "Int constructor called" << std::endl;
 	this->_value = number * (1 << this->_frac_bits);
 }
 
 Fixed::Fixed(const float number)
 {
-	std::cout << "Float constructor called" << std::endl;
+	//std::cout << "Float constructor called" << std::endl;
 	this->_value = number * (1 << this->_frac_bits);
 }
 
@@ -61,7 +61,7 @@ Fixed::Fixed(const float number)
  */
 Fixed::~Fixed()
 {
-	std::cout << "Destructor called" << std::endl;
+	//std::cout << "Destructor called" << std::endl;
 }
 
 /*---------------------------------------------------------*/
@@ -285,7 +285,7 @@ Fixed	Fixed::operator-- (int)
  */
 std::ostream	&operator<<(std::ostream &output, const Fixed &copy)
 {
-	std::cout << "<< operator called" << std::endl;
+	//std::cout << "<< operator called" << std::endl;
 	output << copy.toFloat();
 	return (output);
 }
