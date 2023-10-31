@@ -6,7 +6,7 @@
 /*   By: tsodre-p <tsodre-p@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/25 12:22:29 by tsodre-p          #+#    #+#             */
-/*   Updated: 2023/10/31 14:53:17 by tsodre-p         ###   ########.fr       */
+/*   Updated: 2023/10/31 15:03:15 by tsodre-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -252,14 +252,14 @@ Fixed	Fixed::operator++ (int)
 
 Fixed	Fixed::operator-- (void)
 {
-	std::cout << "-- pre-increment operator called" << std::endl;
+	std::cout << "-- pre-decrement operator called" << std::endl;
 	this->_value--;
 	return (*this);
 }
 
 Fixed	Fixed::operator-- (int)
 {
-	std::cout << "-- post-increment operator called" << std::endl;
+	std::cout << "-- post-decrement operator called" << std::endl;
 	Fixed	copy(*this);
 	this->_value--;
 	return (copy);
