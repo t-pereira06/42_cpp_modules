@@ -6,7 +6,7 @@
 /*   By: tsodre-p <tsodre-p@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/25 12:22:29 by tsodre-p          #+#    #+#             */
-/*   Updated: 2023/10/30 16:17:41 by tsodre-p         ###   ########.fr       */
+/*   Updated: 2023/10/31 12:16:14 by tsodre-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -109,6 +109,38 @@ float	Fixed::toFloat(void) const
 	return (static_cast<float>(this->_value) / static_cast<float>(1 << this->_frac_bits));
 }
 
+Fixed	&Fixed::min(Fixed &f1, Fixed &f2)
+{
+	std::cout << "min member function called" << std::endl;
+	if (f1.toFloat() < f2.toFloat())
+		return (f1);
+	return (f2);
+}
+
+Fixed	const &Fixed::min(const Fixed &f1, const Fixed &f2)
+{
+	std::cout << "const min member function called" << std::endl;
+	if (f1.toFloat() < f2.toFloat())
+		return (f1);
+	return (f2);
+}
+
+Fixed	&Fixed::max(Fixed &f1, Fixed &f2)
+{
+	std::cout << "max member function called" << std::endl;
+	if (f1.toFloat() > f2.toFloat())
+		return (f1);
+	return (f2);
+}
+
+Fixed	const &Fixed::max(const Fixed &f1, const Fixed &f2)
+{
+	std::cout << "const max member function called" << std::endl;
+	if (f1.toFloat() > f2.toFloat())
+		return (f1);
+	return (f2);
+}
+
 /*---------------------------------------------------------*/
 
 /*Operators*/
@@ -131,6 +163,108 @@ Fixed	&Fixed::operator= (const Fixed &copy)
 	return (*this);
 }
 
+bool	Fixed::operator> (const Fixed &copy) const
+{
+	std::cout << "< operator called" << std::endl;
+	if (this->toFloat() > copy.toFloat())
+		return (true);
+	return (false);
+}
+
+bool	Fixed::operator< (const Fixed &copy) const
+{
+	std::cout << "< operator called" << std::endl;
+	if (this->toFloat() < copy.toFloat())
+		return (true);
+	return (false);
+}
+
+bool	Fixed::operator>= (const Fixed &copy) const
+{
+	std::cout << ">= operator called" << std::endl;
+	if (this->toFloat() >= copy.toFloat())
+		return (true);
+	return (false);
+}
+
+bool	Fixed::operator<= (const Fixed &copy) const
+{
+	std::cout << "<= operator called" << std::endl;
+	if (this->toFloat() <= copy.toFloat())
+		return (true);
+	return (false);
+}
+
+bool	Fixed::operator== (const Fixed &copy) const
+{
+	std::cout << "== operator called" << std::endl;
+	if (this->toFloat() == copy.toFloat())
+		return (true);
+	return (false);
+}
+
+bool	Fixed::operator!= (const Fixed &copy) const
+{
+	std::cout << "!= operator called" << std::endl;
+	if (this->toFloat() != copy.toFloat())
+		return (true);
+	return (false);
+}
+
+Fixed	Fixed::operator+ (const Fixed &copy)
+{
+	std::cout << "+ operator called" << std::endl;
+	return (this->toFloat() + copy.toFloat());
+}
+
+Fixed	Fixed::operator- (const Fixed &copy)
+{
+	std::cout << "- operator called" << std::endl;
+	return (this->toFloat() - copy.toFloat());
+}
+
+Fixed	Fixed::operator* (const Fixed &copy)
+{
+	std::cout << "* operator called" << std::endl;
+	return (this->toFloat() * copy.toFloat());
+}
+
+Fixed	Fixed::operator/ (const Fixed &copy)
+{
+	std::cout << "/ operator called" << std::endl;
+	return (this->toFloat() / copy.toFloat());
+}
+
+Fixed	Fixed::operator++ (void)
+{
+	std::cout << "++ pre-increment operator called" << std::endl;
+	this->_value++;
+	return (*this);
+}
+
+Fixed	Fixed::operator++ (int)
+{
+	std::cout << "++ post-increment operator called" << std::endl;
+	Fixed	copy(*this);
+	this->_value++;
+	return (copy);
+}
+
+Fixed	Fixed::operator-- (void)
+{
+	std::cout << "-- pre-increment operator called" << std::endl;
+	this->_value--;
+	return (*this);
+}
+
+Fixed	Fixed::operator-- (int)
+{
+	std::cout << "-- post-increment operator called" << std::endl;
+	Fixed	copy(*this);
+	this->_value--;
+	return (copy);
+}
+
 /*---------------------------------------------------------*/
 
 /*Functions*/
@@ -151,6 +285,7 @@ Fixed	&Fixed::operator= (const Fixed &copy)
  */
 std::ostream	&operator<<(std::ostream &output, const Fixed &copy)
 {
+	std::cout << "<< operator called" << std::endl;
 	output << copy.toFloat();
 	return (output);
 }
