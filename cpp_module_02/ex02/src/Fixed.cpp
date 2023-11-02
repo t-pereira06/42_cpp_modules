@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   Fixed.cpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tsodre-p <tsodre-p@student.42.fr>          +#+  +:+       +#+        */
+/*   By: tsodre-p <tsodre-p@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/25 12:22:29 by tsodre-p          #+#    #+#             */
-/*   Updated: 2023/10/31 15:03:15 by tsodre-p         ###   ########.fr       */
+/*   Updated: 2023/11/02 15:42:21 by tsodre-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Fixed.hpp"
+#include "../includes/Fixed.hpp"
 
 /* Constructors*/
 
@@ -157,7 +157,7 @@ Fixed	const &Fixed::max(const Fixed &f1, const Fixed &f2)
  */
 Fixed	&Fixed::operator= (const Fixed &copy)
 {
-	std::cout << "Copy assignment operator called" << std::endl;
+	//std::cout << "Copy assignment operator called" << std::endl;
 	if (this != &copy)
 		this->_value = copy._value;
 	return (*this);
@@ -165,7 +165,7 @@ Fixed	&Fixed::operator= (const Fixed &copy)
 
 bool	Fixed::operator> (const Fixed &copy) const
 {
-	std::cout << "< operator called" << std::endl;
+	//std::cout << "< operator called" << std::endl;
 	if (this->toFloat() > copy.toFloat())
 		return (true);
 	return (false);
@@ -173,7 +173,7 @@ bool	Fixed::operator> (const Fixed &copy) const
 
 bool	Fixed::operator< (const Fixed &copy) const
 {
-	std::cout << "< operator called" << std::endl;
+	//std::cout << "< operator called" << std::endl;
 	if (this->toFloat() < copy.toFloat())
 		return (true);
 	return (false);
@@ -181,7 +181,7 @@ bool	Fixed::operator< (const Fixed &copy) const
 
 bool	Fixed::operator>= (const Fixed &copy) const
 {
-	std::cout << ">= operator called" << std::endl;
+	//std::cout << ">= operator called" << std::endl;
 	if (this->toFloat() >= copy.toFloat())
 		return (true);
 	return (false);
@@ -189,7 +189,7 @@ bool	Fixed::operator>= (const Fixed &copy) const
 
 bool	Fixed::operator<= (const Fixed &copy) const
 {
-	std::cout << "<= operator called" << std::endl;
+	//std::cout << "<= operator called" << std::endl;
 	if (this->toFloat() <= copy.toFloat())
 		return (true);
 	return (false);
@@ -197,7 +197,7 @@ bool	Fixed::operator<= (const Fixed &copy) const
 
 bool	Fixed::operator== (const Fixed &copy) const
 {
-	std::cout << "== operator called" << std::endl;
+	//std::cout << "== operator called" << std::endl;
 	if (this->toFloat() == copy.toFloat())
 		return (true);
 	return (false);
@@ -205,7 +205,7 @@ bool	Fixed::operator== (const Fixed &copy) const
 
 bool	Fixed::operator!= (const Fixed &copy) const
 {
-	std::cout << "!= operator called" << std::endl;
+	//std::cout << "!= operator called" << std::endl;
 	if (this->toFloat() != copy.toFloat())
 		return (true);
 	return (false);
@@ -213,38 +213,38 @@ bool	Fixed::operator!= (const Fixed &copy) const
 
 Fixed	Fixed::operator+ (const Fixed &copy)
 {
-	std::cout << "+ operator called" << std::endl;
+	//std::cout << "+ operator called" << std::endl;
 	return (this->toFloat() + copy.toFloat());
 }
 
 Fixed	Fixed::operator- (const Fixed &copy)
 {
-	std::cout << "- operator called" << std::endl;
+	//std::cout << "- operator called" << std::endl;
 	return (this->toFloat() - copy.toFloat());
 }
 
 Fixed	Fixed::operator* (const Fixed &copy)
 {
-	std::cout << "* operator called" << std::endl;
+	//std::cout << "* operator called" << std::endl;
 	return (this->toFloat() * copy.toFloat());
 }
 
 Fixed	Fixed::operator/ (const Fixed &copy)
 {
-	std::cout << "/ operator called" << std::endl;
+	//std::cout << "/ operator called" << std::endl;
 	return (this->toFloat() / copy.toFloat());
 }
 
 Fixed	Fixed::operator++ (void)
 {
-	std::cout << "++ pre-increment operator called" << std::endl;
+	//std::cout << "++ pre-increment operator called" << std::endl;
 	this->_value++;
 	return (*this);
 }
 
 Fixed	Fixed::operator++ (int)
 {
-	std::cout << "++ post-increment operator called" << std::endl;
+	//std::cout << "++ post-increment operator called" << std::endl;
 	Fixed	copy(*this);
 	this->_value++;
 	return (copy);
@@ -252,14 +252,14 @@ Fixed	Fixed::operator++ (int)
 
 Fixed	Fixed::operator-- (void)
 {
-	std::cout << "-- pre-decrement operator called" << std::endl;
+	//std::cout << "--a pre-decrement operator called" << std::endl;
 	this->_value--;
 	return (*this);
 }
 
 Fixed	Fixed::operator-- (int)
 {
-	std::cout << "-- post-decrement operator called" << std::endl;
+	//std::cout << "-- post-decrement operator called" << std::endl;
 	Fixed	copy(*this);
 	this->_value--;
 	return (copy);

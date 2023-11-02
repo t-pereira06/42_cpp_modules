@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: tsodre-p <tsodre-p@student.42.fr>          +#+  +:+       +#+         #
+#    By: tsodre-p <tsodre-p@student.42porto.com>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/10/25 12:22:38 by tsodre-p          #+#    #+#              #
-#    Updated: 2023/10/30 11:40:19 by tsodre-p         ###   ########.fr        #
+#    Updated: 2023/11/02 15:43:55 by tsodre-p         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -15,25 +15,55 @@ CXX = c++
 RM = rm -rf
 CXXFLAGS = -Wall -Wextra -Werror -std=c++98
 
-FUNCS = main.cpp Fixed.cpp
-OBJ = $(FUNCS:%.cpp=%.o)
+SRC_DIR		=	src/
+OBJ_DIR		=	obj/
+INC_DIR		=	includes/
 
-GREEN = \033[0;32m
+RESET		=	\033[0m
+GREEN		=	\033[32m
+YELLOW		=	\033[33m
+BLUE		=	\033[34m
+RED			=	\033[31m
+UP			=	\033[A
+CUT			=	\033[K
+
+SRC_FILES = main.cpp Fixed.cpp
+OBJ_FILES	= $(SRC_FILES:.cpp=.o)
+
+SRC			=	$(addprefix $(SRC_DIR), $(SRC_FILES))
+OBJ			=	$(addprefix $(OBJ_DIR), $(OBJ_FILES))
 
 all: $(NAME)
 
+#compiling executable
 $(NAME): $(OBJ)
-		$(CXX) $(CXXFLAGS) $(OBJ) -o $(NAME)
-		@echo "$(GREEN) [ Conpiled: $(NAME) ] "
-		@echo "$(GREEN) [ Generated: $(NAME) ] "
+	@echo "$(YELLOW)Compiling [$(NAME)]...$(RESET)"
+	@$(CXX) $(CXXFLAGS) $(OBJ) -o $(NAME)
+	@echo "$(GREEN)Finished [$(NAME)]$(RESET)"
 
+#compiling objects
+$(OBJ_DIR)%.o:$(SRC_DIR)%.cpp
+	@mkdir -p $(OBJ_DIR)
+	@echo "$(YELLOW)Compiling [$@]...$(RESET)"
+	@$(CXX) $(CXXFLAGS) -I $(INC_DIR) -o $@ -c $<
+	@printf "$(UP)$(CUT)"
+	@echo "$(GREEN)Finished [$@]$(RESET)"
+	@printf "$(UP)$(CUT)"
+
+#deleting objects
 clean:
-		$(RM) $(OBJ)
-		@echo "$(GREEN) [ Object files cleaned ] "
+	@if [ -d "$(OBJ_DIR)" ]; then \
+	rm -rf $(OBJ_DIR); \
+	echo "$(BLUE)Deleting all objects from /ex02...$(RESET)"; else \
+	echo "No objects to remove from /ex02."; \
+	fi;
 
-fclean:
-		$(RM) $(OBJ)
-		$(RM) $(NAME)
-		@echo "$(GREEN) [ Clean Done ] "
+#deleting executable and objects
+fclean: clean
+	@if [ -f "$(NAME)" ]; then \
+	rm -f $(NAME); \
+	echo "$(BLUE)Deleting $(NAME) from /ex02...$(RESET)"; else \
+	echo "No Executable to remove from /ex02."; \
+	fi;
 
 re: clean all
