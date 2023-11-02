@@ -6,7 +6,7 @@
 /*   By: tsodre-p <tsodre-p@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/02 16:00:02 by tsodre-p          #+#    #+#             */
-/*   Updated: 2023/11/02 16:25:09 by tsodre-p         ###   ########.fr       */
+/*   Updated: 2023/11/02 16:30:24 by tsodre-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,10 @@ class Point
 		~Point();
 		Point(Point const &copy);
 		Point &operator= (const Point &copy);
+		Fixed	getx() const;
+		Fixed	gety() const;
 };
+
+bool bsp( Point const a, Point const b, Point const c, Point const point);
 
 #endif

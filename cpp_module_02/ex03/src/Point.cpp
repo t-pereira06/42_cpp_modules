@@ -6,7 +6,7 @@
 /*   By: tsodre-p <tsodre-p@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/02 16:05:23 by tsodre-p          #+#    #+#             */
-/*   Updated: 2023/11/02 16:26:13 by tsodre-p         ###   ########.fr       */
+/*   Updated: 2023/11/02 16:35:50 by tsodre-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,4 +46,16 @@ Point	&Point::operator=(const Point &copy)
 		(Fixed) this->y = copy.y;
 	}
 	return (*this);
+}
+
+/* Member Functions */
+
+Fixed	Point::getx() const
+{
+	return (this->x);
+}
+
+Fixed	Point::gety() const
+{
+	return (this->y);
 }
