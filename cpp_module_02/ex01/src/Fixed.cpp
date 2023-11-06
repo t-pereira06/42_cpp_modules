@@ -6,7 +6,7 @@
 /*   By: tsodre-p <tsodre-p@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/25 12:22:29 by tsodre-p          #+#    #+#             */
-/*   Updated: 2023/11/03 15:02:32 by tsodre-p         ###   ########.fr       */
+/*   Updated: 2023/11/06 11:30:01 by tsodre-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -137,6 +137,6 @@ float	Fixed::toFloat(void) const
  */
 std::ostream	&operator<<(std::ostream &output, const Fixed &copy)
 {
-	output << copy.getRawBits();
+	output << copy.toFloat();
 	return (output);
 }
