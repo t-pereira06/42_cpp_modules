@@ -6,12 +6,12 @@
 #    By: tsodre-p <tsodre-p@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/10/25 12:22:38 by tsodre-p          #+#    #+#              #
-#    Updated: 2023/11/03 09:51:25 by tsodre-p         ###   ########.fr        #
+#    Updated: 2023/11/07 11:05:17 by tsodre-p         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = Fixed
-CXX = c++
+CXX = c++ -g
 RM = rm -rf
 CXXFLAGS = -Wall -Wextra -Werror -std=c++98
 

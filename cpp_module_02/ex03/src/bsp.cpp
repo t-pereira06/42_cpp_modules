@@ -6,16 +6,12 @@
 /*   By: tsodre-p <tsodre-p@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/02 16:05:09 by tsodre-p          #+#    #+#             */
-/*   Updated: 2023/11/06 16:23:03 by tsodre-p         ###   ########.fr       */
+/*   Updated: 2023/11/07 11:41:01 by tsodre-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/Point.hpp"
 
-//Equations to get the necessary values the check if the point is on the segment
-// y = mx + b
-// m = (y2 - y1)/(x2 - x1)
-// y - mx = b
 Fixed area(Point const a, Point const b, Point const c)
 {
 	Fixed	calc;
@@ -24,25 +20,22 @@ Fixed area(Point const a, Point const b, Point const c)
 	return (std::abs(calc.toFloat()));
 }
 
-Fixed	get_b()
+/* Inside the function, the code first checks if the point p lies on the same line as points a and b.
+This is done by comparing the cross product of vectors formed by (p.x - a.x) and (b.y - a.y) with (b.x - a.x) and (p.y - a.y).
+If these two cross products are equal, it means that p, a, and b are collinear (lie on the same line).
 
-bool pointOnLineSegment(Point const a, Point const b, Point const p)
-{
-
-}
-
-
-/* To check if a point lies on a line segment in C++:
-
-1- Calculate the distance between the given point and the two endpoints of the line segment.
-
-2- Compare this distance to the length of the line segment.
-
-If the distance between the point and the two endpoints is equal to the length of the line segment, the point lies on the line segment. */
-bool pointOnEdge(Point const a, Point const b, Point const c, Point const p)
-{
-	if (pointOnLineSegment(a, b, p) || pointOnLineSegment(b, c, p) || pointOnLineSegment(a, c, p))
-		return (true);
+If the first condition is met, the code proceeds to check whether point p lies within the line segment [AB].
+It compares the x and y coordinates of p with the minimum and maximum values of the x and y coordinates of a and b.
+If p is within these boundaries, it means that p is on the line segment. */
+bool isPointOnSegment(Point a, Point b, Point p) {
+	//Check if point p belongs in the line segment defined by points A and B
+	if ((p.getx() - a.getx()) * (b.gety() - a.gety()) == (b.getx() - a.getx()) * (p.gety() - a.gety())) {
+		//Check if point p in on the line segment of [AB]
+		if (p.getx() >= std::min(a.getx(), b.getx()) && p.getx() <= std::max(a.getx(), b.getx()) &&
+			p.gety() >= std::min(a.gety(), b.gety()) && p.gety() <= std::max(a.gety(), b.gety())) {
+			return (true);
+		}
+	}
 	return (false);
 }
 
@@ -63,10 +56,10 @@ bool bsp( Point const a, Point const b, Point const c, Point const p)
 		std::cout << "The point is on a vertice of the triangle!" << std::endl;
 		return (false);
 	}
-	/* if (pointOnEdge(a, b, c, p))
+	if (isPointOnSegment(a, b, p) || isPointOnSegment(b, c, p) || isPointOnSegment(a, c, p))
 	{
 		std::cout << "The point is on the edge of the triangle!" << std::endl;
 		return (false);
-	} */
+	}
 	return (ABC == (PCB + PAC + PAB));
 }
