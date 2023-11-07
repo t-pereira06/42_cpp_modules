@@ -6,7 +6,7 @@
 /*   By: tsodre-p <tsodre-p@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/02 16:05:09 by tsodre-p          #+#    #+#             */
-/*   Updated: 2023/11/07 11:41:01 by tsodre-p         ###   ########.fr       */
+/*   Updated: 2023/11/07 12:23:15 by tsodre-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,9 +28,7 @@ If the first condition is met, the code proceeds to check whether point p lies w
 It compares the x and y coordinates of p with the minimum and maximum values of the x and y coordinates of a and b.
 If p is within these boundaries, it means that p is on the line segment. */
 bool isPointOnSegment(Point a, Point b, Point p) {
-	//Check if point p belongs in the line segment defined by points A and B
 	if ((p.getx() - a.getx()) * (b.gety() - a.gety()) == (b.getx() - a.getx()) * (p.gety() - a.gety())) {
-		//Check if point p in on the line segment of [AB]
 		if (p.getx() >= std::min(a.getx(), b.getx()) && p.getx() <= std::max(a.getx(), b.getx()) &&
 			p.gety() >= std::min(a.gety(), b.gety()) && p.gety() <= std::max(a.gety(), b.gety())) {
 			return (true);
