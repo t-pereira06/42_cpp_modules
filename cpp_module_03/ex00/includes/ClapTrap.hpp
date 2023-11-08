@@ -6,7 +6,7 @@
 /*   By: tsodre-p <tsodre-p@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/07 15:40:46 by tsodre-p          #+#    #+#             */
-/*   Updated: 2023/11/08 11:06:04 by tsodre-p         ###   ########.fr       */
+/*   Updated: 2023/11/08 14:13:28 by tsodre-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,6 +34,7 @@ class ClapTrap
 		~ClapTrap();
 		/* ----------------------------------------- */
 		ClapTrap(const std::string name);
+		void displayInfo(void);
 		void attack(const std::string& target);
 		void takeDamage(unsigned int amount);
 		void beRepaired(unsigned int amount);

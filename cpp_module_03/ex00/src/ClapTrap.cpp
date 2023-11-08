@@ -6,7 +6,7 @@
 /*   By: tsodre-p <tsodre-p@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/07 15:40:42 by tsodre-p          #+#    #+#             */
-/*   Updated: 2023/11/08 11:29:17 by tsodre-p         ###   ########.fr       */
+/*   Updated: 2023/11/08 14:32:56 by tsodre-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,17 +15,17 @@
 /* Orthodox Canonical Form */
 ClapTrap::ClapTrap() : _name("Default"), _health(10), _energy(10), _ad(0)
 {
-	std::cout << "Default constructor called";
+	std::cout << "Default constructor called" << std::endl;
 }
 
 ClapTrap::~ClapTrap()
 {
-	std::cout << "Destructor called";
+	std::cout << "Destructor called" << std::endl;
 }
 
 ClapTrap::ClapTrap(ClapTrap const &copy)
 {
-	std::cout << "Copy constructor called";
+	std::cout << "Copy constructor called" << std::endl;
 	if (this != &copy)
 	{
 		this->_name = copy._name;
@@ -37,7 +37,7 @@ ClapTrap::ClapTrap(ClapTrap const &copy)
 
 ClapTrap	&ClapTrap::operator=(ClapTrap const &copy)
 {
-	std::cout << "Copy assigment operator called";
+	std::cout << "Copy assigment operator called" << std::endl;
 	if (this != &copy)
 	{
 		this->_name = copy._name;
@@ -53,7 +53,7 @@ ClapTrap	&ClapTrap::operator=(ClapTrap const &copy)
 
 ClapTrap::ClapTrap(const std::string name) : _name(name), _health(10), _energy(10), _ad(0)
 {
-	std::cout << "Constructor called";
+	std::cout << "Constructor called" << std::endl;
 }
 
 /*-------------------------------------------------------*/
@@ -64,15 +64,15 @@ void	ClapTrap::attack(const std::string& target)
 {
 	if (this->_energy == 0)
 	{
-		std::cout << "ClapTrap " << this->_name << " ran out of energy. What a shame..." << std::endl;
+		std::cout << "ClapTrap [" << this->_name << "] : " << " ran out of energy. What a shame..." << std::endl;
 		return ;
 	}
 	if (this->_health == 0)
 	{
-		std::cout << "ClapTrap " << this->_name << " is already dead. How do you want to attack?" << std::endl;
+		std::cout << "ClapTrap [" << this->_name << "] : " << " is already dead." << std::endl;
 		return ;
 	}
-	std::cout << "ClapTrap " << this->_name << " attacks " << target << ", causing " << this->_ad << " points of damage!" << std::endl;
+	std::cout << "ClapTrap [" << this->_name << "]" << " attacks " << target << ", causing " << this->_ad << " points of damage!" << std::endl;
 	this->_energy -= 1;
 }
 
@@ -80,34 +80,43 @@ void ClapTrap::takeDamage(unsigned int amount)
 {
 	if (this->_health == 0)
 	{
-		std::cout << "I'm already dead and you still want to attack me?";
+		std::cout << "ClapTrap [" << this->_name << "] : " << "Attacking someone who's already dead? Please..." << std::endl;
 		return ;
 	}
-	if ((this->_health - amount) <= 0)
+	if (amount >= this->_health)
 	{
-		this->_health == 0;
-		std::cout << "Wow, what a powerful attack! Claptrap " << this->_name << " is dead.";
+		this->_health = 0;
+		std::cout << "ClapTrap [" << this->_name << "]" << " took " << amount << " points of damage!" << std::endl;
+		std::cout << "ClapTrap [" << this->_name << "] : " << "Wow, what a powerful attack! I'm dead!" << std::endl;
 		return ;
 	}
 	this->_health -= amount;
-	std::cout << "ClapTrap " << this->_name << " took " << amount << " points of damage!" << std::endl;
+	std::cout << "ClapTrap [" << this->_name << "]" << " took " << amount << " points of damage!" << std::endl;
 }
 
 void ClapTrap::beRepaired(unsigned int amount)
 {
 	if (this->_health == 0)
 	{
-		std::cout << "Wish they could repair dead ClapTraps... I'm dead mate!";
+		std::cout << "ClapTrap [" << this->_name << "] : " << "Wish they could repair dead ClapTraps..." << std::endl;
 		return ;
 	}
 	if (this->_energy == 0)
 	{
-		std::cout << "I have no energy to repair myself!";
+		std::cout << "ClapTrap [" << this->_name << "] : " << "I have no energy to repair myself!" << std::endl;
 		return ;
 	}
 	this->_energy -= 1;
 	this->_health += amount;
-	std::cout << "ClapTrap " << this->_name << " healed " << amount << " points of health!" << std::endl
+	std::cout << "ClapTrap [" << this->_name << "]" << " healed " << amount << " points of health!" << std::endl;
+}
+
+void	ClapTrap::displayInfo(void)
+{
+	std::cout << "[" << this->_name << "]" << std::endl;
+	std::cout << "Health: " << this->_health << std::endl;
+	std::cout << "Energy: " << this->_energy << std::endl;
+	std::cout << "Attack damage: " << this->_ad << std::endl;
 }
 
 /*-------------------------------------------------------*/
