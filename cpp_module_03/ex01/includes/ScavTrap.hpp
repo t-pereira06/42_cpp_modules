@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ScavTrap.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tsodre-p <tsodre-p@student.42porto.com>    +#+  +:+       +#+        */
+/*   By: tsodre-p <tsodre-p@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/08 14:35:25 by tsodre-p          #+#    #+#             */
-/*   Updated: 2023/11/08 14:41:58 by tsodre-p         ###   ########.fr       */
+/*   Updated: 2023/11/09 11:28:05 by tsodre-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,8 +20,14 @@ class ScavTrap : public ClapTrap
 	private:
 
 	public:
+		/* Orthodox Canonical Form */
 		ScavTrap();
+		ScavTrap(ScavTrap const &copy);
+		ScavTrap	&operator=(ScavTrap const &copy);
 		~ScavTrap();
+		/* ----------------------------------------- */
+		ScavTrap(const std::string name);
+		void guardGate();
 };
 
 #endif
