@@ -6,7 +6,7 @@
 /*   By: tsodre-p <tsodre-p@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/08 14:35:34 by tsodre-p          #+#    #+#             */
-/*   Updated: 2023/11/10 11:20:13 by tsodre-p         ###   ########.fr       */
+/*   Updated: 2023/11/10 14:05:58 by tsodre-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,6 +58,22 @@ ScavTrap::ScavTrap(const std::string name) : ClapTrap(name)
 /*-------------------------------------------------------*/
 
 /*Member Functions*/
+
+void	ScavTrap::attack(const std::string& target)
+{
+	if (this->_energy == 0)
+	{
+		std::cout << "ScavTrap [" << this->_name << "] : " << " ran out of energy. What a shame..." << std::endl;
+		return ;
+	}
+	if (this->_health == 0)
+	{
+		std::cout << "ScavTrap [" << this->_name << "] : " << " is already dead." << std::endl;
+		return ;
+	}
+	std::cout << "ScavTrap [" << this->_name << "]" << " attacks " << target << ", causing " << this->_ad << " points of damage!" << std::endl;
+	this->_energy -= 1;
+}
 
 void	ScavTrap::guardGate()
 {

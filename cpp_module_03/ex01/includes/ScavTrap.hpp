@@ -6,7 +6,7 @@
 /*   By: tsodre-p <tsodre-p@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/08 14:35:25 by tsodre-p          #+#    #+#             */
-/*   Updated: 2023/11/10 10:27:24 by tsodre-p         ###   ########.fr       */
+/*   Updated: 2023/11/10 14:06:17 by tsodre-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,7 @@ class ScavTrap : public ClapTrap
 		~ScavTrap();
 		/* ----------------------------------------- */
 		ScavTrap(const std::string name);
+		void attack(const std::string& target);
 		void guardGate();
 };
 
