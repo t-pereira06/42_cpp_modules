@@ -6,14 +6,14 @@
 #    By: tsodre-p <tsodre-p@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/11/08 11:36:06 by tsodre-p          #+#    #+#              #
-#    Updated: 2023/11/10 12:27:49 by tsodre-p         ###   ########.fr        #
+#    Updated: 2023/11/10 13:56:18 by tsodre-p         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = DiamondTrap
 CXX = c++ -g
 RM = rm -rf
-CXXFLAGS = -Wall -Wextra -Werror -std=c++98
+CXXFLAGS = -Wall -Wextra -Werror -Wno-shadow -Wshadow -std=c++98
 
 SRC_DIR		=	src/
 OBJ_DIR		=	obj/
