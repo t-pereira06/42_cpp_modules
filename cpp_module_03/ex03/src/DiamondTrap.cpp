@@ -6,7 +6,7 @@
 /*   By: tsodre-p <tsodre-p@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/10 11:38:14 by tsodre-p          #+#    #+#             */
-/*   Updated: 2023/11/10 14:02:07 by tsodre-p         ###   ########.fr       */
+/*   Updated: 2023/11/10 14:21:42 by tsodre-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,11 +61,6 @@ DiamondTrap::DiamondTrap(const std::string name) : ClapTrap(name), ScavTrap(name
 /*-------------------------------------------------------*/
 
 /*Member Functions*/
-
-/* void	DiamondTrap::attack(const std::string &target)
-{
-	ScavTrap::attack(target);
-} */
 
 void	DiamondTrap::whoAmI()
 {
