@@ -6,7 +6,7 @@
 /*   By: tsodre-p <tsodre-p@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/10 11:36:08 by tsodre-p          #+#    #+#             */
-/*   Updated: 2023/11/10 13:59:57 by tsodre-p         ###   ########.fr       */
+/*   Updated: 2023/11/10 14:14:04 by tsodre-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,8 +29,6 @@ class DiamondTrap : public ScavTrap, public FragTrap
 		~DiamondTrap();
 		/* ----------------------------------------- */
 		DiamondTrap(const std::string name);
-		/* void	attack(const std::string &target);
-		ScavTrap::attack(const std::string &target); */
 		void	whoAmI();
 };
 
