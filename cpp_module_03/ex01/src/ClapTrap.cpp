@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ClapTrap.cpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tsodre-p <tsodre-p@student.42porto.com>    +#+  +:+       +#+        */
+/*   By: tsodre-p <tsodre-p@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/07 15:40:42 by tsodre-p          #+#    #+#             */
-/*   Updated: 2023/11/08 14:32:56 by tsodre-p         ###   ########.fr       */
+/*   Updated: 2023/11/10 10:33:18 by tsodre-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,17 +15,17 @@
 /* Orthodox Canonical Form */
 ClapTrap::ClapTrap() : _name("Default"), _health(10), _energy(10), _ad(0)
 {
-	std::cout << "Default constructor called" << std::endl;
+	std::cout << "ClapTrap " << this->_name << " was created" << std::endl;
 }
 
 ClapTrap::~ClapTrap()
 {
-	std::cout << "Destructor called" << std::endl;
+	std::cout << "ClapTrap " << this->_name << " was destroyed!" << std::endl;
 }
 
 ClapTrap::ClapTrap(ClapTrap const &copy)
 {
-	std::cout << "Copy constructor called" << std::endl;
+	std::cout << "ClapTrap copy constructor called" << std::endl;
 	if (this != &copy)
 	{
 		this->_name = copy._name;
@@ -37,7 +37,7 @@ ClapTrap::ClapTrap(ClapTrap const &copy)
 
 ClapTrap	&ClapTrap::operator=(ClapTrap const &copy)
 {
-	std::cout << "Copy assigment operator called" << std::endl;
+	std::cout << "ClapTrap copy assigment operator called" << std::endl;
 	if (this != &copy)
 	{
 		this->_name = copy._name;
@@ -53,7 +53,7 @@ ClapTrap	&ClapTrap::operator=(ClapTrap const &copy)
 
 ClapTrap::ClapTrap(const std::string name) : _name(name), _health(10), _energy(10), _ad(0)
 {
-	std::cout << "Constructor called" << std::endl;
+	std::cout << "ClapTrap " << this->_name << " was created" << std::endl;
 }
 
 /*-------------------------------------------------------*/

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ClapTrap.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tsodre-p <tsodre-p@student.42porto.com>    +#+  +:+       +#+        */
+/*   By: tsodre-p <tsodre-p@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/07 15:40:46 by tsodre-p          #+#    #+#             */
-/*   Updated: 2023/11/08 14:13:28 by tsodre-p         ###   ########.fr       */
+/*   Updated: 2023/11/10 10:18:47 by tsodre-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@
 
 class ClapTrap
 {
-	private:
+	protected:
 		std::string	_name;
 		unsigned int	_health;
 		unsigned int	_energy;

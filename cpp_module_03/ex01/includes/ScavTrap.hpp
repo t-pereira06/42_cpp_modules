@@ -6,7 +6,7 @@
 /*   By: tsodre-p <tsodre-p@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/08 14:35:25 by tsodre-p          #+#    #+#             */
-/*   Updated: 2023/11/09 11:28:05 by tsodre-p         ###   ########.fr       */
+/*   Updated: 2023/11/10 10:27:24 by tsodre-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,8 +17,6 @@
 
 class ScavTrap : public ClapTrap
 {
-	private:
-
 	public:
 		/* Orthodox Canonical Form */
 		ScavTrap();
