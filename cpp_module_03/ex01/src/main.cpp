@@ -6,7 +6,7 @@
 /*   By: tsodre-p <tsodre-p@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/07 15:40:44 by tsodre-p          #+#    #+#             */
-/*   Updated: 2023/11/10 10:36:39 by tsodre-p         ###   ########.fr       */
+/*   Updated: 2023/11/10 11:19:46 by tsodre-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,25 +14,21 @@
 
 int	main(void)
 {
-	ScavTrap cracked("Cracked");
 	ScavTrap def;
-
-	cracked.attack("Default");
-	cracked.displayInfo();
-	std::cout << std::endl;
 	def.displayInfo();
 	std::cout << std::endl;
-
-	def.takeDamage(5);
+	ScavTrap cracked("Cracked");
 	cracked.displayInfo();
 	std::cout << std::endl;
-	def.displayInfo();
+	ScavTrap a(cracked);
+	a.displayInfo();
+	std::cout << std::endl;
+	a = def;
+	a.displayInfo();
+	def.guardGate();
+	cracked.guardGate();
+	a.guardGate();
 	std::cout << std::endl;
 
-	def.beRepaired(1);
-	cracked.displayInfo();
-	std::cout << std::endl;
-	def.displayInfo();
-	std::cout << std::endl;
 	return (0);
 }

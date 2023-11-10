@@ -6,7 +6,7 @@
 /*   By: tsodre-p <tsodre-p@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/08 14:35:34 by tsodre-p          #+#    #+#             */
-/*   Updated: 2023/11/10 10:37:43 by tsodre-p         ###   ########.fr       */
+/*   Updated: 2023/11/10 11:20:13 by tsodre-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,5 +61,5 @@ ScavTrap::ScavTrap(const std::string name) : ClapTrap(name)
 
 void	ScavTrap::guardGate()
 {
-	std::cout << "ScavTrap " << this->_name << "is now in Gate keeper mode.";
+	std::cout << "ScavTrap " << this->_name << " is now in Gate keeper mode." << std::endl;
 }

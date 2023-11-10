@@ -6,11 +6,11 @@
 #    By: tsodre-p <tsodre-p@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/11/08 11:36:06 by tsodre-p          #+#    #+#              #
-#    Updated: 2023/11/10 10:28:20 by tsodre-p         ###   ########.fr        #
+#    Updated: 2023/11/10 11:19:55 by tsodre-p         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = ClapTrap
+NAME = ScavTrap
 CXX = c++ -g
 RM = rm -rf
 CXXFLAGS = -Wall -Wextra -Werror -std=c++98
