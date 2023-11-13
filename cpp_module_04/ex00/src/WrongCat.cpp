@@ -6,7 +6,7 @@
 /*   By: tsodre-p <tsodre-p@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/13 11:51:06 by tsodre-p          #+#    #+#             */
-/*   Updated: 2023/11/13 11:52:03 by tsodre-p         ###   ########.fr       */
+/*   Updated: 2023/11/13 12:38:49 by tsodre-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ WrongCat::WrongCat() : WrongAnimal("WrongCat")
 
 WrongCat::~WrongCat()
 {
-	std::cout << "WrongCat destructor called";
+	std::cout << "WrongCat destructor called" << std::endl;
 }
 
 WrongCat::WrongCat(WrongCat const &copy) : WrongAnimal(copy)

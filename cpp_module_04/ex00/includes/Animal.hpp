@@ -6,7 +6,7 @@
 /*   By: tsodre-p <tsodre-p@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/13 09:45:00 by tsodre-p          #+#    #+#             */
-/*   Updated: 2023/11/13 11:35:44 by tsodre-p         ###   ########.fr       */
+/*   Updated: 2023/11/13 12:56:49 by tsodre-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ class Animal
 	public:
 		/* Orthodox Canonical Form */
 		Animal();
-		~Animal();
+		virtual ~Animal();
 		Animal(Animal const &copy);
 		Animal	&operator=(Animal const &copy);
 		/* ----------------------------------------- */

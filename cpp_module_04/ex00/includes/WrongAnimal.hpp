@@ -6,7 +6,7 @@
 /*   By: tsodre-p <tsodre-p@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/13 11:43:36 by tsodre-p          #+#    #+#             */
-/*   Updated: 2023/11/13 11:54:57 by tsodre-p         ###   ########.fr       */
+/*   Updated: 2023/11/13 12:56:44 by tsodre-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ class WrongAnimal
 	public:
 		/* Orthodox Canonical Form */
 		WrongAnimal();
-		~WrongAnimal();
+		virtual ~WrongAnimal();
 		WrongAnimal(WrongAnimal const &copy);
 		WrongAnimal	&operator=(WrongAnimal const &copy);
 		/* ----------------------------------------- */

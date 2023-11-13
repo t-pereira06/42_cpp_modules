@@ -6,7 +6,7 @@
 /*   By: tsodre-p <tsodre-p@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/13 09:44:12 by tsodre-p          #+#    #+#             */
-/*   Updated: 2023/11/13 11:18:13 by tsodre-p         ###   ########.fr       */
+/*   Updated: 2023/11/13 12:37:45 by tsodre-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ Cat::Cat() : Animal("Cat")
 
 Cat::~Cat()
 {
-	std::cout << "Cat destructor called";
+	std::cout << "Cat destructor called" << std::endl;
 }
 
 Cat::Cat(Cat const &copy) : Animal(copy)
