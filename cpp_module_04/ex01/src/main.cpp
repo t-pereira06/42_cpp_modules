@@ -6,7 +6,7 @@
 /*   By: tsodre-p <tsodre-p@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/13 09:44:05 by tsodre-p          #+#    #+#             */
-/*   Updated: 2023/11/13 15:27:40 by tsodre-p         ###   ########.fr       */
+/*   Updated: 2023/11/13 16:07:18 by tsodre-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,6 @@ int main()
 			std::cout << "Brain address: " << dogptr->getBrain() << std::endl;
 			std::cout << std::endl;
 		}
-
 		for(int i = 0; i < 4; i++)
 			delete array[i];
 	}
