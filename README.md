@@ -1,6 +1,6 @@
 # C++ Module Repository
 
-Welcome to the C++ Module Repository! This repository contains various modules, each organized in separate folders, and each module has been graded for your convenience.
+Welcome to the C++ Module Repository! This repository contains various modules, each organized in separate folders.
 
 ## Modules
 
