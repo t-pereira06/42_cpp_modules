@@ -13,7 +13,7 @@ Description: Namespaces, classes, member functions, stdio streams, initializatio
 
 ### Module 1
 
-- Folder: [`cpp_module_01'](cpp_module_00/)
+- Folder: [`cpp_module_01'](#cpp_module_00)
 - Grade: 100%
 
 Description: Memory allocation, pointers to members, references, switch statement.
