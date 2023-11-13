@@ -1,28 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Dog.hpp                                            :+:      :+:    :+:   */
+/*   WrongCat.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tsodre-p <tsodre-p@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/13 09:45:02 by tsodre-p          #+#    #+#             */
-/*   Updated: 2023/11/13 11:12:07 by tsodre-p         ###   ########.fr       */
+/*   Created: 2023/11/13 11:48:10 by tsodre-p          #+#    #+#             */
+/*   Updated: 2023/11/13 11:51:19 by tsodre-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef DOG_HPP
-# define DOG_HPP
+#ifndef WRONGCAT_HPP
+# define WRONGCAT_HPP
 
-#include "Animal.hpp"
+#include "WrongAnimal.hpp"
 
-class Dog : public Animal
+class WrongCat : public WrongAnimal
 {
 	public:
 		/* Orthodox Canonical Form */
-		Dog();
-		~Dog();
-		Dog(Dog const &copy);
-		Dog	&operator=(Dog const &copy);
+		WrongCat();
+		~WrongCat();
+		WrongCat(WrongCat const &copy);
+		WrongCat	&operator=(WrongCat const &copy);
 		/* ----------------------------------------- */
 		void	makeSound() const;
 };

@@ -1,30 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Dog.hpp                                            :+:      :+:    :+:   */
+/*   WrongAnimal.hpp                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tsodre-p <tsodre-p@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/13 09:45:02 by tsodre-p          #+#    #+#             */
-/*   Updated: 2023/11/13 11:12:07 by tsodre-p         ###   ########.fr       */
+/*   Created: 2023/11/13 11:43:36 by tsodre-p          #+#    #+#             */
+/*   Updated: 2023/11/13 11:54:57 by tsodre-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef DOG_HPP
-# define DOG_HPP
+#ifndef WRONGANIMAL_HPP
+# define WRONGANIMAL_HPP
 
-#include "Animal.hpp"
+#include <iostream>
+#include <string.h>
+#include <locale.h>
+#include <stdio.h>
+#include <cmath>
 
-class Dog : public Animal
+class WrongAnimal
 {
+	protected:
+		std::string	type;
 	public:
 		/* Orthodox Canonical Form */
-		Dog();
-		~Dog();
-		Dog(Dog const &copy);
-		Dog	&operator=(Dog const &copy);
+		WrongAnimal();
+		~WrongAnimal();
+		WrongAnimal(WrongAnimal const &copy);
+		WrongAnimal	&operator=(WrongAnimal const &copy);
 		/* ----------------------------------------- */
+		WrongAnimal(std::string _type);
 		void	makeSound() const;
+		std::string	getType() const;
 };
 
 #endif

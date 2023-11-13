@@ -6,11 +6,11 @@
 #    By: tsodre-p <tsodre-p@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/11/13 09:43:30 by tsodre-p          #+#    #+#              #
-#    Updated: 2023/11/13 09:43:51 by tsodre-p         ###   ########.fr        #
+#    Updated: 2023/11/13 12:03:53 by tsodre-p         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = DiamondTrap
+NAME = Animal
 CXX = c++ -g
 RM = rm -rf
 CXXFLAGS = -Wall -Wextra -Werror -Wno-shadow -Wshadow -std=c++98
@@ -27,7 +27,7 @@ RED			=	\033[31m
 UP			=	\033[A
 CUT			=	\033[K
 
-SRC_FILES = main.cpp Animal.cpp Dog.cpp Cat.cpp
+SRC_FILES = main.cpp Animal.cpp Dog.cpp Cat.cpp WrongAnimal.cpp WrongCat.cpp
 OBJ_FILES	= $(SRC_FILES:.cpp=.o)
 
 SRC			=	$(addprefix $(SRC_DIR), $(SRC_FILES))

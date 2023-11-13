@@ -1,36 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Dog.cpp                                            :+:      :+:    :+:   */
+/*   WrongCat.cpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tsodre-p <tsodre-p@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/13 09:44:08 by tsodre-p          #+#    #+#             */
-/*   Updated: 2023/11/13 11:18:07 by tsodre-p         ###   ########.fr       */
+/*   Created: 2023/11/13 11:51:06 by tsodre-p          #+#    #+#             */
+/*   Updated: 2023/11/13 11:52:03 by tsodre-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/Dog.hpp"
+#include "../includes/WrongCat.hpp"
 
 /*Orthodox Canonical Form*/
-Dog::Dog() : Animal("Dog")
+WrongCat::WrongCat() : WrongAnimal("WrongCat")
 {
-	std::cout << "Dog default constructor called" << std::endl;
+	std::cout << "WrongCat default constructor called" << std::endl;
 }
 
-Dog::~Dog()
+WrongCat::~WrongCat()
 {
-	std::cout << "Dog destructor called";
+	std::cout << "WrongCat destructor called";
 }
 
-Dog::Dog(Dog const &copy) : Animal(copy)
+WrongCat::WrongCat(WrongCat const &copy) : WrongAnimal(copy)
 {
-	std::cout << "Dog copy constructor called" << std::endl;
+	std::cout << "WrongCat copy constructor called" << std::endl;
 }
 
-Dog	&Dog::operator=(Dog const &copy)
+WrongCat	&WrongCat::operator=(WrongCat const &copy)
 {
-	std::cout << "Dog copy assignment operator called" << std::endl;
+	std::cout << "WrongCat copy assignment operator called" << std::endl;
 	if (this != &copy)
 	{
 		this->type = copy.type;
@@ -39,7 +39,7 @@ Dog	&Dog::operator=(Dog const &copy)
 }
 /*-------------------------------------*/
 
-void	Dog::makeSound() const
+void	WrongCat::makeSound() const
 {
-	std::cout << "Bark" << std::endl;
+	std::cout << "Miau" << std::endl;
 }
