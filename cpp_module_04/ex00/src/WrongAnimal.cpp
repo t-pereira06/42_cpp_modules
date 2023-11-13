@@ -6,7 +6,7 @@
 /*   By: tsodre-p <tsodre-p@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/13 11:44:46 by tsodre-p          #+#    #+#             */
-/*   Updated: 2023/11/13 11:50:59 by tsodre-p         ###   ########.fr       */
+/*   Updated: 2023/11/13 12:06:30 by tsodre-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,5 +55,5 @@ std::string	WrongAnimal::getType() const
 
 void	WrongAnimal::makeSound() const
 {
-	std::cout << "Roarhfwaffjfjawbfwahvf" << std::endl;
+	std::cout << "Roarh Miau Catchau" << std::endl;
 }
