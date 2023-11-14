@@ -6,7 +6,7 @@
 /*   By: tsodre-p <tsodre-p@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/14 12:00:05 by tsodre-p          #+#    #+#             */
-/*   Updated: 2023/11/14 16:35:07 by tsodre-p         ###   ########.fr       */
+/*   Updated: 2023/11/14 16:56:41 by tsodre-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -86,6 +86,7 @@ void	Character::equip(AMateria* m)
 		if (!this->inventory[i])
 		{
 			this->inventory[i] = m;
+			std::cout << "Materia equipped on slot " << i << "!" << std::endl;
 			return ;
 		}
 	}
@@ -114,9 +115,15 @@ void	Character::unequip(int idx)
 void	Character::use(int idx, ICharacter& target)
 {
 	if (idx < 0 || idx > 3)
+	{
 		std::cout << "Trying to use a materia outside the inventory range!" << std::endl;
+		return ;
+	}
 	if (!this->inventory[idx])
+	{
 		std::cout << this->name << " does not have materia in that slot!" << std::endl;
+		return ;
+	}
 	this->inventory[idx]->use(target);
 }
 

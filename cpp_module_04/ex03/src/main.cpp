@@ -6,7 +6,7 @@
 /*   By: tsodre-p <tsodre-p@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/14 10:22:56 by tsodre-p          #+#    #+#             */
-/*   Updated: 2023/11/14 16:22:27 by tsodre-p         ###   ########.fr       */
+/*   Updated: 2023/11/14 16:52:47 by tsodre-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,20 +18,28 @@
 
 int main()
 {
+	ICharacter* cracked = new Character("Cracked");
+	ICharacter* bob = new Character("Bob");
+
 	IMateriaSource* src = new MateriaSource();
 	src->learnMateria(new Ice());
 	src->learnMateria(new Cure());
-	ICharacter* me = new Character("me");
+	src->learnMateria(new Ice());
+	src->learnMateria(new Cure());
+
 	AMateria* tmp;
 	tmp = src->createMateria("ice");
-	me->equip(tmp);
+	cracked->equip(tmp);
 	tmp = src->createMateria("cure");
-	me->equip(tmp);
-	ICharacter* bob = new Character("bob");
-	me->use(0, *bob);
-	me->use(1, *bob);
+	cracked->equip(tmp);
+	tmp = src->createMateria("cure");
+	cracked->equip(tmp);
+
+	cracked->use(2, *bob);
+	cracked->use(0, *bob);
+	cracked->use(1, *bob);
 	delete bob;
-	delete me;
+	delete cracked;
 	delete src;
 	return 0;
 }
