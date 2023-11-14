@@ -6,7 +6,7 @@
 /*   By: tsodre-p <tsodre-p@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/14 12:00:05 by tsodre-p          #+#    #+#             */
-/*   Updated: 2023/11/14 12:42:57 by tsodre-p         ###   ########.fr       */
+/*   Updated: 2023/11/14 14:33:34 by tsodre-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -78,28 +78,35 @@ void	Character::equip(AMateria* m)
 			return ;
 		}
 	}
-	std::cout << "Inventory is full!";
+	std::cout << "Inventory is full!" << std::endl;
 }
 
 void	Character::unequip(int idx)
 {
 	if (idx < 0 || idx > 3)
-		std::cout << "Nnequipping outside of the inventory range!" << std::endl;
+		std::cout << "Unequipping outside of the inventory range!" << std::endl;
+	if (!this->inventory[idx])
+		std::cout << "No materia on slot " << idx << "!" << std::endl;
 	for (int i = 0; i < 10; i++)
 	{
 		if (!this->floor[i])
 		{
 			this->floor[i] = this->inventory[idx];
 			delete this->inventory[idx];
-			return;
+			return ;
 		}
 	}
-	std::cout << "Floor is full of materia!";
+	std::cout << "Floor is full of materia!" << std::endl;
 }
 
-void	use(int idx, ICharacter& target);
-
-
+void	Character::use(int idx, ICharacter& target)
+{
+	if (idx < 0 || idx > 3)
+		std::cout << "Trying to use a materia outside the inventory range!" << std::endl;
+	if (!this->inventory[idx])
+		std::cout << this->name << " does not have materia in that slot!" << std::endl;
+	this->inventory[idx]->use(target);
+}
 
 std::string const &Character::getName() const
 {
