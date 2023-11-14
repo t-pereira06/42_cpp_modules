@@ -6,7 +6,7 @@
 /*   By: tsodre-p <tsodre-p@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/14 10:22:56 by tsodre-p          #+#    #+#             */
-/*   Updated: 2023/11/14 16:52:47 by tsodre-p         ###   ########.fr       */
+/*   Updated: 2023/11/14 17:01:28 by tsodre-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,7 @@ int main()
 	tmp = src->createMateria("cure");
 	cracked->equip(tmp);
 
-	cracked->use(2, *bob);
+	cracked->use(-2, *bob);
 	cracked->use(0, *bob);
 	cracked->use(1, *bob);
 	delete bob;
