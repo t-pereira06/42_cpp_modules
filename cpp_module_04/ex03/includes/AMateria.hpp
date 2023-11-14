@@ -6,7 +6,7 @@
 /*   By: tsodre-p <tsodre-p@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/14 10:08:56 by tsodre-p          #+#    #+#             */
-/*   Updated: 2023/11/14 10:15:41 by tsodre-p         ###   ########.fr       */
+/*   Updated: 2023/11/14 11:12:08 by tsodre-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,8 @@
 #include <locale.h>
 #include <stdio.h>
 #include <cmath>
+
+#include "ICharacter.hpp";
 
 class AMateria
 {
@@ -31,9 +33,9 @@ class AMateria
 		AMateria	&operator=(AMateria const &copy);
 		/* ----------------------------------------- */
 		AMateria(std::string const &type);
-		std::string const & getType() const; //Returns the materia type
-		virtual AMateria* clone() const = 0;
+		std::string const	&getType() const;
+		virtual AMateria*	clone() const = 0;
 		virtual void use(ICharacter& target);
-}
+};
 
 #endif
