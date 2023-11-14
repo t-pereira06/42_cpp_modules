@@ -6,14 +6,15 @@
 /*   By: tsodre-p <tsodre-p@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/14 10:22:56 by tsodre-p          #+#    #+#             */
-/*   Updated: 2023/11/14 11:59:56 by tsodre-p         ###   ########.fr       */
+/*   Updated: 2023/11/14 16:22:27 by tsodre-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "AMateria.hpp"
-#include "Ice.hpp"
-#include "Cure.hpp"
-#include "ICharacter.hpp";
+#include "../includes/Character.hpp"
+#include "../includes/Cure.hpp"
+#include "../includes/Ice.hpp"
+#include "../includes/MateriaSource.hpp"
+#include "../includes/AMateria.hpp"
 
 int main()
 {

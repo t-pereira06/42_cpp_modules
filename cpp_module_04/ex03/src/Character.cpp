@@ -6,7 +6,7 @@
 /*   By: tsodre-p <tsodre-p@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/14 12:00:05 by tsodre-p          #+#    #+#             */
-/*   Updated: 2023/11/14 14:33:34 by tsodre-p         ###   ########.fr       */
+/*   Updated: 2023/11/14 16:35:07 by tsodre-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,21 +15,42 @@
 /* Orthodox Canonical Form */
 Character::Character() : name("Default")
 {
-	std::cout << "Character default constructor called" << std::endl;
 	for (int i = 0; i < 4; i++)
 		this->inventory[i] = NULL;
+	for (int i = 0; i < 10; i++)
+		this->floor[i] = NULL;
 }
 
 Character::~Character()
 {
-	std::cout << "Character destructor called" << std::endl;
 	for (int i = 0; i < 4; i++)
 		delete this->inventory[i];
+	for (int i = 0; i < 10; i++)
+		this->floor[i] = NULL;
 }
 
 Character::Character(Character const &copy)
 {
-	std::cout << "Character copy constructor called" << std::endl;
+	if (this != &copy)
+	{
+		this->name = copy.name;
+		for(int i = 0; i < 4; i++)
+		{
+			if (this->inventory[i])
+				delete this->inventory[i];
+			this->inventory[i] = copy.inventory[i];
+		}
+		for(int i = 0; i < 10; i++)
+		{
+			if (this->floor[i])
+				delete this->floor[i];
+			this->floor[i] = copy.floor[i];
+		}
+	}
+}
+
+Character	&Character::operator=(Character const &copy)
+{
 	if (this != &copy)
 	{
 		this->name = copy.name;
@@ -39,20 +60,11 @@ Character::Character(Character const &copy)
 				delete inventory[i];
 			this->inventory[i] = copy.inventory[i];
 		}
-	}
-}
-
-Character	&Character::operator=(Character const &copy)
-{
-	std::cout << "Character copy assignment operator called" << std::endl;
-	if (this != &copy)
-	{
-		this->name = copy.name;
-		for(int i = 0; i < 4; i++)
+		for(int i = 0; i < 10; i++)
 		{
-			if (this->inventory[i])
-				delete inventory[i];
-			this->inventory[i] = copy.inventory[i];
+			if (this->floor[i])
+				delete this->floor[i];
+			this->floor[i] = copy.floor[i];
 		}
 	}
 	return (*this);
@@ -63,7 +75,6 @@ Character	&Character::operator=(Character const &copy)
 
 Character::Character(std::string _name) : name(_name)
 {
-	std::cout << "Character constructor called" << std::endl;
 	for (int i = 0; i < 4; i++)
 		this->inventory[i] = NULL;
 }
@@ -92,6 +103,7 @@ void	Character::unequip(int idx)
 		if (!this->floor[i])
 		{
 			this->floor[i] = this->inventory[idx];
+			std::cout << this->inventory[idx]->getType() << " went to the floor!" << std::endl;
 			delete this->inventory[idx];
 			return ;
 		}

@@ -6,7 +6,7 @@
 #    By: tsodre-p <tsodre-p@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/11/14 10:07:15 by tsodre-p          #+#    #+#              #
-#    Updated: 2023/11/14 10:07:49 by tsodre-p         ###   ########.fr        #
+#    Updated: 2023/11/14 16:28:19 by tsodre-p         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -27,7 +27,7 @@ RED			=	\033[31m
 UP			=	\033[A
 CUT			=	\033[K
 
-SRC_FILES = main.cpp Animal.cpp Dog.cpp Cat.cpp Brain.cpp
+SRC_FILES = main.cpp AMateria.cpp Character.cpp Cure.cpp Ice.cpp MateriaSource.cpp
 OBJ_FILES	= $(SRC_FILES:.cpp=.o)
 
 SRC			=	$(addprefix $(SRC_DIR), $(SRC_FILES))

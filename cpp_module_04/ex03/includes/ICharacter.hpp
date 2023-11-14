@@ -6,14 +6,16 @@
 /*   By: tsodre-p <tsodre-p@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/14 11:08:39 by tsodre-p          #+#    #+#             */
-/*   Updated: 2023/11/14 11:45:12 by tsodre-p         ###   ########.fr       */
+/*   Updated: 2023/11/14 16:28:46 by tsodre-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef ICHARACTER_HPP
 # define ICHARACTER_HPP
 
-#include "AMateria.hpp";
+#include "AMateria.hpp"
+
+class AMateria;
 
 class ICharacter
 {

@@ -1,39 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Character.hpp                                      :+:      :+:    :+:   */
+/*   MateriaSource.hpp                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tsodre-p <tsodre-p@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/14 11:33:18 by tsodre-p          #+#    #+#             */
-/*   Updated: 2023/11/14 16:35:37 by tsodre-p         ###   ########.fr       */
+/*   Created: 2023/11/14 14:48:49 by tsodre-p          #+#    #+#             */
+/*   Updated: 2023/11/14 15:06:54 by tsodre-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef CHARACTER_HPP
-# define CHARACTER_HPP
+#ifndef MATERIASOURCE_HPP
+# define MATERIASOURCE_HPP
 
-#include "ICharacter.hpp"
-#include "AMateria.hpp"
+#include "IMateriaSource.hpp"
 
-class Character	: public ICharacter
+class MateriaSource : public IMateriaSource
 {
 	private:
-		std::string	name;
-		AMateria *inventory[4];
-		AMateria *floor[10];
+		AMateria *mat_array[4];
 	public:
 		/* Orthodox Canonical Form */
-		Character();
-		virtual ~Character();
-		Character(Character const &copy);
-		Character	&operator=(Character const &copy);
+		MateriaSource();
+		virtual ~MateriaSource();
+		MateriaSource(MateriaSource const &copy);
+		MateriaSource	&operator=(MateriaSource const &copy);
 		/* ----------------------------------------- */
-		Character(std::string _name);
-		std::string const &getName() const;
-		void equip(AMateria* m);
-		void unequip(int idx);
-		void use(int idx, ICharacter& target);
+		void learnMateria(AMateria* materia);
+		AMateria* createMateria(std::string const & type);
 };
 
 #endif

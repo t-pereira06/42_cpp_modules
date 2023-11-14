@@ -6,7 +6,7 @@
 /*   By: tsodre-p <tsodre-p@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/14 10:08:56 by tsodre-p          #+#    #+#             */
-/*   Updated: 2023/11/14 11:12:08 by tsodre-p         ###   ########.fr       */
+/*   Updated: 2023/11/14 16:36:14 by tsodre-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,12 +14,9 @@
 # define AMATERIA_HPP
 
 #include <iostream>
-#include <string.h>
-#include <locale.h>
-#include <stdio.h>
-#include <cmath>
+#include "ICharacter.hpp"
 
-#include "ICharacter.hpp";
+class ICharacter;
 
 class AMateria
 {
