@@ -6,7 +6,7 @@
 /*   By: tsodre-p <tsodre-p@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/14 15:00:38 by tsodre-p          #+#    #+#             */
-/*   Updated: 2023/11/14 16:39:16 by tsodre-p         ###   ########.fr       */
+/*   Updated: 2023/11/15 12:03:34 by tsodre-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,10 @@ MateriaSource::MateriaSource()
 MateriaSource::~MateriaSource()
 {
 	for (int i = 0; i < 4; i++)
-		delete this->mat_array[i];
+	{
+		if (this->mat_array[i])
+			delete this->mat_array[i];
+	}
 }
 
 MateriaSource::MateriaSource(MateriaSource const &copy)
@@ -76,12 +79,11 @@ AMateria* MateriaSource::createMateria(std::string const & type)
 	{
 		if (this->mat_array[i] && (this->mat_array[i]->getType() == type))
 		{
-			std::cout << this->mat_array[i]->getType() << " was learned!" << std::endl;
+			std::cout << this->mat_array[i]->getType() << " was created!" << std::endl;
 			return (this->mat_array[i]->clone());
 		}
 	}
 	std::cout << type << " still yet to learn!" << std::endl;
 	return (NULL);
 }
-
 /*-------------------------------------*/
