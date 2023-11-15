@@ -6,7 +6,7 @@
 /*   By: tsodre-p <tsodre-p@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/13 09:44:05 by tsodre-p          #+#    #+#             */
-/*   Updated: 2023/11/13 16:17:03 by tsodre-p         ###   ########.fr       */
+/*   Updated: 2023/11/15 15:37:27 by tsodre-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,12 +24,20 @@ int main()
 		for (int i = 2; i < 4; i++)
 			array[i] = new Cat();
 		std::cout << std::endl;
-		for(int i = 0; i < 4; i++)
+		for(int i = 0; i < 2; i++)
 		{
 			std::cout << "Type of animal: " << array[i]->getType() << std::endl;
 			std::cout << "Animal address: " << array[i] << std::endl;
 			Dog*	dogptr = (Dog *)array[i];
 			std::cout << "Brain address: " << dogptr->getBrain() << std::endl;
+			std::cout << std::endl;
+		}
+		for(int i = 2; i < 4; i++)
+		{
+			std::cout << "Type of animal: " << array[i]->getType() << std::endl;
+			std::cout << "Animal address: " << array[i] << std::endl;
+			Cat*	catptr = (Cat *)array[i];
+			std::cout << "Brain address: " << catptr->getBrain() << std::endl;
 			std::cout << std::endl;
 		}
 		for(int i = 0; i < 4; i++)
