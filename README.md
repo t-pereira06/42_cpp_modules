@@ -35,6 +35,6 @@ Description: Learning about inheritance in classes.
 ### Module 04
 
 - Folder: [cpp_module_04](cpp_module_04/)
-- Grade: 90%
+- Grade: not graded yet
 
 Description: Subtype polymorphism, abstract classes, interfaces
