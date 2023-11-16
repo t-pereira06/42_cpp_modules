@@ -6,7 +6,7 @@
 /*   By: tsodre-p <tsodre-p@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/13 09:44:08 by tsodre-p          #+#    #+#             */
-/*   Updated: 2023/11/15 15:35:03 by tsodre-p         ###   ########.fr       */
+/*   Updated: 2023/11/16 09:46:21 by tsodre-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,8 +21,8 @@ Dog::Dog() : Animal("Dog")
 
 Dog::~Dog()
 {
-	std::cout << "Dog destructor called" << std::endl;
 	delete this->brain;
+	std::cout << "Dog destructor called" << std::endl;
 }
 
 Dog::Dog(Dog const &copy) : Animal(copy)
