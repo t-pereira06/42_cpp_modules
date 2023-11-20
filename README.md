@@ -35,6 +35,41 @@ Description: Learning about inheritance in classes.
 ### Module 04
 
 - Folder: [cpp_module_04](cpp_module_04/)
+- Grade: 100%
+
+Description: Subtype polymorphism, abstract classes, interfaces
+
+### Module 05
+
+- Folder: [cpp_module_05](cpp_module_05/)
+- Grade: Repetition and Exceptions
+
+Description: Subtype polymorphism, abstract classes, interfaces
+
+### Module 06
+
+- Folder: [cpp_module_06](cpp_module_06/)
+- Grade: not graded yet
+
+Description: Subtype polymorphism, abstract classes, interfaces
+
+### Module 07
+
+- Folder: [cpp_module_07](cpp_module_07/)
+- Grade: not graded yet
+
+Description: Subtype polymorphism, abstract classes, interfaces
+
+### Module 08
+
+- Folder: [cpp_module_08](cpp_module_08/)
+- Grade: not graded yet
+
+Description: Subtype polymorphism, abstract classes, interfaces
+
+### Module 09
+
+- Folder: [cpp_module_09](cpp_module_09/)
 - Grade: not graded yet
 
 Description: Subtype polymorphism, abstract classes, interfaces
