@@ -6,7 +6,7 @@
 #    By: tsodre-p <tsodre-p@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/11/14 10:07:15 by tsodre-p          #+#    #+#              #
-#    Updated: 2023/11/20 12:49:35 by tsodre-p         ###   ########.fr        #
+#    Updated: 2023/11/20 17:03:49 by tsodre-p         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -27,7 +27,8 @@ RED			=	\033[31m
 UP			=	\033[A
 CUT			=	\033[K
 
-SRC_FILES = main.cpp Form.cpp Bureaucrat.cpp
+SRC_FILES = main.cpp Form.cpp Bureaucrat.cpp PresidentialPardonForm.cpp \
+			RobotomyRequestForm.cpp ShrubberyCreationForm.cpp
 OBJ_FILES	= $(SRC_FILES:.cpp=.o)
 
 SRC			=	$(addprefix $(SRC_DIR), $(SRC_FILES))
@@ -54,16 +55,16 @@ $(OBJ_DIR)%.o:$(SRC_DIR)%.cpp
 clean:
 	@if [ -d "$(OBJ_DIR)" ]; then \
 	rm -rf $(OBJ_DIR); \
-	echo "$(BLUE)Deleting all objects from /ex01...$(RESET)"; else \
-	echo "No objects to remove from /ex01."; \
+	echo "$(BLUE)Deleting all objects from /ex02...$(RESET)"; else \
+	echo "No objects to remove from /ex02."; \
 	fi;
 
 #deleting executable and objects
 fclean: clean
 	@if [ -f "$(NAME)" ]; then \
 	rm -f $(NAME); \
-	echo "$(BLUE)Deleting $(NAME) from /ex01...$(RESET)"; else \
-	echo "No Executable to remove from /ex01."; \
+	echo "$(BLUE)Deleting $(NAME) from /ex02...$(RESET)"; else \
+	echo "No Executable to remove from /ex02."; \
 	fi;
 
 re: clean all
