@@ -6,7 +6,7 @@
 /*   By: tsodre-p <tsodre-p@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/16 11:25:41 by tsodre-p          #+#    #+#             */
-/*   Updated: 2023/11/20 14:40:14 by tsodre-p         ###   ########.fr       */
+/*   Updated: 2023/11/20 16:48:17 by tsodre-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,23 +20,20 @@ int	main()
 		{
 			Bureaucrat	a("Cracked", 1);
 			Bureaucrat	b("John", 135);
-			Form	c("Maths", 70, 50);
+			Form	c("Maths", 70, 40);
 			Form	d("Science", 45, 30);
 			std::cout << a;
 			a.decrementGrade();
-			std::cout << a;
-			std::cout << std::endl;
-			std::cout << c;
-			std::cout << std::endl;
+			std::cout << a << std::endl;
+			std::cout << c << std::endl;
 			a.signForm(c);
 			std::cout << std::endl;
 			std::cout << c;
 			std::cout << "-------------------------------------" << std::endl;
 			std::cout << b;
 			b.decrementGrade();
-			std::cout << b;
-			std::cout << std::endl;
-			std::cout << d;
+			std::cout << b << std::endl;
+			std::cout << d << std::endl;
 			b.signForm(d);
 			std::cout << d;
 		}

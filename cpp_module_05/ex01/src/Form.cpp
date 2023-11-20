@@ -6,14 +6,14 @@
 /*   By: tsodre-p <tsodre-p@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/16 12:53:08 by tsodre-p          #+#    #+#             */
-/*   Updated: 2023/11/20 14:35:09 by tsodre-p         ###   ########.fr       */
+/*   Updated: 2023/11/20 16:45:54 by tsodre-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/Form.hpp"
 
 /*Orthodox Canonical Form*/
-Form::Form() : _name("Default"), _signed(false), _signGrade(50), _executeGrade(30)
+Form::Form() : _name("Default"), _signed(false), _signGrade(80), _executeGrade(30)
 {
 }
 
@@ -40,6 +40,10 @@ Form	&Form::operator=(Form const &copy)
 /*Member Functions*/
 Form::Form(std::string name, int const signGrade, int const executeGrade) : _name(name), _signed(false), _signGrade(signGrade), _executeGrade(executeGrade)
 {
+	if (_signGrade > 150 || _executeGrade > 150)
+		throw GradeTooLowException();
+	if (_signGrade < 1 || _executeGrade < 1)
+		throw GradeTooHighException();
 }
 
 void	Form::beSigned(Bureaucrat &bureaucrat)

@@ -6,7 +6,7 @@
 /*   By: tsodre-p <tsodre-p@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/16 12:52:59 by tsodre-p          #+#    #+#             */
-/*   Updated: 2023/11/20 14:30:39 by tsodre-p         ###   ########.fr       */
+/*   Updated: 2023/11/20 16:46:33 by tsodre-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 
 #include <iostream>
 #include "Bureaucrat.hpp"
+# pragma once
 
 class Bureaucrat;
 
