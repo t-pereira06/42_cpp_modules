@@ -6,7 +6,7 @@
 /*   By: tsodre-p <tsodre-p@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/16 12:52:59 by tsodre-p          #+#    #+#             */
-/*   Updated: 2023/11/20 12:13:47 by tsodre-p         ###   ########.fr       */
+/*   Updated: 2023/11/20 12:53:32 by tsodre-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,8 @@
 
 #include <iostream>
 #include "Bureaucrat.hpp"
+
+class Bureaucrat;
 
 class Form
 {
@@ -32,9 +34,9 @@ class Form
 		/* ----------------------------------------- */
 		Form(std::string name, int const signGrade, int const executeGrade);
 		std::string	getName();
-		bool		getSigned();
-		int const	getSignGrade();
-		int const	getExecuteGrade();
+		bool	getSigned();
+		int		getSignGrade() const;
+		int		getExecuteGrade() const;
 		void	beSigned(Bureaucrat &bureaucrat);
 		class	GradeTooLowException : public std::exception
 		{

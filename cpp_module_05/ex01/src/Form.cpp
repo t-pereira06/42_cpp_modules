@@ -6,7 +6,7 @@
 /*   By: tsodre-p <tsodre-p@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/16 12:53:08 by tsodre-p          #+#    #+#             */
-/*   Updated: 2023/11/20 12:33:30 by tsodre-p         ###   ########.fr       */
+/*   Updated: 2023/11/20 12:50:25 by tsodre-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,12 +59,12 @@ bool	Form::getSigned()
 	return (this->_signed);
 }
 
-int const	Form::getSignGrade()
+int Form::getSignGrade()const
 {
 	return (this->_signGrade);
 }
 
-int const	Form::getExecuteGrade()
+int Form::getExecuteGrade() const
 {
 	return (this->_executeGrade);
 }
