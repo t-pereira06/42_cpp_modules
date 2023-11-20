@@ -6,7 +6,7 @@
 /*   By: tsodre-p <tsodre-p@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/16 11:28:38 by tsodre-p          #+#    #+#             */
-/*   Updated: 2023/11/20 11:45:56 by tsodre-p         ###   ########.fr       */
+/*   Updated: 2023/11/20 16:42:01 by tsodre-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,7 +42,6 @@ class Bureaucrat
 			public:
 				virtual const char *what() const throw();
 		};
-
 };
 
 std::ostream	&operator<<(std::ostream &output, const Bureaucrat &copy);
