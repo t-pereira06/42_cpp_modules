@@ -51,25 +51,25 @@ Description: Repetition and Exceptions
 - Folder: [cpp_module_06](cpp_module_06/)
 - Grade: not graded yet
 
-Description: Subtype polymorphism, abstract classes, interfaces
+Description: C++ casts
 
 ### Module 07
 
 - Folder: [cpp_module_07](cpp_module_07/)
 - Grade: not graded yet
 
-Description: Subtype polymorphism, abstract classes, interfaces
+Description: C++ templates
 
 ### Module 08
 
 - Folder: [cpp_module_08](cpp_module_08/)
 - Grade: not graded yet
 
-Description: Subtype polymorphism, abstract classes, interfaces
+Description: Templated containers, iterators, algorithms
 
 ### Module 09
 
 - Folder: [cpp_module_09](cpp_module_09/)
 - Grade: not graded yet
 
-Description: Subtype polymorphism, abstract classes, interfaces
+Description: C++ Standard Template Library (STL)
