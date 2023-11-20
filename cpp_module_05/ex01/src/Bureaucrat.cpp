@@ -6,7 +6,7 @@
 /*   By: tsodre-p <tsodre-p@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/16 11:28:28 by tsodre-p          #+#    #+#             */
-/*   Updated: 2023/11/20 12:22:27 by tsodre-p         ###   ########.fr       */
+/*   Updated: 2023/11/20 14:23:32 by tsodre-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -86,7 +86,10 @@ void	Bureaucrat::signForm(Form &form)
 	else
 	{
 		if (this->getGrade() <= form.getSignGrade())
+		{
 			form.beSigned(*this);
+			std::cout << this->getName() << " signed " << form.getName() << std::endl;
+		}
 		else
 		{
 			std::cout << this->getName() << " couldn't sign " << form.getName() << " because ";

@@ -6,7 +6,7 @@
 /*   By: tsodre-p <tsodre-p@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/16 12:52:59 by tsodre-p          #+#    #+#             */
-/*   Updated: 2023/11/20 12:53:32 by tsodre-p         ###   ########.fr       */
+/*   Updated: 2023/11/20 14:30:39 by tsodre-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,8 +33,8 @@ class Form
 		Form	&operator=(Form const &copy);
 		/* ----------------------------------------- */
 		Form(std::string name, int const signGrade, int const executeGrade);
-		std::string	getName();
-		bool	getSigned();
+		std::string	getName() const;
+		bool	getSigned() const;
 		int		getSignGrade() const;
 		int		getExecuteGrade() const;
 		void	beSigned(Bureaucrat &bureaucrat);

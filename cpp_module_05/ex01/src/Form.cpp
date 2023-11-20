@@ -6,7 +6,7 @@
 /*   By: tsodre-p <tsodre-p@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/16 12:53:08 by tsodre-p          #+#    #+#             */
-/*   Updated: 2023/11/20 12:50:25 by tsodre-p         ###   ########.fr       */
+/*   Updated: 2023/11/20 14:35:09 by tsodre-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,17 +49,17 @@ void	Form::beSigned(Bureaucrat &bureaucrat)
 	this->_signed = true;
 }
 
-std::string	Form::getName()
+std::string	Form::getName() const
 {
 	return (this->_name);
 }
 
-bool	Form::getSigned()
+bool	Form::getSigned() const
 {
 	return (this->_signed);
 }
 
-int Form::getSignGrade()const
+int Form::getSignGrade() const
 {
 	return (this->_signGrade);
 }
@@ -78,3 +78,18 @@ const char	*Form::GradeTooLowException::what() const throw()
 {
 	return ("Grade is too low!");
 }
+/*-------------------------------------*/
+
+/*Operators*/
+std::ostream	&operator<<(std::ostream &output, const Form &copy)
+{
+	output << "Form's name: " << copy.getName() << std::endl;
+	output << "Sign Grade: " << copy.getSignGrade() << std::endl;
+	output << "Execute Grade: " << copy.getExecuteGrade() << std::endl;
+	if (copy.getSigned() == 0)
+		output << "Signed: No" << std::endl;
+	else
+		output << "Signed: Yes" << std::endl;
+	return (output);
+}
+/*-------------------------------------*/
