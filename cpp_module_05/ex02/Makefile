@@ -6,7 +6,7 @@
 #    By: tsodre-p <tsodre-p@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/11/14 10:07:15 by tsodre-p          #+#    #+#              #
-#    Updated: 2023/11/20 17:03:49 by tsodre-p         ###   ########.fr        #
+#    Updated: 2023/11/21 14:16:30 by tsodre-p         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -27,7 +27,7 @@ RED			=	\033[31m
 UP			=	\033[A
 CUT			=	\033[K
 
-SRC_FILES = main.cpp Form.cpp Bureaucrat.cpp PresidentialPardonForm.cpp \
+SRC_FILES = main.cpp AForm.cpp Bureaucrat.cpp PresidentialPardonForm.cpp \
 			RobotomyRequestForm.cpp ShrubberyCreationForm.cpp
 OBJ_FILES	= $(SRC_FILES:.cpp=.o)
 

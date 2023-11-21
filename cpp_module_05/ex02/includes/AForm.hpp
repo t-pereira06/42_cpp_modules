@@ -6,7 +6,7 @@
 /*   By: tsodre-p <tsodre-p@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/16 12:52:59 by tsodre-p          #+#    #+#             */
-/*   Updated: 2023/11/20 17:01:39 by tsodre-p         ###   ########.fr       */
+/*   Updated: 2023/11/21 14:16:15 by tsodre-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ class AForm
 	public:
 		/* Orthodox Canonical Form */
 		AForm();
-		~AForm();
+		virtual ~AForm();
 		AForm(AForm const &copy);
 		AForm	&operator=(AForm const &copy);
 		/* ----------------------------------------- */
@@ -39,6 +39,7 @@ class AForm
 		int		getSignGrade() const;
 		int		getExecuteGrade() const;
 		void	beSigned(Bureaucrat &bureaucrat);
+		virtual void	execute(Bureaucrat const & executor) const = 0;
 		class	GradeTooLowException : public std::exception
 		{
 			public:
@@ -51,6 +52,6 @@ class AForm
 		};
 };
 
-std::ostream	&operator<<(std::ostream &output, const Form &copy);
+std::ostream	&operator<<(std::ostream &output, const AForm &copy);
 
 #endif

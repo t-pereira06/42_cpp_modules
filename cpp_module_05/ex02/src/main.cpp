@@ -6,12 +6,16 @@
 /*   By: tsodre-p <tsodre-p@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/16 11:25:41 by tsodre-p          #+#    #+#             */
-/*   Updated: 2023/11/20 16:48:17 by tsodre-p         ###   ########.fr       */
+/*   Updated: 2023/11/21 14:22:50 by tsodre-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/Bureaucrat.hpp"
-#include "../includes/Form.hpp"
+#include "../includes/AForm.hpp"
+#include "../includes/Bureaucrat.hpp"
+#include "../includes/PresidentialPardonForm.hpp"
+#include "../includes/RobotomyRequestForm.hpp"
+#include "../includes/ShrubberyCreationForm.hpp"
 
 int	main()
 {
@@ -19,9 +23,9 @@ int	main()
 		try
 		{
 			Bureaucrat	a("Cracked", 1);
-			Bureaucrat	b("John", 135);
-			Form	c("Maths", 70, 40);
-			Form	d("Science", 45, 30);
+			Bureaucrat	b("John", 149);
+			ShrubberyCreationForm	c("Maths");
+			ShrubberyCreationForm	d("Science");
 			std::cout << a;
 			a.decrementGrade();
 			std::cout << a << std::endl;
@@ -32,9 +36,12 @@ int	main()
 			std::cout << "-------------------------------------" << std::endl;
 			std::cout << b;
 			b.decrementGrade();
+			std::cout << "droga" << std::endl;
+			d.execute(b);
 			std::cout << b << std::endl;
 			std::cout << d << std::endl;
 			b.signForm(d);
+			d.execute(b);
 			std::cout << d;
 		}
 		catch(const std::exception& e)
