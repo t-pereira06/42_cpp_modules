@@ -6,7 +6,7 @@
 /*   By: tsodre-p <tsodre-p@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/20 16:59:29 by tsodre-p          #+#    #+#             */
-/*   Updated: 2023/11/21 14:22:59 by tsodre-p         ###   ########.fr       */
+/*   Updated: 2023/11/22 09:30:38 by tsodre-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,11 +34,14 @@ ShrubberyCreationForm	&ShrubberyCreationForm::operator=(ShrubberyCreationForm co
 }
 /*-------------------------------------*/
 
+/*Constructors*/
 ShrubberyCreationForm::ShrubberyCreationForm(std::string name) : AForm("ShrubberyCreationForm", 145, 75)
 {
 	this->_targetName = name + "_shrubbery";
 }
+/*-------------------------------------*/
 
+/*Member Functions*/
 void	ShrubberyCreationForm::execute(Bureaucrat const & executor) const
 {
 	if (executor.getGrade() > 145)
@@ -49,52 +52,53 @@ void	ShrubberyCreationForm::execute(Bureaucrat const & executor) const
 		std::string	out_filename = _targetName;
 		const char *out_file = out_filename.c_str();
 		createFile.open(out_file);
-		std::cout << "                       O                         " << std::endl;
-		std::cout << "                      ***                        " << std::endl;
-		std::cout << "                     **O**                       " << std::endl;
-		std::cout << "                    *******                      " << std::endl;
-		std::cout << "                   *********                     " << std::endl;
-		std::cout << "                  ***********                    " << std::endl;
-		std::cout << "                   ******o**                     " << std::endl;
-		std::cout << "                  ***********                    " << std::endl;
-		std::cout << "                 ****o********                   " << std::endl;
-		std::cout << "                ***************                  " << std::endl;
-		std::cout << "               ****o***o********                 " << std::endl;
-		std::cout << "              *******************                " << std::endl;
-		std::cout << "            ***********************              " << std::endl;
-		std::cout << "               *****O***********                 " << std::endl;
-		std::cout << "              **********o********                " << std::endl;
-		std::cout << "             ****************o****               " << std::endl;
-		std::cout << "            **O********************              " << std::endl;
-		std::cout << "           ***********o********O****             " << std::endl;
-		std::cout << "         *****************************           " << std::endl;
-		std::cout << "             *********************               " << std::endl;
-		std::cout << "            ***o*******************              " << std::endl;
-		std::cout << "           ***********o*******o*****             " << std::endl;
-		std::cout << "          ***************************            " << std::endl;
-		std::cout << "         ***********************O*****           " << std::endl;
-		std::cout << "        ***O***************************          " << std::endl;
-		std::cout << "      ***********************************        " << std::endl;
-		std::cout << "           *************************             " << std::endl;
-		std::cout << "          *******o********o**********            " << std::endl;
-		std::cout << "         *****************************           " << std::endl;
-		std::cout << "        **************o****************          " << std::endl;
-		std::cout << "       *************************O*******         " << std::endl;
-		std::cout << "      *****O*****************************        " << std::endl;
-		std::cout << "    **************o************************      " << std::endl;
-		std::cout << "          ***************************            " << std::endl;
-		std::cout << "         *************o***************           " << std::endl;
-		std::cout << "        ***********o*******************          " << std::endl;
-		std::cout << "       **************************O******         " << std::endl;
-		std::cout << "      ***o******************O************        " << std::endl;
-		std::cout << "    ***o***********o****************o******      " << std::endl;
-		std::cout << "                      ###                        " << std::endl;
-		std::cout << "                      ###                        " << std::endl;
-		std::cout << "                      ###                        " << std::endl;
-		std::cout << "                  ###########                    " << std::endl;
-		std::cout << "                  ###########                    " << std::endl;
+		createFile << "                       O                         " << std::endl;
+		createFile << "                      ***                        " << std::endl;
+		createFile << "                     **O**                       " << std::endl;
+		createFile << "                    *******                      " << std::endl;
+		createFile << "                   *********                     " << std::endl;
+		createFile << "                  ***********                    " << std::endl;
+		createFile << "                   ******o**                     " << std::endl;
+		createFile << "                  ***********                    " << std::endl;
+		createFile << "                 ****o********                   " << std::endl;
+		createFile << "                ***************                  " << std::endl;
+		createFile << "               ****o***o********                 " << std::endl;
+		createFile << "              *******************                " << std::endl;
+		createFile << "            ***********************              " << std::endl;
+		createFile << "               *****O***********                 " << std::endl;
+		createFile << "              **********o********                " << std::endl;
+		createFile << "             ****************o****               " << std::endl;
+		createFile << "            **O********************              " << std::endl;
+		createFile << "           ***********o********O****             " << std::endl;
+		createFile << "         *****************************           " << std::endl;
+		createFile << "             *********************               " << std::endl;
+		createFile << "            ***o*******************              " << std::endl;
+		createFile << "           ***********o*******o*****             " << std::endl;
+		createFile << "          ***************************            " << std::endl;
+		createFile << "         ***********************O*****           " << std::endl;
+		createFile << "        ***O***************************          " << std::endl;
+		createFile << "      ***********************************        " << std::endl;
+		createFile << "           *************************             " << std::endl;
+		createFile << "          *******o********o**********            " << std::endl;
+		createFile << "         *****************************           " << std::endl;
+		createFile << "        **************o****************          " << std::endl;
+		createFile << "       *************************O*******         " << std::endl;
+		createFile << "      *****O*****************************        " << std::endl;
+		createFile << "    **************o************************      " << std::endl;
+		createFile << "          ***************************            " << std::endl;
+		createFile << "         *************o***************           " << std::endl;
+		createFile << "        ***********o*******************          " << std::endl;
+		createFile << "       **************************O******         " << std::endl;
+		createFile << "      ***o******************O************        " << std::endl;
+		createFile << "    ***o***********o****************o******      " << std::endl;
+		createFile << "                      ###                        " << std::endl;
+		createFile << "                      ###                        " << std::endl;
+		createFile << "                      ###                        " << std::endl;
+		createFile << "                  ###########                    " << std::endl;
+		createFile << "                  ###########                    " << std::endl;
 		createFile.close();
 	}
 	else
 		std::cout << "Cannot execute because Form is not signed!" << std::endl;
 }
+/*-------------------------------------*/

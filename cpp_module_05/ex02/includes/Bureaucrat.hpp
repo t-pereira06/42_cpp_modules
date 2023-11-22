@@ -6,7 +6,7 @@
 /*   By: tsodre-p <tsodre-p@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/16 11:28:38 by tsodre-p          #+#    #+#             */
-/*   Updated: 2023/11/21 14:16:45 by tsodre-p         ###   ########.fr       */
+/*   Updated: 2023/11/22 11:20:58 by tsodre-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,6 +37,7 @@ class Bureaucrat
 		void	incrementGrade();
 		void	decrementGrade();
 		void	signForm(AForm &form);
+		void	executeForm(AForm const &form);
 		class	GradeTooLowException : public std::exception
 		{
 			public:

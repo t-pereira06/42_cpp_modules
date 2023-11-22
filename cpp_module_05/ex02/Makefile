@@ -6,11 +6,11 @@
 #    By: tsodre-p <tsodre-p@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/11/14 10:07:15 by tsodre-p          #+#    #+#              #
-#    Updated: 2023/11/21 14:16:30 by tsodre-p         ###   ########.fr        #
+#    Updated: 2023/11/22 09:21:08 by tsodre-p         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = Form
+NAME = Forms
 CXX = c++ -g
 RM = rm -rf
 CXXFLAGS = -Wall -Wextra -Werror -Wno-shadow -Wshadow -std=c++98

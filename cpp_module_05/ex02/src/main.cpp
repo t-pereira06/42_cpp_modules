@@ -6,7 +6,7 @@
 /*   By: tsodre-p <tsodre-p@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/16 11:25:41 by tsodre-p          #+#    #+#             */
-/*   Updated: 2023/11/21 14:22:50 by tsodre-p         ###   ########.fr       */
+/*   Updated: 2023/11/22 09:38:02 by tsodre-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,14 +23,15 @@ int	main()
 		try
 		{
 			Bureaucrat	a("Cracked", 1);
-			Bureaucrat	b("John", 149);
+			Bureaucrat	b("John", 65);
 			ShrubberyCreationForm	c("Maths");
-			ShrubberyCreationForm	d("Science");
+			RobotomyRequestForm	d("Science");
 			std::cout << a;
 			a.decrementGrade();
 			std::cout << a << std::endl;
 			std::cout << c << std::endl;
 			a.signForm(c);
+			c.execute(a);
 			std::cout << std::endl;
 			std::cout << c;
 			std::cout << "-------------------------------------" << std::endl;
