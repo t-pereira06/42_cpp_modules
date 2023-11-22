@@ -6,7 +6,7 @@
 /*   By: tsodre-p <tsodre-p@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/20 16:59:04 by tsodre-p          #+#    #+#             */
-/*   Updated: 2023/11/22 10:43:16 by tsodre-p         ###   ########.fr       */
+/*   Updated: 2023/11/22 14:58:41 by tsodre-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,9 +53,9 @@ void	RobotomyRequestForm::execute(Bureaucrat const & executor) const
 		randNumber = rand() % 2;
 		std::cout << "Bzzzzzzzzzzzzzzzzzzzzzzzzz" << std::endl;
 		if (randNumber == 1)
-			std::cout << executor.getName() << "has been robotomized!" << std::endl;
+			std::cout << executor.getName() << " has been robotomized!" << std::endl;
 		else
-			std::cout << "Robotomy of " << executor.getName() << "has failed!" << std::endl;
+			std::cout << "Robotomy of " << executor.getName() << " has failed!" << std::endl;
 	}
 	else
 		std::cout << "Cannot execute because Form is not signed!" << std::endl;

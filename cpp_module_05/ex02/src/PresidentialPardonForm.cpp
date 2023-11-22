@@ -6,7 +6,7 @@
 /*   By: tsodre-p <tsodre-p@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/20 16:58:54 by tsodre-p          #+#    #+#             */
-/*   Updated: 2023/11/22 10:44:01 by tsodre-p         ###   ########.fr       */
+/*   Updated: 2023/11/22 15:00:39 by tsodre-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,7 +47,7 @@ void	PresidentialPardonForm::execute(Bureaucrat const & executor) const
 	if (executor.getGrade() > 25)
 		throw GradeTooLowException();
 	if (this->getSigned())
-		std::cout << executor.getName() << "has been pardoned by Zaphod Beeblebrox!" << std::endl;
+		std::cout << executor.getName() << " has been pardoned by Zaphod Beeblebrox!" << std::endl;
 	else
 		std::cout << "Cannot execute because Form is not signed!" << std::endl;
 }

@@ -6,7 +6,7 @@
 /*   By: tsodre-p <tsodre-p@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/16 11:25:41 by tsodre-p          #+#    #+#             */
-/*   Updated: 2023/11/22 09:38:02 by tsodre-p         ###   ########.fr       */
+/*   Updated: 2023/11/22 15:12:50 by tsodre-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,31 +19,65 @@
 
 int	main()
 {
+	std::cout << std::endl;
+	std::cout << "\033[33mTESTING SHRUBBERY_CREATION_FORM\033[0m" << std::endl;
+	std::cout << std::endl;
 	{
 		try
 		{
-			Bureaucrat	a("Cracked", 1);
-			Bureaucrat	b("John", 65);
+			Bureaucrat	a("Cracked", 15);
 			ShrubberyCreationForm	c("Maths");
-			RobotomyRequestForm	d("Science");
-			std::cout << a;
-			a.decrementGrade();
 			std::cout << a << std::endl;
 			std::cout << c << std::endl;
 			a.signForm(c);
+			a.executeForm(c);
 			c.execute(a);
 			std::cout << std::endl;
 			std::cout << c;
-			std::cout << "-------------------------------------" << std::endl;
-			std::cout << b;
-			b.decrementGrade();
-			std::cout << "droga" << std::endl;
-			d.execute(b);
-			std::cout << b << std::endl;
-			std::cout << d << std::endl;
-			b.signForm(d);
-			d.execute(b);
-			std::cout << d;
+		}
+		catch(const std::exception& e)
+		{
+			std::cerr << e.what() << std::endl;
+		}
+	}
+	std::cout << std::endl;
+	std::cout << "--------------------------------------------------" << std::endl << std::endl;
+	std::cout << "\033[33mTESTING ROBOTOMY_REQUEST_FORM\033[0m" << std::endl;
+	std::cout << std::endl;
+	{
+		try
+		{
+			Bureaucrat	a("Cracked", 40);
+			RobotomyRequestForm	c("Maths");
+			std::cout << a << std::endl;
+			std::cout << c << std::endl;
+			a.signForm(c);
+			a.executeForm(c);
+			c.execute(a);
+			std::cout << std::endl;
+			std::cout << c;
+		}
+		catch(const std::exception& e)
+		{
+			std::cerr << e.what() << std::endl;
+		}
+	}
+	std::cout << std::endl;
+	std::cout << "--------------------------------------------------" << std::endl << std::endl;
+	std::cout << "\033[33mTESTING PRESIDENTIAL_PARDON_FORM\033[0m" << std::endl;
+	std::cout << std::endl;
+	{
+		try
+		{
+			Bureaucrat	a("Cracked", 3);
+			PresidentialPardonForm	c("Maths");
+			std::cout << a << std::endl;
+			std::cout << c << std::endl;
+			a.signForm(c);
+			a.executeForm(c);
+			c.execute(a);
+			std::cout << std::endl;
+			std::cout << c;
 		}
 		catch(const std::exception& e)
 		{
