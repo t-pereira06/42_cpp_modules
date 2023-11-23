@@ -6,7 +6,7 @@
 /*   By: tsodre-p <tsodre-p@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/16 12:52:59 by tsodre-p          #+#    #+#             */
-/*   Updated: 2023/11/22 11:30:17 by tsodre-p         ###   ########.fr       */
+/*   Updated: 2023/11/23 14:06:01 by tsodre-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,7 @@ class AForm
 		int		getSignGrade() const;
 		int		getExecuteGrade() const;
 		void	beSigned(Bureaucrat &bureaucrat);
-		virtual void	execute(Bureaucrat const & executor) const = 0;
+		virtual void	execute(Bureaucrat const &executor) const = 0;
 		class	GradeTooLowException : public std::exception
 		{
 			public:
