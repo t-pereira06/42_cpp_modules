@@ -6,7 +6,7 @@
 /*   By: tsodre-p <tsodre-p@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/23 11:11:02 by tsodre-p          #+#    #+#             */
-/*   Updated: 2023/11/23 12:01:41 by tsodre-p         ###   ########.fr       */
+/*   Updated: 2023/11/23 15:28:50 by tsodre-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,9 +29,6 @@ class Intern
 		Intern(Intern const &copy);
 		Intern	&operator=(Intern const &copy);
 		/* ----------------------------------------- */
-		AForm	*makeRobotomy(std::string _target);
-		AForm	*makeShrubbery(std::string _target);
-		AForm	*makePresidential(std::string _target);
 		AForm	*makeForm(std::string _formName, std::string _target);
 };
 
