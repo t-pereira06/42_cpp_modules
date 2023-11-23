@@ -6,7 +6,7 @@
 /*   By: tsodre-p <tsodre-p@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/23 11:11:12 by tsodre-p          #+#    #+#             */
-/*   Updated: 2023/11/23 15:29:35 by tsodre-p         ###   ########.fr       */
+/*   Updated: 2023/11/23 16:31:13 by tsodre-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,12 +37,11 @@ Intern	&Intern::operator=(Intern const &copy)
 
 AForm	*Intern::makeForm(std::string _formName, std::string _target)
 {
-	int	index = 0;
+	int	index = 3;
 	std::string	levels[3] = {"robotomy request", "shrubbery creation", "presidential pardon"};
 	for(int	i = 0; i < 3; i++)
 		if (levels[i] == _formName)
 			index = i;
-	std::cout << "Intern could not find form!" << std::endl;
 	switch (index)
 	{
 		case 0:
@@ -55,6 +54,7 @@ AForm	*Intern::makeForm(std::string _formName, std::string _target)
 			std::cout << "Intern creates PresidentialPardonForm" << std::endl;
 			return (new PresidentialPardonForm(_target));
 	}
+	std::cout << "Intern could not find form!" << std::endl;
 	return (NULL);
 }
 /*-------------------------------------*/
