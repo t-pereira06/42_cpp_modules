@@ -6,7 +6,7 @@
 /*   By: tsodre-p <tsodre-p@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/16 11:25:41 by tsodre-p          #+#    #+#             */
-/*   Updated: 2023/11/23 12:29:00 by tsodre-p         ###   ########.fr       */
+/*   Updated: 2023/11/23 14:16:05 by tsodre-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,6 +32,7 @@ int	main()
 			std::cout << *shrubberyform;
 			cracked.signForm(*shrubberyform);
 			cracked.executeForm(*shrubberyform);
+			delete shrubberyform;
 		}
 		catch(const std::exception& e)
 		{
@@ -49,6 +50,7 @@ int	main()
 			Intern someRandomIntern;
 			AForm* rrf;
 			rrf = someRandomIntern.makeForm("maths creation", "Cracked");
+			delete rrf;
 		}
 		catch(const std::exception& e)
 		{
