@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Intern.cpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tsodre-p <tsodre-p@student.42.fr>          +#+  +:+       +#+        */
+/*   By: tsodre-p <tsodre-p@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/23 11:11:12 by tsodre-p          #+#    #+#             */
-/*   Updated: 2023/11/23 16:31:13 by tsodre-p         ###   ########.fr       */
+/*   Updated: 2023/11/26 23:04:50 by tsodre-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,6 +35,11 @@ Intern	&Intern::operator=(Intern const &copy)
 
 /*Member Functions*/
 
+const char	*Intern::NoFormException::what() const throw()
+{
+	return ("Intern could not find form!");
+}
+
 AForm	*Intern::makeForm(std::string _formName, std::string _target)
 {
 	int	index = 3;
@@ -54,7 +59,7 @@ AForm	*Intern::makeForm(std::string _formName, std::string _target)
 			std::cout << "Intern creates PresidentialPardonForm" << std::endl;
 			return (new PresidentialPardonForm(_target));
 	}
-	std::cout << "Intern could not find form!" << std::endl;
+	throw NoFormException();
 	return (NULL);
 }
 /*-------------------------------------*/

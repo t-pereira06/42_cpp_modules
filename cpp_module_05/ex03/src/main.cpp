@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tsodre-p <tsodre-p@student.42.fr>          +#+  +:+       +#+        */
+/*   By: tsodre-p <tsodre-p@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/16 11:25:41 by tsodre-p          #+#    #+#             */
-/*   Updated: 2023/11/23 16:31:52 by tsodre-p         ###   ########.fr       */
+/*   Updated: 2023/11/26 23:00:46 by tsodre-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,10 +47,14 @@ int	main()
 	{
 		try
 		{
-			Intern someRandomIntern;
-			AForm* rrf;
-			rrf = someRandomIntern.makeForm("maths creation", "Cracked");
-			delete rrf;
+			Bureaucrat	cracked("Cracked", 15);
+			Intern Intern;
+			AForm* shrubberyform;
+			shrubberyform = Intern.makeForm("maths", "Bender");
+			std::cout << *shrubberyform;
+			cracked.signForm(*shrubberyform);
+			cracked.executeForm(*shrubberyform);
+			delete shrubberyform;
 		}
 		catch(const std::exception& e)
 		{

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Intern.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tsodre-p <tsodre-p@student.42.fr>          +#+  +:+       +#+        */
+/*   By: tsodre-p <tsodre-p@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/23 11:11:02 by tsodre-p          #+#    #+#             */
-/*   Updated: 2023/11/23 15:28:50 by tsodre-p         ###   ########.fr       */
+/*   Updated: 2023/11/26 23:03:49 by tsodre-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,6 +30,11 @@ class Intern
 		Intern	&operator=(Intern const &copy);
 		/* ----------------------------------------- */
 		AForm	*makeForm(std::string _formName, std::string _target);
+		class	NoFormException : public std::exception
+		{
+			public:
+				const char *what() const throw();
+		};
 };
 
 #endif
