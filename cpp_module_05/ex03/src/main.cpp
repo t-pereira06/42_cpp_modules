@@ -6,7 +6,7 @@
 /*   By: tsodre-p <tsodre-p@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/16 11:25:41 by tsodre-p          #+#    #+#             */
-/*   Updated: 2023/11/26 23:00:46 by tsodre-p         ###   ########.fr       */
+/*   Updated: 2023/11/26 23:06:18 by tsodre-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ int	main()
 			Bureaucrat	cracked("Cracked", 15);
 			Intern Intern;
 			AForm* shrubberyform;
-			shrubberyform = Intern.makeForm("presidential pardon", "Bender");
+			shrubberyform = Intern.makeForm("shrubbery creation", "Bender");
 			std::cout << *shrubberyform;
 			cracked.signForm(*shrubberyform);
 			cracked.executeForm(*shrubberyform);
