@@ -6,7 +6,7 @@
 /*   By: tsodre-p <tsodre-p@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/29 09:35:08 by tsodre-p          #+#    #+#             */
-/*   Updated: 2023/11/29 12:44:07 by tsodre-p         ###   ########.fr       */
+/*   Updated: 2023/11/29 14:29:15 by tsodre-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,9 +15,9 @@
 
 #include <iostream>
 #include <string.h>
-#include <limits.h>
-#include <iomanip>
 #include <stdlib.h>
+#include <limits>
+#include <iomanip>
 
 class ScalarConverter
 {
@@ -37,8 +37,8 @@ class ScalarConverter
 		static bool	isPseudo(std::string &input);
 
 		//Printing
-		static void	printChar(char a);
-		static void	printInt(int a);
+		static void	printChar(char a, std::string &input);
+		static void	printInt(int a, std::string &input);
 		static void	printFloat(float a, std::string &input);
 		static void	printDouble(double a, std::string &input);
 		static void	printPseudo(std::string &input);
@@ -46,6 +46,7 @@ class ScalarConverter
 		//Controlling function
 		static void	printController(long double num, std::string &input);
 		static void	convert(std::string &input);
+		static bool	checkOverflow(std::string &input, char type);
 };
 
 #endif

@@ -6,7 +6,7 @@
 /*   By: tsodre-p <tsodre-p@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/29 09:38:41 by tsodre-p          #+#    #+#             */
-/*   Updated: 2023/11/29 14:13:39 by tsodre-p         ###   ########.fr       */
+/*   Updated: 2023/11/29 14:37:27 by tsodre-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -102,22 +102,37 @@ bool	ScalarConverter::isPseudo(std::string &input)
 
 /*Printing functions*/
 
-void	ScalarConverter::printChar(char a)
+void	ScalarConverter::printChar(char a, std::string &input)
 {
+	if (checkOverflow(input, 'c'))
+	{
+		std::cout << "char: " << "Overflow" << std::endl;
+		return;
+	}
 	if (std::isprint(a))
 		std::cout << "char: '" << a << "'"<< std::endl;
 	else
 		std::cout << "char: Non displayable" << std::endl;
 }
 
-void	ScalarConverter::printInt(int a)
+void	ScalarConverter::printInt(int a, std::string &input)
 {
+	if (checkOverflow(input, 'i'))
+	{
+		std::cout << "int: " << "Overflow" << std::endl;
+		return;
+	}
 	std::cout << "int: " << a << std::endl;
 }
 
 void	ScalarConverter::printFloat(float a, std::string &input)
 {
 	(void)input;
+	if (checkOverflow(input, 'f'))
+	{
+		std::cout << "float: " << "Overflow" << std::endl;
+		return;
+	}
 	if ((a - (int)a) == 0)
 		std::cout << "float: " << a << ".0f" << std::endl;
 	/* if ((input[input.find(".") + 1] == '0' && (input[input.find(".") + 2] == 'f' || input[input.find(".") + 2] == '0' || input[input.find(".") + 2] == '\0'))
@@ -130,6 +145,11 @@ void	ScalarConverter::printFloat(float a, std::string &input)
 void	ScalarConverter::printDouble(double a, std::string &input)
 {
 	(void)input;
+	if (checkOverflow(input, 'd'))
+	{
+		std::cout << "double: " << "Overflow" << std::endl;
+		return;
+	}
 	if ((a-(int)a)==0)
 		std::cout << "double: " << a << ".0" << std::endl;
 	/* if ((input[input.find(".") + 1] == '0' && (input[input.find(".") + 2] == 'f' || input[input.find(".") + 2] == '0' || input[input.find(".") + 2] == '\0'))
@@ -146,10 +166,25 @@ void	ScalarConverter::printDouble(double a, std::string &input)
 
 /* ----------------------------------------------------------- */
 
+bool	ScalarConverter::checkOverflow(std::string &input, char type)
+{
+	long double	number;
+	number = std::strtod(input.c_str(), NULL);
+	if (type == 'c')
+		return (number < std::numeric_limits<char>::min() || number > std::numeric_limits<char>::max());
+	if (type == 'i')
+		return (number < std::numeric_limits<int>::min() || number > std::numeric_limits<int>::max());
+	if (type == 'f')
+		return (number < std::numeric_limits<float>::min() || number > std::numeric_limits<float>::max());
+	if (type == 'd')
+		return (number < std::numeric_limits<double>::min() || number > std::numeric_limits<double>::max());
+	return (true);
+}
+
 void	ScalarConverter::printController(long double a, std::string &input)
 {
-	printChar(static_cast<char>(a));
-	printInt(static_cast<int>(a));
+	printChar(static_cast<char>(a), input);
+	printInt(static_cast<int>(a), input);
 	printFloat(static_cast<float>(a), input);
 	printDouble(static_cast<double>(a), input);
 }
