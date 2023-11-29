@@ -6,7 +6,7 @@
 /*   By: tsodre-p <tsodre-p@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/29 09:38:41 by tsodre-p          #+#    #+#             */
-/*   Updated: 2023/11/29 14:48:58 by tsodre-p         ###   ########.fr       */
+/*   Updated: 2023/11/29 15:25:32 by tsodre-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -135,9 +135,6 @@ void	ScalarConverter::printFloat(float a, std::string &input)
 	}
 	if ((a - (int)a) == 0)
 		std::cout << "float: " << a << ".0f" << std::endl;
-	/* if ((input[input.find(".") + 1] == '0' && (input[input.find(".") + 2] == 'f' || input[input.find(".") + 2] == '0' || input[input.find(".") + 2] == '\0'))
-		|| input.find(".") == std::string::npos)
-		std::cout << "float: " << a << ".0f" << std::endl; */
 	else
 		std::cout << "float: " << a << "f" << std::endl;
 }
@@ -152,9 +149,6 @@ void	ScalarConverter::printDouble(double a, std::string &input)
 	}
 	if ((a-(int)a)==0)
 		std::cout << "double: " << a << ".0" << std::endl;
-	/* if ((input[input.find(".") + 1] == '0' && (input[input.find(".") + 2] == 'f' || input[input.find(".") + 2] == '0' || input[input.find(".") + 2] == '\0'))
-		|| input.find(".") == std::string::npos)
-		std::cout << "double: " << a << ".0" << std::endl; */
 	else
 		std::cout << "double: " << a << std::endl;
 }
