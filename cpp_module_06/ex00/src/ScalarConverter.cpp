@@ -6,7 +6,7 @@
 /*   By: tsodre-p <tsodre-p@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/29 09:38:41 by tsodre-p          #+#    #+#             */
-/*   Updated: 2023/11/29 15:25:32 by tsodre-p         ###   ########.fr       */
+/*   Updated: 2023/11/29 17:11:35 by tsodre-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -127,7 +127,6 @@ void	ScalarConverter::printInt(int a, std::string &input)
 
 void	ScalarConverter::printFloat(float a, std::string &input)
 {
-	(void)input;
 	if (!checkOverflow(input, 'f'))
 	{
 		std::cout << "float: " << "Overflow" << std::endl;
@@ -141,7 +140,6 @@ void	ScalarConverter::printFloat(float a, std::string &input)
 
 void	ScalarConverter::printDouble(double a, std::string &input)
 {
-	(void)input;
 	if (!checkOverflow(input, 'd'))
 	{
 		std::cout << "double: " << "Overflow" << std::endl;
@@ -153,10 +151,13 @@ void	ScalarConverter::printDouble(double a, std::string &input)
 		std::cout << "double: " << a << std::endl;
 }
 
-/* void	ScalarConverter::printPseudo(std::string &input)
+void	ScalarConverter::printPseudo(std::string &input)
 {
-
-} */
+	std::cout << "char : inpossible" << std::endl;
+	std::cout << "int : impossible" << std::endl;
+	std::cout << "float: " << input << "f" << std::endl;
+	std::cout << "double: " << input << std::endl;
+}
 
 /* ----------------------------------------------------------- */
 
@@ -205,8 +206,8 @@ void	ScalarConverter::convert(std::string &input)
 		printController(std::strtod(input.c_str(), NULL), input);
 	else if (isDouble(input))
 		printController(std::strtod(input.c_str(), NULL), input);
-	/* else if (isPseudo(input))
-		printPseudo(input); */
+	else if (isPseudo(input))
+		printPseudo(input);
 	else
 		std::cerr << "Invalid type!" << std::endl;
 }
