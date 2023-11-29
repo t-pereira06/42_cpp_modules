@@ -6,7 +6,7 @@
 /*   By: tsodre-p <tsodre-p@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/29 10:09:00 by tsodre-p          #+#    #+#             */
-/*   Updated: 2023/11/29 11:55:00 by tsodre-p         ###   ########.fr       */
+/*   Updated: 2023/11/29 12:38:39 by tsodre-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,5 @@ int main(int argc, char **argv)
 		std::cerr << "Error: Run the program with 2 arguments! ./convert <string>" << std::endl;
 		return (0);
 	}
-	if (!ScalarConverter::isDouble(literal))
-		std::cerr << "Is not double type!" << std::endl;
+	ScalarConverter::convert(literal);
 }

@@ -6,7 +6,7 @@
 /*   By: tsodre-p <tsodre-p@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/29 09:38:41 by tsodre-p          #+#    #+#             */
-/*   Updated: 2023/11/29 11:57:31 by tsodre-p         ###   ########.fr       */
+/*   Updated: 2023/11/29 14:13:39 by tsodre-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,7 @@ bool	ScalarConverter::isChar(std::string &input)
 {
 	if(input.size() > 1)
 		return (false);
-	if (input[0] >= 49 && input[0] <= 57)
+	if (input[0] >= 48 && input[0] <= 57)
 		return (false);
 	if (input[0] < 33 || input[0] > 126)
 		return (false);
@@ -99,3 +99,73 @@ bool	ScalarConverter::isPseudo(std::string &input)
 }
 
 /* ----------------------------------------------------------- */
+
+/*Printing functions*/
+
+void	ScalarConverter::printChar(char a)
+{
+	if (std::isprint(a))
+		std::cout << "char: '" << a << "'"<< std::endl;
+	else
+		std::cout << "char: Non displayable" << std::endl;
+}
+
+void	ScalarConverter::printInt(int a)
+{
+	std::cout << "int: " << a << std::endl;
+}
+
+void	ScalarConverter::printFloat(float a, std::string &input)
+{
+	(void)input;
+	if ((a - (int)a) == 0)
+		std::cout << "float: " << a << ".0f" << std::endl;
+	/* if ((input[input.find(".") + 1] == '0' && (input[input.find(".") + 2] == 'f' || input[input.find(".") + 2] == '0' || input[input.find(".") + 2] == '\0'))
+		|| input.find(".") == std::string::npos)
+		std::cout << "float: " << a << ".0f" << std::endl; */
+	else
+		std::cout << "float: " << a << "f" << std::endl;
+}
+
+void	ScalarConverter::printDouble(double a, std::string &input)
+{
+	(void)input;
+	if ((a-(int)a)==0)
+		std::cout << "double: " << a << ".0" << std::endl;
+	/* if ((input[input.find(".") + 1] == '0' && (input[input.find(".") + 2] == 'f' || input[input.find(".") + 2] == '0' || input[input.find(".") + 2] == '\0'))
+		|| input.find(".") == std::string::npos)
+		std::cout << "double: " << a << ".0" << std::endl; */
+	else
+		std::cout << "double: " << a << std::endl;
+}
+
+/* void	ScalarConverter::printPseudo(std::string &input)
+{
+
+} */
+
+/* ----------------------------------------------------------- */
+
+void	ScalarConverter::printController(long double a, std::string &input)
+{
+	printChar(static_cast<char>(a));
+	printInt(static_cast<int>(a));
+	printFloat(static_cast<float>(a), input);
+	printDouble(static_cast<double>(a), input);
+}
+
+void	ScalarConverter::convert(std::string &input)
+{
+	if (isChar(input))
+		printController(input[0], input);
+	else if (isInt(input))
+		printController(std::strtod(input.c_str(), NULL), input);
+	else if (isFloat(input))
+		printController(std::strtod(input.c_str(), NULL), input);
+	else if (isDouble(input))
+		printController(std::strtod(input.c_str(), NULL), input);
+	/* else if (isPseudo(input))
+		printPseudo(input); */
+	else
+		std::cerr << "Invalid type!" << std::endl;
+}
