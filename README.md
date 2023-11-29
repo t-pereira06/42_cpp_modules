@@ -42,7 +42,7 @@ Description: Subtype polymorphism, abstract classes, interfaces
 ### Module 05
 
 - Folder: [cpp_module_05](cpp_module_05/)
-- Grade: not graded yet
+- Grade: 100%
 
 Description: Repetition and Exceptions
 
