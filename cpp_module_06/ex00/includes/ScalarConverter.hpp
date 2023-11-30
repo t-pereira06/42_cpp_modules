@@ -6,7 +6,7 @@
 /*   By: tsodre-p <tsodre-p@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/29 09:35:08 by tsodre-p          #+#    #+#             */
-/*   Updated: 2023/11/29 14:29:15 by tsodre-p         ###   ########.fr       */
+/*   Updated: 2023/11/30 12:23:00 by tsodre-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,14 +21,14 @@
 
 class ScalarConverter
 {
-	public:
+	private:
 		/* Orthodox Canonical Form */
 		ScalarConverter();
 		~ScalarConverter();
 		ScalarConverter(ScalarConverter const &copy);
 		ScalarConverter	&operator=(ScalarConverter const &copy);
 		/* ----------------------- */
-
+	public:
 		//Checking
 		static bool	isChar(std::string &input);
 		static bool	isInt(std::string &nput);
