@@ -6,7 +6,7 @@
 /*   By: tsodre-p <tsodre-p@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/30 09:16:30 by tsodre-p          #+#    #+#             */
-/*   Updated: 2023/11/30 09:39:06 by tsodre-p         ###   ########.fr       */
+/*   Updated: 2023/11/30 11:56:26 by tsodre-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,5 +38,5 @@ uintptr_t	Serializer::serialize(Data* ptr)
 
 Data*	Serializer::deserialize(uintptr_t raw)
 {
-	return ((Data*)(raw));
+	return ((Data*)raw);
 }
