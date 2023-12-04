@@ -6,7 +6,7 @@
 /*   By: tsodre-p <tsodre-p@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/04 10:00:48 by tsodre-p          #+#    #+#             */
-/*   Updated: 2023/12/04 11:58:24 by tsodre-p         ###   ########.fr       */
+/*   Updated: 2023/12/04 14:14:13 by tsodre-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,4 +20,5 @@ int	main(void)
 	identify(base);
 	std::cout << "Using reference function:" << std::endl;
 	identify(*base);
+	delete base;
 }
