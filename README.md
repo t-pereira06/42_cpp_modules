@@ -28,7 +28,7 @@ Description: Ad-hoc polymorphism, operator overloading and Orthodox Canonical cl
 ### Module 03
 
 - Folder: [cpp_module_03](cpp_module_03/)
-- Grade: 100%
+- Grade: 90%
 
 Description: Learning about inheritance in classes.
 
