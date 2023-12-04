@@ -6,7 +6,7 @@
 /*   By: tsodre-p <tsodre-p@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/30 09:16:32 by tsodre-p          #+#    #+#             */
-/*   Updated: 2023/11/30 12:23:06 by tsodre-p         ###   ########.fr       */
+/*   Updated: 2023/12/04 09:20:50 by tsodre-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,10 @@
 
 struct Data
 {
-	int	number;
+	int number;
+	std::string string;
+	char character;
+	bool truth;
 };
 
 class Serializer
