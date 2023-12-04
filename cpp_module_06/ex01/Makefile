@@ -6,11 +6,11 @@
 #    By: tsodre-p <tsodre-p@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/11/14 10:07:15 by tsodre-p          #+#    #+#              #
-#    Updated: 2023/12/04 09:15:33 by tsodre-p         ###   ########.fr        #
+#    Updated: 2023/12/04 09:29:55 by tsodre-p         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = serializer
+NAME = ex01
 CXX = c++ -g
 RM = rm -rf
 CXXFLAGS = -Wall -Wextra -Werror -Wno-shadow -Wshadow -std=c++98
