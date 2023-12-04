@@ -6,11 +6,11 @@
 #    By: tsodre-p <tsodre-p@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/12/04 09:29:35 by tsodre-p          #+#    #+#              #
-#    Updated: 2023/12/04 10:05:11 by tsodre-p         ###   ########.fr        #
+#    Updated: 2023/12/04 11:56:13 by tsodre-p         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = ex03
+NAME = ex02
 CXX = c++ -g
 RM = rm -rf
 CXXFLAGS = -Wall -Wextra -Werror -Wno-shadow -Wshadow -std=c++98

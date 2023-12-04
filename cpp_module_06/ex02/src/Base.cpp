@@ -6,7 +6,7 @@
 /*   By: tsodre-p <tsodre-p@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/04 09:34:59 by tsodre-p          #+#    #+#             */
-/*   Updated: 2023/12/04 10:20:53 by tsodre-p         ###   ########.fr       */
+/*   Updated: 2023/12/04 11:55:58 by tsodre-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,14 +52,19 @@ void identify(Base* p)
 		std::cout << "P is pointing to A" << std::endl;
 		return;
 	}
-	if (BPtr)
+	else if (BPtr)
 	{
 		std::cout << "P is pointing to B" << std::endl;
 		return;
 	}
-	if (CPtr)
+	else if (CPtr)
 	{
 		std::cout << "P is pointing to C" << std::endl;
+		return;
+	}
+	else
+	{
+		std::cout << "Pointer is NULL" << std::endl;
 		return;
 	}
 }
