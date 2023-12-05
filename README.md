@@ -49,7 +49,7 @@ Description: Repetition and Exceptions
 ### Module 06
 
 - Folder: [cpp_module_06](cpp_module_06/)
-- Grade: not graded yet
+- Grade: 100%
 
 Description: C++ casts
 
