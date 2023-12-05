@@ -6,12 +6,14 @@
 /*   By: tsodre-p <tsodre-p@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/05 09:25:30 by tsodre-p          #+#    #+#             */
-/*   Updated: 2023/12/05 09:59:15 by tsodre-p         ###   ########.fr       */
+/*   Updated: 2023/12/05 12:30:34 by tsodre-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef ITER_HPP
 # define ITER_HPP
+
+#pragma once
 
 #include <iostream>
 
