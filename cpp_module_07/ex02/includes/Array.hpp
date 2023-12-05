@@ -6,7 +6,7 @@
 /*   By: tsodre-p <tsodre-p@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/05 14:46:00 by tsodre-p          #+#    #+#             */
-/*   Updated: 2023/12/05 15:04:14 by tsodre-p         ###   ########.fr       */
+/*   Updated: 2023/12/05 15:11:03 by tsodre-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ template <class T> class Array
 {
 	private:
 		T	*array;
-		unsigned int	number;
+		unsigned int	size;
 	public:
 		/* Orthodox Canonical Form */
 		Array();
@@ -28,7 +28,7 @@ template <class T> class Array
 		Array(Array const &copy);
 		Array	&operator=(Array const &copy);
 		/* ----------------------------------------- */
-		Array(unsinged int n);
+		Array(unsigned int n);
 		size_t	size() const;
 		T	&operator[](unsigned int index);
 		class	OutOfBounds : public std::exception
