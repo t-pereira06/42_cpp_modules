@@ -6,7 +6,7 @@
 /*   By: tsodre-p <tsodre-p@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/05 09:25:30 by tsodre-p          #+#    #+#             */
-/*   Updated: 2023/12/05 09:54:44 by tsodre-p         ###   ########.fr       */
+/*   Updated: 2023/12/05 09:56:35 by tsodre-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,9 +26,9 @@ template <typename T> void decrement(T a)
 	::print(a);
 }
 
-template <typename T> void iter(T *array, int lenght, void (*func)(T))
+template <typename T> void iter(T *array, size_t lenght, void (*func)(T))
 {
-	for (int i = 0; i < lenght; i++)
+	for (size_t i = 0; i < lenght; i++)
 		func(array[i]);
 }
 
