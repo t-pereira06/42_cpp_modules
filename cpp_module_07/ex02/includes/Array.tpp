@@ -6,7 +6,7 @@
 /*   By: tsodre-p <tsodre-p@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/05 14:44:03 by tsodre-p          #+#    #+#             */
-/*   Updated: 2023/12/06 10:06:08 by tsodre-p         ###   ########.fr       */
+/*   Updated: 2023/12/06 10:51:12 by tsodre-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,18 +22,18 @@ template <class T> Array<T>::Array() : size(0)
 template <class T> Array<T>::Array(Array const &copy) : size(copy.size)
 {
 	this->array = new T[this->size];
-	for (int i = 0; i < this->size; i++)
+	for (unsigned int i = 0; i < this->size; i++)
 		this->array[i] = copy.array[i];
 }
 
 template <class T> Array<T>	&Array<T>::operator=(Array const &copy)
 {
-	if (this != *copy)
+	if (this != &copy)
 	{
 		delete this->array;
 		this->array = new T[copy.size];
 		this->size = copy.size;
-		for (int i = 0; i < copy.size; i++)
+		for (unsigned int i = 0; i < copy.size; i++)
 			this->array[i] = copy.array[i];
 	}
 	return (*this);
