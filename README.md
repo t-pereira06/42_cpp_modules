@@ -56,7 +56,7 @@ Description: C++ casts
 ### Module 07
 
 - Folder: [cpp_module_07](cpp_module_07/)
-- Grade: not graded yet
+- Grade: 100%
 
 Description: C++ templates
 
