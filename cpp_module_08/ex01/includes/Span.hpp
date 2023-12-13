@@ -6,7 +6,7 @@
 /*   By: tsodre-p <tsodre-p@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/13 15:28:36 by tsodre-p          #+#    #+#             */
-/*   Updated: 2023/12/13 16:41:28 by tsodre-p         ###   ########.fr       */
+/*   Updated: 2023/12/13 17:05:50 by tsodre-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,8 +34,8 @@ class Span
 
 		Span(unsigned int number);
 		void	addNumber(int number);
-		int	shortestSpan();
-		int	longestSpan();
+		unsigned int	shortestSpan();
+		unsigned int	longestSpan();
 		void	printVector();
 		class ContainerFullException : std::exception
 		{

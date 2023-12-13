@@ -6,7 +6,7 @@
 /*   By: tsodre-p <tsodre-p@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/13 15:29:00 by tsodre-p          #+#    #+#             */
-/*   Updated: 2023/12/13 16:41:32 by tsodre-p         ###   ########.fr       */
+/*   Updated: 2023/12/13 17:11:54 by tsodre-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,19 +42,31 @@ void	Span::addNumber(int number)
 	this->vector.push_back(number);
 }
 
-/* int	Span::shortestSpan()
+unsigned int	Span::shortestSpan()
 {
 	if (this->N < 2)
 		throw LowStoredNumbersException();
-} */
+	unsigned int	shortestDistance;
+	std::vector<int> sortedVector = this->vector;
+	std::sort(sortedVector.begin(), sortedVector.end());
+	shortestDistance = sortedVector[1] - sortedVector[0];
+	for (size_t i =  1; i < sortedVector.size() - 1; i++)
+	{
+		unsigned int	result = sortedVector[i + 1] - sortedVector[i];
+		shortestDistance = std::min(shortestDistance, result);
+	}
+	return (shortestDistance);
+}
 
-int	Span::longestSpan()
+unsigned int	Span::longestSpan()
 {
 	if (this->N < 2)
 		throw LowStoredNumbersException();
 	std::vector<int> sortedVector = this->vector;
 	std::sort(sortedVector.begin(), sortedVector.end());
-	return (sortedVector.back() - sortedVector.front());
+	int	min = *(std::min_element(this->vector.begin(), this->vector.end()));
+	int	max = *(std::max_element(this->vector.begin(), this->vector.end()));
+	return (max - min);
 }
 
 void	Span::printVector()
