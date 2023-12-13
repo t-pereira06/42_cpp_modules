@@ -6,7 +6,7 @@
 /*   By: tsodre-p <tsodre-p@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/13 15:29:00 by tsodre-p          #+#    #+#             */
-/*   Updated: 2023/12/13 17:11:54 by tsodre-p         ###   ########.fr       */
+/*   Updated: 2023/12/13 17:13:42 by tsodre-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,9 +64,9 @@ unsigned int	Span::longestSpan()
 		throw LowStoredNumbersException();
 	std::vector<int> sortedVector = this->vector;
 	std::sort(sortedVector.begin(), sortedVector.end());
-	int	min = *(std::min_element(this->vector.begin(), this->vector.end()));
-	int	max = *(std::max_element(this->vector.begin(), this->vector.end()));
-	return (max - min);
+	int	minValue = *(std::min_element(this->vector.begin(), this->vector.end()));
+	int	maxValue = *(std::max_element(this->vector.begin(), this->vector.end()));
+	return (maxValue - minValue);
 }
 
 void	Span::printVector()
