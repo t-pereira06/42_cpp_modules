@@ -6,7 +6,7 @@
 /*   By: tsodre-p <tsodre-p@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/13 15:29:00 by tsodre-p          #+#    #+#             */
-/*   Updated: 2023/12/13 17:13:42 by tsodre-p         ###   ########.fr       */
+/*   Updated: 2023/12/14 15:22:56 by tsodre-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,10 +31,12 @@ Span	&Span::operator=(Span const &copy)
 }
 /* ----------------------------------------------------------- */
 
-/*Member Functions*/
+/*Constructors*/
 Span::Span(unsigned int number) : N(number){}
-
 /* ----------------------------------------------------------- */
+
+/*Member Functions*/
+
 void	Span::addNumber(int number)
 {
 	if (this->vector.size() >= this->N)
@@ -50,7 +52,7 @@ unsigned int	Span::shortestSpan()
 	std::vector<int> sortedVector = this->vector;
 	std::sort(sortedVector.begin(), sortedVector.end());
 	shortestDistance = sortedVector[1] - sortedVector[0];
-	for (size_t i =  1; i < sortedVector.size() - 1; i++)
+	for (size_t i = 1; i < sortedVector.size() - 1; i++)
 	{
 		unsigned int	result = sortedVector[i + 1] - sortedVector[i];
 		shortestDistance = std::min(shortestDistance, result);
@@ -64,8 +66,8 @@ unsigned int	Span::longestSpan()
 		throw LowStoredNumbersException();
 	std::vector<int> sortedVector = this->vector;
 	std::sort(sortedVector.begin(), sortedVector.end());
-	int	minValue = *(std::min_element(this->vector.begin(), this->vector.end()));
-	int	maxValue = *(std::max_element(this->vector.begin(), this->vector.end()));
+	unsigned int	minValue = *(std::min_element(this->vector.begin(), this->vector.end()));
+	unsigned int	maxValue = *(std::max_element(this->vector.begin(), this->vector.end()));
 	return (maxValue - minValue);
 }
 
@@ -73,9 +75,18 @@ void	Span::printVector()
 {
 	std::cout << "[ ";
 	for (std::vector<int>::iterator ptr = this->vector.begin(); ptr != this->vector.end(); ptr++)
-	{
-		std::cout << *ptr;
-		std::cout << ", ";
-	}
+		std::cout << *ptr << ", ";
 	std::cout << "]" << std::endl;
 }
+
+void	Span::generateRandomNumbers(int nNumbers)
+{
+	std::srand(std::time(NULL));
+	std::vector<int> randomNumbers;
+	for (int i = 0; i < nNumbers; i++)
+		randomNumbers.push_back(rand());
+	if (this->vector.size() + randomNumbers.size() > this->N)
+		throw ContainerFullException();
+	this->vector.insert(this->vector.end(), randomNumbers.begin(), randomNumbers.end());
+}
+/* ----------------------------------------------------------- */

@@ -6,7 +6,7 @@
 /*   By: tsodre-p <tsodre-p@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/13 15:28:36 by tsodre-p          #+#    #+#             */
-/*   Updated: 2023/12/13 17:05:50 by tsodre-p         ###   ########.fr       */
+/*   Updated: 2023/12/14 15:17:26 by tsodre-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,7 @@
 #include <vector>
 #include <list>
 #include <iterator>
+#include <ctime>
 
 class Span
 {
@@ -32,11 +33,16 @@ class Span
 		Span	&operator=(Span const &copy);
 		/* ----------------------- */
 
+		/* Constructors */
 		Span(unsigned int number);
+		/* ----------------------- */
+
+		/* Member Functions */
 		void	addNumber(int number);
 		unsigned int	shortestSpan();
 		unsigned int	longestSpan();
 		void	printVector();
+		void	generateRandomNumbers(int nNumbers);
 		class ContainerFullException : std::exception
 		{
 			public:
@@ -53,6 +59,7 @@ class Span
 					return ("Not enough numbers stored!");
 				}
 		};
+		/* ----------------------- */
 };
 
 #endif
