@@ -6,7 +6,7 @@
 /*   By: tsodre-p <tsodre-p@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/13 15:29:03 by tsodre-p          #+#    #+#             */
-/*   Updated: 2023/12/18 09:21:01 by tsodre-p         ###   ########.fr       */
+/*   Updated: 2023/12/18 09:29:28 by tsodre-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,7 @@ int	main (void)
 		sp.addNumber(71);
 		sp.addNumber(12);
 		sp.addNumber(45);*/
-		sp.generateRandomNumbers(6);
+		sp.generateRandomNumbers(5);
 		sp.printVector();
 		std::cout << "The longest span is " << sp.longestSpan() << std::endl;
 		std::cout << "The shortest span is " << sp.shortestSpan() << std::endl;

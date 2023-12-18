@@ -6,7 +6,7 @@
 /*   By: tsodre-p <tsodre-p@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/13 15:29:00 by tsodre-p          #+#    #+#             */
-/*   Updated: 2023/12/18 09:26:20 by tsodre-p         ###   ########.fr       */
+/*   Updated: 2023/12/18 09:31:11 by tsodre-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,7 +46,7 @@ void	Span::addNumber(int number)
 
 unsigned int	Span::shortestSpan()
 {
-	if (this->N < 2)
+	if (this->vector.size() < 2)
 		throw LowStoredNumbersException();
 	unsigned int	shortestDistance;
 	std::vector<int> sortedVector = this->vector;
@@ -62,7 +62,7 @@ unsigned int	Span::shortestSpan()
 
 unsigned int	Span::longestSpan()
 {
-	if (this->N < 2)
+	if (this->vector.size() < 2)
 		throw LowStoredNumbersException();
 	std::vector<int> sortedVector = this->vector;
 	std::sort(sortedVector.begin(), sortedVector.end());
