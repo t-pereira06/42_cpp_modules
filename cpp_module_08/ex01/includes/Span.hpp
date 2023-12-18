@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Span.hpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tsodre-p <tsodre-p@student.42porto.com>    +#+  +:+       +#+        */
+/*   By: tsodre-p <tsodre-p@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/13 15:28:36 by tsodre-p          #+#    #+#             */
-/*   Updated: 2023/12/14 15:27:55 by tsodre-p         ###   ########.fr       */
+/*   Updated: 2023/12/18 09:26:48 by tsodre-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,7 +43,7 @@ class Span
 		unsigned int	longestSpan();
 		void	printVector();
 		void	generateRandomNumbers(int nNumbers);
-		class ContainerFullException : std::exception
+		class ContainerFullException : public std::exception
 		{
 			public:
 				const char *what() const throw()
@@ -51,7 +51,7 @@ class Span
 					return ("Vector is full!");
 				}
 		};
-		class LowStoredNumbersException : std::exception
+		class LowStoredNumbersException : public std::exception
 		{
 			public:
 				const char *what() const throw()
