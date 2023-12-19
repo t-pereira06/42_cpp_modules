@@ -8,7 +8,8 @@ Welcome to the C++ Module Repository!
 
 - Folder: [cpp_module_00](cpp_module_00/)
 - Grade: 100%
-![Screenshot from 2023-12-19 09-19-15](https://github.com/t-pereira06/42_cpp_modules/assets/118270669/c5febce1-732b-4b48-a17a-36b3aa444f4c)
+![100_percent](https://github.com/t-pereira06/42_cpp_modules/assets/118270669/adeaa1d5-9340-48d1-b42c-a8e7a9296098)
+
 
 Description: Namespaces, classes, member functions, stdio streams, initialization lists, static, const.
 
