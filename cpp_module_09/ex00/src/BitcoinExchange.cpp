@@ -6,7 +6,7 @@
 /*   By: tsodre-p <tsodre-p@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/19 09:38:39 by tsodre-p          #+#    #+#             */
-/*   Updated: 2023/12/19 15:43:31 by tsodre-p         ###   ########.fr       */
+/*   Updated: 2023/12/19 15:46:24 by tsodre-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -98,5 +98,10 @@ int	BitcoinExchange::checkDate(const std::string& checkDate)
 		return 1; // checkDate is after date1
 	else
 		return 0; // dates are equal
+
+	/*
+	CHECK IF THE DATE DOES NOT CORRESPOND ON THE DATABASE, THEN CHECK
+	IF (DATEBEHIND < MYDATE && DATEAHEAD > MYDATE)
+		RETURN DATEBEHIND*/
 }
 /* ----------------------------------------------------------- */
