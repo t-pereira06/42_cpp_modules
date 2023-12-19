@@ -63,7 +63,7 @@ Description: C++ templates
 ### Module 08
 
 - Folder: [cpp_module_08](cpp_module_08/)
-- Grade: not graded yet
+- Grade: 100%
 
 Description: Templated containers, iterators, algorithms
 
