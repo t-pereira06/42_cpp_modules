@@ -29,7 +29,8 @@ Description: Ad-hoc polymorphism, operator overloading and Orthodox Canonical cl
 ### Module 03
 
 - Folder: [cpp_module_03](cpp_module_03/)
-- Grade: 90%
+- Grade: ![90_percent](https://github.com/t-pereira06/42_cpp_modules/assets/118270669/b1dbc734-1010-40da-b7f2-b9ba9ac51715)
+
 
 Description: Learning about inheritance in classes.
 
