@@ -6,7 +6,7 @@
 /*   By: tsodre-p <tsodre-p@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/19 09:38:39 by tsodre-p          #+#    #+#             */
-/*   Updated: 2023/12/20 12:39:00 by tsodre-p         ###   ########.fr       */
+/*   Updated: 2023/12/20 12:51:01 by tsodre-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -106,17 +106,17 @@ int	BitcoinExchange::checkIfDateCorrect(const std::string& checkDate)
 {
 	std::string date1 = "2009-01-02";
 	if (!correctDateFormat(checkDate))
-		return -1;
-	if (checkDate < date1)
-		return -1; // checkDate is before date1
+		return 0;
+	if ((checkDate < date1))
+		return 0; // checkDate is before date1
 	else if (checkDate > date1)
-		return 0; // checkDate is after date1
+		return 1; // checkDate is after date1
 
 	/*
 	CHECK IF THE DATE DOES NOT CORRESPOND ON THE DATABASE, THEN CHECK
 	IF (DATEBEHIND < MYDATE && DATEAHEAD > MYDATE)
 		RETURN DATEBEHIND*/
-	return 0;
+	return 1;
 }
 
 int	BitcoinExchange::checkIfIsDigit(std::string string)
@@ -140,26 +140,26 @@ int	BitcoinExchange::correctDateFormat(const std::string& checkDate)
 	std::string day;
 	i = checkDate.find("-");
 	if (i == std::string::npos)
-		return 1;
+		return 0;
 	year = checkDate.substr(0, i);
 	month = checkDate.substr(i + 1, (checkDate.find("-", i + 1) - (i + 1)));
 	i = checkDate.find("-", i + 1);
 	if (i == std::string::npos)
-		return 1;
+		return 0;
 	day = checkDate.substr(i + 1);
 	if (!checkIfIsDigit(year) || !checkIfIsDigit(month) || !checkIfIsDigit(day))
-		return 1;
+		return 0;
 	if (year.size() != 4 || month.size() != 2 || day.size() != 2)
-		return 1;
+		return 0;
 	if (atoi(month.c_str()) < 1 || atoi(month.c_str()) > 12)
-		return 1;
-	if (!checkday(day))
-		return 1;
-	return 0;
+		return 0;
+	/* if (!checkday(day))
+		return 1; */
+	return 1;
 }
 
-int	BitcoinExchange::checkDay(std::string day)
+/* int	BitcoinExchange::checkDay(std::string day)
 {
 
-}
+} */
 /* ----------------------------------------------------------- */
