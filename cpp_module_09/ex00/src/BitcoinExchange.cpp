@@ -6,7 +6,7 @@
 /*   By: tsodre-p <tsodre-p@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/19 09:38:39 by tsodre-p          #+#    #+#             */
-/*   Updated: 2023/12/20 09:22:20 by tsodre-p         ###   ########.fr       */
+/*   Updated: 2023/12/20 11:44:58 by tsodre-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -100,16 +100,38 @@ void	BitcoinExchange::parsingInputFile(std::string file)
 int	BitcoinExchange::checkIfDateCorrect(const std::string& checkDate)
 {
 	std::string date1 = "2009-01-02";
+	if (!correctDateFormat(checkDate))
+		return -1;
 	if (checkDate < date1)
 		return -1; // checkDate is before date1
 	else if (checkDate > date1)
-		return 1; // checkDate is after date1
-	else
-		return 0; // dates are equal
+		return 0; // checkDate is after date1
 
 	/*
 	CHECK IF THE DATE DOES NOT CORRESPOND ON THE DATABASE, THEN CHECK
 	IF (DATEBEHIND < MYDATE && DATEAHEAD > MYDATE)
 		RETURN DATEBEHIND*/
+	return 0;
+}
+
+int	BitcoinExchange::correctDateFormat(const std::string& checkDate)
+{
+	size_t	i;
+	std::string	year;
+	std::string	month;
+	std::string day;
+	i = checkDate.find("-");
+	if (i == std::string::npos)
+		return 1;
+	year = checkDate.substr(0, i);
+	month = checkDate.substr(i + 1, (checkDate.find("-", i + 1) - (i + 1)));
+	i = checkDate.find("-", i + 1);
+	if (i == std::string::npos)
+		return 1;
+	day = checkDate.substr(i + 1);
+	std::cout << "Year: " << year << std::endl;
+	std::cout << "Month: " << month << std::endl;
+	std::cout << "Day: " << day << std::endl;
+	return 0;
 }
 /* ----------------------------------------------------------- */
