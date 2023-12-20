@@ -6,7 +6,7 @@
 /*   By: tsodre-p <tsodre-p@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/19 09:38:39 by tsodre-p          #+#    #+#             */
-/*   Updated: 2023/12/20 12:06:54 by tsodre-p         ###   ########.fr       */
+/*   Updated: 2023/12/20 12:22:01 by tsodre-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -114,12 +114,15 @@ int	BitcoinExchange::checkIfDateCorrect(const std::string& checkDate)
 	return 0;
 }
 
-int	BitcoinExchange::checkIfIsDigit(std::string string)
+int	BitcoinExchange::checkIfIsDigit(std::string *string)
 {
-	for (size_t i = 0; i < string.size();i++)
+	for (size_t i = 0; i < string.length();i++)
 	{
 		if (!isdigit(string[i]))
+		{
+			std::cout << "im here" << std::endl;
 			return 1;
+		}
 	}
 	return 0;
 }
@@ -139,12 +142,15 @@ int	BitcoinExchange::correctDateFormat(const std::string& checkDate)
 	if (i == std::string::npos)
 		return 1;
 	day = checkDate.substr(i + 1);
+	std::cerr << "year: => " << year << std::endl;
+	std::cerr << "month: => " << month << std::endl;
+	std::cerr << "day: => " << day << std::endl;
 	if (!checkIfIsDigit(year) || !checkIfIsDigit(month) || !checkIfIsDigit(day))
 		return 1;
-	if (year.size() != 4 || month.size() != 2 || day.size() != 2)
-		return 1;
-	if (atoi(month.c_str()) < 1 || atoi(month.c_str()) > 12)
-		return 1;
+	/* if (year.size() != 4 || month.size() != 2 || day.size() != 2)
+		return 1; */
+	/* if (atoi(month.c_str()) < 1 || atoi(month.c_str()) > 12)
+		return 1; */
 	return 0;
 }
 
