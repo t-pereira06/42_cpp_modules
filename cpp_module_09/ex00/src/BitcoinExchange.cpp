@@ -6,7 +6,7 @@
 /*   By: tsodre-p <tsodre-p@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/19 09:38:39 by tsodre-p          #+#    #+#             */
-/*   Updated: 2023/12/20 12:31:29 by tsodre-p         ###   ########.fr       */
+/*   Updated: 2023/12/20 12:39:00 by tsodre-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -151,13 +151,15 @@ int	BitcoinExchange::correctDateFormat(const std::string& checkDate)
 		return 1;
 	if (year.size() != 4 || month.size() != 2 || day.size() != 2)
 		return 1;
-	/* if (atoi(month.c_str()) < 1 || atoi(month.c_str()) > 12)
-		return 1; */
+	if (atoi(month.c_str()) < 1 || atoi(month.c_str()) > 12)
+		return 1;
+	if (!checkday(day))
+		return 1;
 	return 0;
 }
 
-/* int	BitcoinExchange::checkDay(std::string day)
+int	BitcoinExchange::checkDay(std::string day)
 {
 
-} */
+}
 /* ----------------------------------------------------------- */
