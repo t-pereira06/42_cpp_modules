@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   BitcoinExchange.hpp                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tsodre-p <tsodre-p@student.42.fr>          +#+  +:+       +#+        */
+/*   By: tsodre-p <tsodre-p@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/19 09:17:44 by tsodre-p          #+#    #+#             */
-/*   Updated: 2023/12/20 14:22:15 by tsodre-p         ###   ########.fr       */
+/*   Updated: 2023/12/20 15:41:41 by tsodre-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,7 @@
 #include <fstream>
 #include <stdlib.h>
 #include <stdio.h>
+#include <typeinfo>
 
 class BitcoinExchange
 {
@@ -42,15 +43,14 @@ class BitcoinExchange
 
 		/* Checks for the input file */
 		int		checkDate(const std::string& checkDate);
-		int		checkValue(std::string value);
+		int		checkValue(double value, std::string valueString);
 		int		correctDateFormat(const std::string& checkDate);
 		int		checkDay(int day, int month, int year);
 		int		checkIfIsDigit(std::string string);
 		int		checkIfDateCorrect(const std::string& checkDate);
 		void	parsingInputFile(std::string file);
-
-
 		/* ----------------------- */
+		void	execute(std::string date, std::string value);
 
 };
 

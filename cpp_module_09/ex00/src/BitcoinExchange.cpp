@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   BitcoinExchange.cpp                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tsodre-p <tsodre-p@student.42.fr>          +#+  +:+       +#+        */
+/*   By: tsodre-p <tsodre-p@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/19 09:38:39 by tsodre-p          #+#    #+#             */
-/*   Updated: 2023/12/20 14:23:03 by tsodre-p         ###   ########.fr       */
+/*   Updated: 2023/12/20 15:56:47 by tsodre-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -84,20 +84,21 @@ void	BitcoinExchange::parsingInputFile(std::string file)
 		while (1)
 		{
 			i = line.find("|");
-			if (i == std::string::npos)
+			if (i == std::string::npos || i == line.size() - 1)
 			{
 				std::cerr << "Error: bad input => " << line << std::endl;
 				break;
 			}
 			date = line.substr(0, i - 1);
-			value = line.substr(i + 1);
+			value = line.substr(i + 2);
 			if (!checkIfDateCorrect(date))
 			{
 				std::cerr << "Error: bad date => " << date << std::endl;
 				break;
 			}
-			if (!checkValue(value))
+			if (!checkValue(std::strtod(value.c_str(), NULL), value))
 				break;
+			execute(date, value);
 			break;
 		}
 
@@ -128,10 +129,7 @@ int	BitcoinExchange::checkIfIsDigit(std::string string)
 	for (size_t i = 0; i < string.length();i++)
 	{
 		if (!isdigit(string[i]))
-		{
-			std::cout << "im here" << std::endl;
 			return 0;
-		}
 	}
 	return 1;
 }
@@ -189,11 +187,50 @@ int	BitcoinExchange::checkDay(int day, int month, int year)
 /* ----------------------------------------------------------- */
 
 /* Value verifications */
-int		BitcoinExchanger::checkValue(std::string value)
+int		BitcoinExchange::checkValue(double value, std::string valueString)
 {
-	
+	for(size_t i = 0; i < valueString.size();i++)
+	{
+		size_t a = 0;
+		a = valueString.find(".");
+		a = valueString.find(".", a + 2);
+		if (a != std::string::npos)
+		{
+			std::cout << "Error: bad input." << std::endl;
+			return 0;
+		}
+	}
+	if (value < 0)
+	{
+		std::cout << "Error: not a positive number." << std::endl;
+		return 0;
+	}
+	if (value > 1000)
+	{
+		std::cout << "Error: too large a number." << std::endl;
+		return 0;
+	}
+	return 1;
 }
-
 /* ----------------------------------------------------------- */
+
+void	BitcoinExchange::execute(std::string date, std::string value)
+{
+	double valueConverted = std::strtod(value.c_str(), NULL);
+	std::cout << date << " => " << value << " = ";
+	double foundValue = 0;
+	for (std::map<std::string,double>::iterator it = db.begin(); it != db.end();it++)
+	{
+		if ((date < it->first))
+		{
+			--it;
+			foundValue = it->second;
+			break;
+		}
+	}
+	double calculation;
+	calculation = foundValue * valueConverted;
+	std::cout << calculation << std::endl;
+}
 
 /* ----------------------------------------------------------- */
