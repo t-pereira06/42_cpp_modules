@@ -6,7 +6,7 @@
 /*   By: tsodre-p <tsodre-p@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/19 09:38:39 by tsodre-p          #+#    #+#             */
-/*   Updated: 2023/12/20 15:56:47 by tsodre-p         ###   ########.fr       */
+/*   Updated: 2023/12/20 17:14:20 by tsodre-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,14 +56,6 @@ void	BitcoinExchange::fileToDB()
 		db.insert(std::pair<std::string, double>(part1, std::strtod(part2.c_str(), NULL)));
 	}
 	dbFile.close();
-	/* std::map<std::string, double>::iterator it = this->db.begin();
-
-	// Iterate through the map and print the elements
-	while (it != this->db.end())
-	{
-		std::cout << "Key: " << it->first << ", Value: " << it->second << std::endl;
-		++it;
-	} */
 }
 
 void	BitcoinExchange::parsingInputFile(std::string file)
