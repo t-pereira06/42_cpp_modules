@@ -6,7 +6,7 @@
 /*   By: tsodre-p <tsodre-p@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/19 09:38:39 by tsodre-p          #+#    #+#             */
-/*   Updated: 2023/12/20 14:16:57 by tsodre-p         ###   ########.fr       */
+/*   Updated: 2023/12/20 14:23:03 by tsodre-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,7 +71,7 @@ void	BitcoinExchange::parsingInputFile(std::string file)
 	inputFile.open(file.c_str());
 	if (!inputFile)
 	{
-		std::cerr << "Could not open input file!" << std::endl;
+		std::cerr << "Error: could not open file." << std::endl;
 		exit (1);
 	}
 	std::string	line;
@@ -96,12 +96,16 @@ void	BitcoinExchange::parsingInputFile(std::string file)
 				std::cerr << "Error: bad date => " << date << std::endl;
 				break;
 			}
+			if (!checkValue(value))
+				break;
 			break;
 		}
 
 	}
 }
 
+
+/* Date verifications */
 int	BitcoinExchange::checkIfDateCorrect(const std::string& checkDate)
 {
 	std::string date1 = "2009-01-02";
@@ -182,4 +186,14 @@ int	BitcoinExchange::checkDay(int day, int month, int year)
 	}
 	return 1;
 }
+/* ----------------------------------------------------------- */
+
+/* Value verifications */
+int		BitcoinExchanger::checkValue(std::string value)
+{
+	
+}
+
+/* ----------------------------------------------------------- */
+
 /* ----------------------------------------------------------- */
