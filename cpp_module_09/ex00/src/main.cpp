@@ -6,7 +6,7 @@
 /*   By: tsodre-p <tsodre-p@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/19 10:45:40 by tsodre-p          #+#    #+#             */
-/*   Updated: 2023/12/20 09:02:29 by tsodre-p         ###   ########.fr       */
+/*   Updated: 2023/12/20 09:26:01 by tsodre-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,5 +22,5 @@ int	main(int argc, char**argv)
 	}
 	BitcoinExchange obj = BitcoinExchange();
 	obj.fileToDB();
-	//obj.outputResult(argv[1]);
+	obj.parsingInputFile(argv[1]);
 }

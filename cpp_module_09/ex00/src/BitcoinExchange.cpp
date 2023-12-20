@@ -6,7 +6,7 @@
 /*   By: tsodre-p <tsodre-p@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/19 09:38:39 by tsodre-p          #+#    #+#             */
-/*   Updated: 2023/12/20 09:21:28 by tsodre-p         ###   ########.fr       */
+/*   Updated: 2023/12/20 09:22:20 by tsodre-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -88,7 +88,7 @@ void	BitcoinExchange::parsingInputFile(std::string file)
 			break;
 		}
 		date = line.substr(0, i);
-		value = line.substr(i);
+		value = line.substr(i + 1);
 		if (!checkIfDateCorrect(date))
 		{
 			std::cerr << "Error: bad date => " << date << std::endl;
