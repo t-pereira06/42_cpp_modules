@@ -6,7 +6,7 @@
 /*   By: tsodre-p <tsodre-p@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/19 09:38:39 by tsodre-p          #+#    #+#             */
-/*   Updated: 2023/12/20 12:51:01 by tsodre-p         ###   ########.fr       */
+/*   Updated: 2023/12/20 14:16:57 by tsodre-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -153,13 +153,33 @@ int	BitcoinExchange::correctDateFormat(const std::string& checkDate)
 		return 0;
 	if (atoi(month.c_str()) < 1 || atoi(month.c_str()) > 12)
 		return 0;
-	/* if (!checkday(day))
-		return 1; */
+	if (!checkDay(atoi(day.c_str()), atoi(month.c_str()), atoi(year.c_str())))
+		return 0;
 	return 1;
 }
 
-/* int	BitcoinExchange::checkDay(std::string day)
+int	BitcoinExchange::checkDay(int day, int month, int year)
 {
-
-} */
+	if (month == 4 || month == 6 || month == 9 || month == 30)
+		if (day < 1 || day > 30)
+			return 0;
+	if (month == 1 || month == 3 || month == 5 || month == 7 || month == 8
+		|| month == 10 || month == 12)
+		if (day < 1 || day > 31)
+			return 0;
+	if (month == 2)
+	{
+		if ((year % 4 == 0 && year % 100 != 0) || (year % 400 == 0))
+		{
+			if (day < 1 || day > 29)
+				return 0;
+		}
+		else
+		{
+			if (day < 1 || day > 28)
+				return 0;
+		}
+	}
+	return 1;
+}
 /* ----------------------------------------------------------- */

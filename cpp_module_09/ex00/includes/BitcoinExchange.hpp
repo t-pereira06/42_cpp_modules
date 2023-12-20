@@ -6,7 +6,7 @@
 /*   By: tsodre-p <tsodre-p@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/19 09:17:44 by tsodre-p          #+#    #+#             */
-/*   Updated: 2023/12/20 12:21:59 by tsodre-p         ###   ########.fr       */
+/*   Updated: 2023/12/20 14:14:28 by tsodre-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,7 +43,7 @@ class BitcoinExchange
 		/* Checks for the input file */
 		int		checkDate(const std::string& checkDate);
 		int		correctDateFormat(const std::string& checkDate);
-		int		checkDay(std::string day);
+		int		checkDay(int day, int month, int year);
 		int		checkIfIsDigit(std::string string);
 		int		checkIfDateCorrect(const std::string& checkDate);
 		void	parsingInputFile(std::string file);
