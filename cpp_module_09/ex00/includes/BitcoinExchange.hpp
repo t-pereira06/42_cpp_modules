@@ -6,7 +6,7 @@
 /*   By: tsodre-p <tsodre-p@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/19 09:17:44 by tsodre-p          #+#    #+#             */
-/*   Updated: 2023/12/20 08:59:22 by tsodre-p         ###   ########.fr       */
+/*   Updated: 2023/12/20 09:07:46 by tsodre-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,7 @@
 #include <iostream>
 #include <string.h>
 #include <fstream>
+#include <stdlib.h>
 
 class BitcoinExchange
 {
@@ -40,7 +41,7 @@ class BitcoinExchange
 
 		/* Checks for the input file */
 		int		checkDate(const std::string& checkDate);
-		int		checkIfDataCorrect(std::string date);
+		int		checkIfDateCorrect(const std::string& checkDate);
 		void	parsingInputFile(std::string file);
 
 

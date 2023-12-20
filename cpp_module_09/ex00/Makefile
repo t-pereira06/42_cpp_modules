@@ -6,7 +6,7 @@
 #    By: tsodre-p <tsodre-p@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/12/19 09:02:42 by tsodre-p          #+#    #+#              #
-#    Updated: 2023/12/19 10:45:29 by tsodre-p         ###   ########.fr        #
+#    Updated: 2023/12/20 09:03:42 by tsodre-p         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -27,7 +27,7 @@ RED			=	\033[31m
 UP			=	\033[A
 CUT			=	\033[K
 
-SRC_FILES = main.cpp
+SRC_FILES = main.cpp BitcoinExchange.cpp
 OBJ_FILES	= $(SRC_FILES:.cpp=.o)
 
 SRC			=	$(addprefix $(SRC_DIR), $(SRC_FILES))

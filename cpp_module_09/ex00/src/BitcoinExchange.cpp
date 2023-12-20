@@ -6,7 +6,7 @@
 /*   By: tsodre-p <tsodre-p@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/19 09:38:39 by tsodre-p          #+#    #+#             */
-/*   Updated: 2023/12/19 15:46:24 by tsodre-p         ###   ########.fr       */
+/*   Updated: 2023/12/20 09:21:28 by tsodre-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,15 +52,23 @@ void	BitcoinExchange::fileToDB()
 	{
 		i = line.find(",");
 		part1 = line.substr(0, i);
-		part2 = line.substr(i);
+		part2 = line.substr(i + 1);
 		db.insert(std::pair<std::string, double>(part1, std::strtod(part2.c_str(), NULL)));
 	}
 	dbFile.close();
+	/* std::map<std::string, double>::iterator it = this->db.begin();
+
+	// Iterate through the map and print the elements
+	while (it != this->db.end())
+	{
+		std::cout << "Key: " << it->first << ", Value: " << it->second << std::endl;
+		++it;
+	} */
 }
 
 void	BitcoinExchange::parsingInputFile(std::string file)
 {
-	inputFile.open(file);
+	inputFile.open(file.c_str());
 	if (!inputFile)
 	{
 		std::cerr << "Could not open input file!" << std::endl;
@@ -81,7 +89,7 @@ void	BitcoinExchange::parsingInputFile(std::string file)
 		}
 		date = line.substr(0, i);
 		value = line.substr(i);
-		if (!checkIfDataCorrect(date))
+		if (!checkIfDateCorrect(date))
 		{
 			std::cerr << "Error: bad date => " << date << std::endl;
 			break;
@@ -89,7 +97,7 @@ void	BitcoinExchange::parsingInputFile(std::string file)
 	}
 }
 
-int	BitcoinExchange::checkDate(const std::string& checkDate)
+int	BitcoinExchange::checkIfDateCorrect(const std::string& checkDate)
 {
 	std::string date1 = "2009-01-02";
 	if (checkDate < date1)
