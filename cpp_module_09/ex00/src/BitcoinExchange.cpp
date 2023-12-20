@@ -6,7 +6,7 @@
 /*   By: tsodre-p <tsodre-p@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/19 09:38:39 by tsodre-p          #+#    #+#             */
-/*   Updated: 2023/12/20 12:22:01 by tsodre-p         ###   ########.fr       */
+/*   Updated: 2023/12/20 12:31:29 by tsodre-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -81,19 +81,24 @@ void	BitcoinExchange::parsingInputFile(std::string file)
 	getline(inputFile, line);
 	while (getline(inputFile, line))
 	{
-		i = line.find("|");
-		if (i == std::string::npos)
+		while (1)
 		{
-			std::cerr << "Error: bad input => " << line << std::endl;
+			i = line.find("|");
+			if (i == std::string::npos)
+			{
+				std::cerr << "Error: bad input => " << line << std::endl;
+				break;
+			}
+			date = line.substr(0, i - 1);
+			value = line.substr(i + 1);
+			if (!checkIfDateCorrect(date))
+			{
+				std::cerr << "Error: bad date => " << date << std::endl;
+				break;
+			}
 			break;
 		}
-		date = line.substr(0, i);
-		value = line.substr(i + 1);
-		if (!checkIfDateCorrect(date))
-		{
-			std::cerr << "Error: bad date => " << date << std::endl;
-			break;
-		}
+
 	}
 }
 
@@ -114,17 +119,17 @@ int	BitcoinExchange::checkIfDateCorrect(const std::string& checkDate)
 	return 0;
 }
 
-int	BitcoinExchange::checkIfIsDigit(std::string *string)
+int	BitcoinExchange::checkIfIsDigit(std::string string)
 {
 	for (size_t i = 0; i < string.length();i++)
 	{
 		if (!isdigit(string[i]))
 		{
 			std::cout << "im here" << std::endl;
-			return 1;
+			return 0;
 		}
 	}
-	return 0;
+	return 1;
 }
 
 int	BitcoinExchange::correctDateFormat(const std::string& checkDate)
@@ -142,13 +147,10 @@ int	BitcoinExchange::correctDateFormat(const std::string& checkDate)
 	if (i == std::string::npos)
 		return 1;
 	day = checkDate.substr(i + 1);
-	std::cerr << "year: => " << year << std::endl;
-	std::cerr << "month: => " << month << std::endl;
-	std::cerr << "day: => " << day << std::endl;
 	if (!checkIfIsDigit(year) || !checkIfIsDigit(month) || !checkIfIsDigit(day))
 		return 1;
-	/* if (year.size() != 4 || month.size() != 2 || day.size() != 2)
-		return 1; */
+	if (year.size() != 4 || month.size() != 2 || day.size() != 2)
+		return 1;
 	/* if (atoi(month.c_str()) < 1 || atoi(month.c_str()) > 12)
 		return 1; */
 	return 0;
