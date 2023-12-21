@@ -6,7 +6,7 @@
 /*   By: tsodre-p <tsodre-p@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/20 16:25:58 by tsodre-p          #+#    #+#             */
-/*   Updated: 2023/12/21 12:33:39 by tsodre-p         ###   ########.fr       */
+/*   Updated: 2023/12/21 12:47:30 by tsodre-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,20 +45,14 @@ void	RPN::checkArgs(std::string arg)
 		if (arg[i] == '+' || arg[i] == '-' || arg[i] == '*' || arg[i] == '/' || arg[i] == ' ')
 			continue;
 		else if (!isdigit(arg[i]))
-		{
-			std::cerr << "Error" << std::endl;
-			exit(1);
-		}
+			throw std::runtime_error("Error");
 	}
 }
 
 void	RPN::operation(char arg)
 {
 	if (this->stack.size() < 2)
-	{
-		std::cerr << "Not enough numbers to execute an operation." << std::endl;
-		exit(1);
-	}
+		throw std::runtime_error("Not enough numbers to execute an operation.");
 	int num1;
 	int num2;
 	int result;
