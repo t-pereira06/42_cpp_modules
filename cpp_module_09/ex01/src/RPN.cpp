@@ -6,7 +6,7 @@
 /*   By: tsodre-p <tsodre-p@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/20 16:25:58 by tsodre-p          #+#    #+#             */
-/*   Updated: 2023/12/21 12:52:20 by tsodre-p         ###   ########.fr       */
+/*   Updated: 2023/12/21 14:30:27 by tsodre-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,21 +17,12 @@ RPN::RPN() {}
 
 RPN::~RPN() {}
 
-RPN::RPN(RPN const &copy)
-{
-	while (!stack.empty())
-		this->stack.pop();
-	this->stack = copy.stack;
-}
+RPN::RPN(RPN const &copy) : stack(copy.stack) {}
 
 RPN	&RPN::operator=(RPN const &copy)
 {
 	if (this != &copy)
-	{
-		while (!stack.empty())
-			this->stack.pop();
 		this->stack = copy.stack;
-	}
 	return (*this);
 }
 /* ----------------------------------------------------------- */
