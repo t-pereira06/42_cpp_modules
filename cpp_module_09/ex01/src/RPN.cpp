@@ -6,7 +6,7 @@
 /*   By: tsodre-p <tsodre-p@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/20 16:25:58 by tsodre-p          #+#    #+#             */
-/*   Updated: 2023/12/21 12:04:21 by tsodre-p         ###   ########.fr       */
+/*   Updated: 2023/12/21 12:33:39 by tsodre-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,36 +52,74 @@ void	RPN::checkArgs(std::string arg)
 	}
 }
 
-void	RPN::operation(std::string arg)
+void	RPN::operation(char arg)
 {
 	if (this->stack.size() < 2)
 	{
 		std::cerr << "Not enough numbers to execute an operation." << std::endl;
 		exit(1);
 	}
-	int num1 = stack.pop_back();
+	int num1;
+	int num2;
+	int result;
+	num2 = stack.top();
+	stack.pop();
+	num1 = stack.top();
+	stack.pop();
+	//4 - Push the result back onto the stack.
+	switch (arg)
+	{
+		case ('+') :
+		{
+			result = num1 + num2;
+			this->stack.push(result);
+			break;
+		}
+		case ('-') :
+		{
+			result = num1 - num2;
+			this->stack.push(result);
+			break;
+		}
+		case ('*') :
+		{
+			result = num1 * num2;
+			this->stack.push(result);
+			break;
+		}
+		case ('/') :
+		{
+			result = num1 / num2;
+			this->stack.push(result);
+			break;
+		}
+	}
 }
 
 void	RPN::execute(std::string arg)
 {
+	std::string	number;
 	//1 - Iterate through each token in the RPN expression from left to right.
 	for (size_t i = 0; i < arg.size(); i++)
 	{
-		//2 - If the token is an operand, push it onto the stack.
-		if (arg[i] == '+' || arg[i] == '-' || arg[i] == '*' || arg[i] == '/' || arg[i] == ' ')
-			operation(arg[i]);
-		else if
-		{
-			std::cerr << "Error" << std::endl;
-			exit(1);
-		}
-		/*3 -If the token is an operator, pop the required number of operands from the stack
+		if (arg[i] == ' ')
+			continue;
+		/*2 -If the token is an operator, pop the required number of operands from the stack
 		(usually two for binary operators) and perform the operation.*/
-		//4 - Push the result back onto the stack.
-		//5 - After processing all tokens, the result should be at the top of the stack.
-		//6 - Pop it and return the result
-
+		else if (arg[i] == '+' || arg[i] == '-' || arg[i] == '*' || arg[i] == '/')
+			operation(arg[i]);
+		//3 - If the token is an operand, push it onto the stack.
+		else
+		{
+			number = arg[i];
+			this->stack.push(atof(number.c_str()));
+		}
 	}
-
+	//5 - After processing all tokens, the result should be at the top of the stack.
+	if (this->stack.size() > 1)
+		std::cerr << "Not enough operators." << std::endl;
+	//6 - Pop it and return the result
+	std::cout << this->stack.top() << std::endl;
+	stack.pop();
 }
 /* ----------------------------------------------------------- */

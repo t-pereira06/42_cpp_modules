@@ -6,7 +6,7 @@
 /*   By: tsodre-p <tsodre-p@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/20 16:25:52 by tsodre-p          #+#    #+#             */
-/*   Updated: 2023/12/21 12:00:38 by tsodre-p         ###   ########.fr       */
+/*   Updated: 2023/12/21 12:24:07 by tsodre-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,8 +23,7 @@
 class RPN
 {
 	private:
-		std::stack<int>	stack;
-		char	**splittedArg;
+		std::stack<double>	stack;
 	public:
 		/* Orthodox Canonical Form */
 		RPN();
@@ -32,10 +31,9 @@ class RPN
 		RPN(RPN const &copy);
 		RPN	&operator=(RPN const &copy);
 		/* ----------------------- */
-		RPN(const char *arg);
 		void	checkArgs(std::string arg);
 		void	execute(std::string arg);
-		void	operation(std::string arg);
+		void	operation(char arg);
 };
 
 #endif
