@@ -6,7 +6,7 @@
 /*   By: tsodre-p <tsodre-p@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/20 16:25:58 by tsodre-p          #+#    #+#             */
-/*   Updated: 2023/12/21 12:47:30 by tsodre-p         ###   ########.fr       */
+/*   Updated: 2023/12/21 12:48:19 by tsodre-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -111,7 +111,7 @@ void	RPN::execute(std::string arg)
 	}
 	//5 - After processing all tokens, the result should be at the top of the stack.
 	if (this->stack.size() > 1)
-		std::cerr << "Not enough operators." << std::endl;
+		throw std::runtime_error("Not enough operators.");
 	//6 - Pop it and return the result
 	std::cout << this->stack.top() << std::endl;
 	stack.pop();
