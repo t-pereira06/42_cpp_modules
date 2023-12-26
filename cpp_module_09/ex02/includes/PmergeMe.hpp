@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   PmergeMe.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tsodre-p <tsodre-p@student.42.fr>          +#+  +:+       +#+        */
+/*   By: tsodre-p <tsodre-p@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/21 14:26:39 by tsodre-p          #+#    #+#             */
-/*   Updated: 2023/12/26 14:47:24 by tsodre-p         ###   ########.fr       */
+/*   Updated: 2023/12/26 15:39:04 by tsodre-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,8 +36,10 @@ class PmergeMe
 		/* ----------------------- */
 		PmergeMe(std::vector<int> vector);
 		void	sortAlgorithm(std::vector<int> &vector, std::deque<int> &deque);
-		void	mergeVector(std::vector<int> &vec, int start, int end);
-		void	mergeDeque(std::deque<int> &deque, int start, int end);
+		void	sortVector(std::vector<int> &vec);
+		void	sortDeque(std::deque<int> &deque);
+		void	mergeVector(std::vector<int> &left, std::vector<int>&right, std::vector<int> &vector);
+		void	mergeDeque(std::deque<int> &left, std::deque<int>&right, std::deque<int> &deque);
 };
 
 #endif

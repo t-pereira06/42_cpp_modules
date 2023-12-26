@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   PmergeMe.cpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tsodre-p <tsodre-p@student.42.fr>          +#+  +:+       +#+        */
+/*   By: tsodre-p <tsodre-p@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/21 14:26:54 by tsodre-p          #+#    #+#             */
-/*   Updated: 2023/12/26 14:53:58 by tsodre-p         ###   ########.fr       */
+/*   Updated: 2023/12/26 15:42:13 by tsodre-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,7 +43,7 @@ void	PmergeMe::sortAlgorithm(std::vector<int> &vector, std::deque<int> &deque)
 	std::cout << std::endl;
 
 	clock_t start1 = clock();
-	mergeVector(vector, 0, vector.size() - 1);
+	sortVector(vector);
 
 	clock_t end1 = clock();
 	double elapsed_microseconds1 = static_cast<double>(end1 - start1) / CLOCKS_PER_SEC * 1000;
@@ -54,7 +54,7 @@ void	PmergeMe::sortAlgorithm(std::vector<int> &vector, std::deque<int> &deque)
 	std::cout << std::endl;
 
 	clock_t start2 = clock();
-	mergeDeque(deque, 0, deque.size() - 1);
+	sortDeque(deque);
 
 	clock_t end2 = clock();
 	double elapsed_microseconds2 = static_cast<double>(end2 - start2) / CLOCKS_PER_SEC * 1000;
@@ -62,27 +62,98 @@ void	PmergeMe::sortAlgorithm(std::vector<int> &vector, std::deque<int> &deque)
 	std::cout << "Time to process a range of " << deque.size() << " elements with std::vector: " << " " << elapsed_microseconds2 << " us" << std::endl;
 }
 
-void	PmergeMe::mergeVector(std::vector<int> &vector, int start, int end)
+void	PmergeMe::sortVector(std::vector<int> &vector)
 {
-	if (start < end)
+	if (vector.size() == 1)
+		return ;
+	int	mid = vector.size() / 2;
+
+	std::vector<int> left = std::vector<int>(vector.begin(), vector.begin() + mid);
+	std::vector<int> right = std::vector<int>(vector.begin() + mid, vector.end());
+	sortVector(left);
+	sortVector(right);
+	mergeVector(left, right, vector);
+}
+
+void	PmergeMe::sortDeque(std::deque<int> &deque)
+{
+	if (deque.size() == 1)
+		return ;
+	int	mid = deque.size() / 2;
+
+	std::deque<int> left = std::deque<int>(deque.begin(), deque.begin() + mid);
+	std::deque<int> right = std::deque<int>(deque.begin() + mid, deque.end());
+	sortDeque(left);
+	sortDeque(right);
+	mergeDeque(left, right, deque);
+}
+
+void	PmergeMe::mergeVector(std::vector<int> &left, std::vector<int>&right, std::vector<int> &vector)
+{
+	size_t l = 0, r = 0, i = 0;
+
+	while (l < left.size() && r < right.size())
 	{
-		int	mid = (start + end) / 2;
-		mergeVector(vector, start, mid);
-		mergeVector(vector, mid + 1, end);
-		for (std::vector<int>::iterator it = vector.begin(); it != vector.end(); it++)
-		std::cout << *it << " ";
-		std::cout << std::endl;
-		std::inplace_merge(vector.begin() + start, vector.begin() + mid + 1, vector.begin() + end + 1);
+		if (left[l] < right[r])
+		{
+			vector[i] = left[l];
+			i++;
+			l++;
+		}
+		else
+		{
+			vector[i] = right[r];
+			i++;
+			r++;
+		}
+	}
+
+	// in case the number of elements in odd and there is one left to put in the array:
+	while (l < left.size())
+	{
+		vector[i] = left[l];
+		i++;
+		l++;
+	}
+	while (r < right.size())
+	{
+		vector[i] = right[r];
+		i++;
+		r++;
 	}
 }
 
-void	PmergeMe::mergeDeque(std::deque<int> &deque, int start, int end)
+void	PmergeMe::mergeDeque(std::deque<int> &left, std::deque<int>&right, std::deque<int> &deque)
 {
-	if (start < end)
+	size_t l = 0, r = 0, i = 0;
+
+	while (l < left.size() && r < right.size())
 	{
-		int	mid = (start + end) / 2;
-		mergeDeque(deque, start, mid);
-		mergeDeque(deque, mid + 1, end);
-		std::inplace_merge(deque.begin() + start, deque.begin() + mid + 1, deque.begin() + end + 1);
+		if (left[l] < right[r])
+		{
+			deque[i] = left[l];
+			i++;
+			l++;
+		}
+		else
+		{
+			deque[i] = right[r];
+			i++;
+			r++;
+		}
+	}
+
+	// in case the number of elements in odd and there is one left to put in the array:
+	while (l < left.size())
+	{
+		deque[i] = left[l];
+		i++;
+		l++;
+	}
+	while (r < right.size())
+	{
+		deque[i] = right[r];
+		i++;
+		r++;
 	}
 }
