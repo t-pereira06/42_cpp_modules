@@ -6,7 +6,7 @@
 /*   By: tsodre-p <tsodre-p@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/21 14:26:54 by tsodre-p          #+#    #+#             */
-/*   Updated: 2023/12/26 12:50:18 by tsodre-p         ###   ########.fr       */
+/*   Updated: 2023/12/26 14:14:32 by tsodre-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,10 +32,10 @@ PmergeMe	&PmergeMe::operator=(PmergeMe const &copy)
 
 PmergeMe::PmergeMe(std::vector<int> _vector) : vector(_vector), deque(vector.begin(), vector.end())
 {
-	sortAlgorithm(_vector);
+	sortAlgorithm(vector);
 }
 
-void	PmergeMe::sortAlgorithm(std::vector<int> vector)
+void	PmergeMe::sortAlgorithm(std::vector<int> &vector)
 {
 	std::cout << "Before: ";
 	for (std::vector<int>::iterator it = vector.begin(); it != vector.end(); it++)
