@@ -6,7 +6,7 @@
 /*   By: tsodre-p <tsodre-p@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/21 14:26:54 by tsodre-p          #+#    #+#             */
-/*   Updated: 2023/12/26 15:42:13 by tsodre-p         ###   ########.fr       */
+/*   Updated: 2023/12/26 15:44:10 by tsodre-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -108,7 +108,7 @@ void	PmergeMe::mergeVector(std::vector<int> &left, std::vector<int>&right, std::
 		}
 	}
 
-	// in case the number of elements in odd and there is one left to put in the array:
+	//if the number of elements is odd. if it is, then a number is left to put in the vector
 	while (l < left.size())
 	{
 		vector[i] = left[l];
@@ -143,7 +143,7 @@ void	PmergeMe::mergeDeque(std::deque<int> &left, std::deque<int>&right, std::deq
 		}
 	}
 
-	// in case the number of elements in odd and there is one left to put in the array:
+	//if the number of elements is odd. if it is, then a number is left to put in the deque
 	while (l < left.size())
 	{
 		deque[i] = left[l];
