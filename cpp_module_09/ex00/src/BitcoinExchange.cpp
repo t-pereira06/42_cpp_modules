@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   BitcoinExchange.cpp                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tsodre-p <tsodre-p@student.42porto.com>    +#+  +:+       +#+        */
+/*   By: tsodre-p <tsodre-p@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/19 09:38:39 by tsodre-p          #+#    #+#             */
-/*   Updated: 2023/12/20 17:14:20 by tsodre-p         ###   ########.fr       */
+/*   Updated: 2023/12/27 11:15:24 by tsodre-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -108,11 +108,6 @@ int	BitcoinExchange::checkIfDateCorrect(const std::string& checkDate)
 		return 0; // checkDate is before date1
 	else if (checkDate > date1)
 		return 1; // checkDate is after date1
-
-	/*
-	CHECK IF THE DATE DOES NOT CORRESPOND ON THE DATABASE, THEN CHECK
-	IF (DATEBEHIND < MYDATE && DATEAHEAD > MYDATE)
-		RETURN DATEBEHIND*/
 	return 1;
 }
 
