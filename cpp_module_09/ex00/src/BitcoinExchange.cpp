@@ -6,7 +6,7 @@
 /*   By: tsodre-p <tsodre-p@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/19 09:38:39 by tsodre-p          #+#    #+#             */
-/*   Updated: 2023/12/27 11:15:24 by tsodre-p         ###   ########.fr       */
+/*   Updated: 2023/12/27 11:47:09 by tsodre-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -206,7 +206,8 @@ void	BitcoinExchange::execute(std::string date, std::string value)
 	double valueConverted = std::strtod(value.c_str(), NULL);
 	std::cout << date << " => " << value << " = ";
 	double foundValue = 0;
-	for (std::map<std::string,double>::iterator it = db.begin(); it != db.end();it++)
+	std::map<std::string,double>::iterator it;
+	for (it = db.begin(); it != db.end();it++)
 	{
 		if ((date < it->first))
 		{
@@ -214,6 +215,11 @@ void	BitcoinExchange::execute(std::string date, std::string value)
 			foundValue = it->second;
 			break;
 		}
+	}
+	if (it == db.end())
+	{
+		--it;
+		foundValue = it->second;
 	}
 	double calculation;
 	calculation = foundValue * valueConverted;
