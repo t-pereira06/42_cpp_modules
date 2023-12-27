@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   PmergeMe.cpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tsodre-p <tsodre-p@student.42porto.com>    +#+  +:+       +#+        */
+/*   By: tsodre-p <tsodre-p@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/21 14:26:54 by tsodre-p          #+#    #+#             */
-/*   Updated: 2023/12/26 15:44:10 by tsodre-p         ###   ########.fr       */
+/*   Updated: 2023/12/27 09:45:27 by tsodre-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,7 +59,7 @@ void	PmergeMe::sortAlgorithm(std::vector<int> &vector, std::deque<int> &deque)
 	clock_t end2 = clock();
 	double elapsed_microseconds2 = static_cast<double>(end2 - start2) / CLOCKS_PER_SEC * 1000;
 	std::cout << "Time to process a range of " << vector.size() << " elements with std::vector: " << " " << elapsed_microseconds1 << " us" << std::endl;
-	std::cout << "Time to process a range of " << deque.size() << " elements with std::vector: " << " " << elapsed_microseconds2 << " us" << std::endl;
+	std::cout << "Time to process a range of " << deque.size() << " elements with std::deque: " << " " << elapsed_microseconds2 << " us" << std::endl;
 }
 
 void	PmergeMe::sortVector(std::vector<int> &vector)
@@ -90,20 +90,29 @@ void	PmergeMe::sortDeque(std::deque<int> &deque)
 
 void	PmergeMe::mergeVector(std::vector<int> &left, std::vector<int>&right, std::vector<int> &vector)
 {
-	size_t l = 0, r = 0, i = 0;
+	size_t l = 0;
+	size_t r = 0;
+	size_t v = 0;
 
+	/* for (std::vector<int>::iterator it = left.begin(); it != left.end(); it++)
+		std::cout << *it << " ";
+	std::cout << std::endl;
+	for (std::vector<int>::iterator it = right.begin(); it != right.end(); it++)
+		std::cout << *it << " ";
+	std::cout << std::endl; */
 	while (l < left.size() && r < right.size())
 	{
+		/* std::cout << "Left: " << left[l] << " Right: " << right[r] << std::endl; */
 		if (left[l] < right[r])
 		{
-			vector[i] = left[l];
-			i++;
+			vector[v] = left[l];
+			v++;
 			l++;
 		}
 		else
 		{
-			vector[i] = right[r];
-			i++;
+			vector[v] = right[r];
+			v++;
 			r++;
 		}
 	}
@@ -111,34 +120,35 @@ void	PmergeMe::mergeVector(std::vector<int> &left, std::vector<int>&right, std::
 	//if the number of elements is odd. if it is, then a number is left to put in the vector
 	while (l < left.size())
 	{
-		vector[i] = left[l];
-		i++;
+		vector[v] = left[l];
+		v++;
 		l++;
 	}
 	while (r < right.size())
 	{
-		vector[i] = right[r];
-		i++;
+		vector[v] = right[r];
+		v++;
 		r++;
 	}
 }
 
 void	PmergeMe::mergeDeque(std::deque<int> &left, std::deque<int>&right, std::deque<int> &deque)
 {
-	size_t l = 0, r = 0, i = 0;
-
+	size_t l = 0;
+	size_t r = 0;
+	size_t d = 0;
 	while (l < left.size() && r < right.size())
 	{
 		if (left[l] < right[r])
 		{
-			deque[i] = left[l];
-			i++;
+			deque[d] = left[l];
+			d++;
 			l++;
 		}
 		else
 		{
-			deque[i] = right[r];
-			i++;
+			deque[d] = right[r];
+			d++;
 			r++;
 		}
 	}
@@ -146,14 +156,14 @@ void	PmergeMe::mergeDeque(std::deque<int> &left, std::deque<int>&right, std::deq
 	//if the number of elements is odd. if it is, then a number is left to put in the deque
 	while (l < left.size())
 	{
-		deque[i] = left[l];
-		i++;
+		deque[d] = left[l];
+		d++;
 		l++;
 	}
 	while (r < right.size())
 	{
-		deque[i] = right[r];
-		i++;
+		deque[d] = right[r];
+		d++;
 		r++;
 	}
 }
