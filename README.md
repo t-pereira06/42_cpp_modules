@@ -72,6 +72,6 @@ Description: Templated containers, iterators, algorithms
 ### Module 09
 
 - Folder: [cpp_module_09](cpp_module_09/)
-- Grade: not graded yet
+- Grade: ![100_percent](https://github.com/t-pereira06/42_cpp_modules/assets/118270669/adeaa1d5-9340-48d1-b42c-a8e7a9296098)
 
 Description: C++ Standard Template Library (STL)
